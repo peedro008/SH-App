@@ -1,0 +1,110 @@
+.ContainerDiv {
+  max-height: 100vh;
+  max-width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+.Vector3 {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 4%;
+}
+.Vector6 {
+  position: absolute;
+  width: 100%;
+  left: 30%;
+}
+.Vector4 {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  bottom: 1%;
+}
+.Vector5 {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  bottom: 0;
+}
+.LogoRedo {
+  height: auto;
+  width: 20.5vw;
+  align-self: center;
+  margin-top: 22%;
+  z-index: 1;
+  opacity: 0.99;
+}
+.Bienvenide {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 41px;
+  margin-bottom: 15%;
+
+  color: #15353b;
+}
+.text {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  padding-left: 8%;
+  padding-right: 8%;
+  margin-top: 5px;
+  /* letra secundaria */
+
+  color: #15353b;
+}
+.Comenzar{
+    display:"flex";
+    justify-content: center;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width:200px;
+    height: 48px;
+    color: #FFFFFF;
+    border-width: 0;
+    background: rgba(176, 141, 186, 0.8);
+    border-radius: 50px;
+    margin-top:20px ;
+}
+.ProximoTurno{
+    display:"flex";
+    justify-content: center;
+    margin-top:16px ;
+    position: relative;
+    width:200px;
+    height: 48px;
+border: 2px solid #B08DBA;
+border-radius: 50px;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 300;
+font-size: 22px;
+line-height: 30px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Letra general */
+
+color: #252828;
+
+}

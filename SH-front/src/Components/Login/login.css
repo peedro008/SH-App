@@ -1,0 +1,95 @@
+.ContainerDiv {
+  max-height: 100vh;
+  max-width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Vector2 {
+  
+  position: absolute;
+  top: 7%;
+  width: 100vw;
+}
+.Vector1 {
+  
+  position: absolute;
+  width: 98vw;
+  left: 0;
+}
+.Vector6 {
+  top: 5;
+  position: absolute;
+  width: 100vw;
+ 
+}
+.LogoLogin {
+  height: auto;
+  width: 29vw;
+  align-self: center;
+  margin-top: 35%;
+}
+.Input {
+  height: 49px;
+  border-width: 0;
+  width: 264px;
+  left: 63px;
+  background-color: rgba(196, 196, 196, 0.35);
+  border-radius: 75px;
+  z-index: 1;
+  font-family: 'Nunito';
+  font-size: 15px;
+  padding-left:15px ;
+}
+.Bienvenide{
+    font-family: 'Nunito';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 41px;
+
+
+color: #15353B;
+
+}
+.DNI{
+    font-family: 'Nunito';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+
+/* identical to box height */
+
+
+/* Letra general */
+
+color: #252828;
+
+
+}
+.boton{
+    margin-top: 10%;
+}
+.footer{
+    
+position: absolute;
+padding-left: 10%;
+padding-right: 10%;
+top: 90%;
+
+font-family: 'Work Sans';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+
+/* letra secundaria */
+
+color:  #15353B;
+}
