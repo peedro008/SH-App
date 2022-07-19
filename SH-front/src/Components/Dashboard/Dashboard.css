@@ -1,0 +1,61 @@
+.div1 {
+    
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.div2{
+    background-color: rgba(185, 185, 185, 0.39);
+    border-radius: 50%;
+    height: 150px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.div3{
+    width: 100%;
+}
+
+h1{
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+h2, h4{
+    padding-left: 10px; 
+}
+
+.buttons{
+    margin-top: 20px;
+}
+
+.containerBack {
+    display: flex;
+
+    height: 25vh;
+    align-items: flex-end;
+    justify-content: right;
+}
+
+.botonBack {
+    display: flex;
+    height: 45px;
+    width: 25%;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    border: 0.15rem solid #2B6C78;
+    border-radius: 2rem;
+    padding: auto;
+    margin: 0 8% 8% 0;     
+}
+
+.back {
+    padding-left: 0%;
+}

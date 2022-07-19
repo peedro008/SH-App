@@ -1,20 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import BienvenideComponent from "./Components/Bienvenide/Bienvenide";
-import App from "./App"
+import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import store from "./Redux/store";
-import { Provider } from 'react-redux';
+import { Provider } from "react-redux";
+import Navbar from "./Components/Navbar";
+import Boton from "./Components/Boton";
 import Dashboard from "./Components/Dashboard/Dashboard";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-      
-<Dashboard/>
-
+        {/* <App /> */}
+        <Dashboard />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>
