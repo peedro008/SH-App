@@ -20,19 +20,19 @@ function Dashboard() {
       </div>
       <div className='div3'>
       <h2 className='2'>Jose Alfonso</h2>
-      <h4 className='3'>Editar informacion Personal</h4>
+      <h4 className='3'>Editar informacion personal</h4>
       </div>
     </div>
     <div className='buttons'>
-      <Boton icon={<VscNotebook size="20px"/>} text="Historia clínica completa"/>
-      <Boton icon={<FiCamera size="20px"/>} text="Fotografias"/>
-      <Boton icon={<GiCardExchange size="20px"/>} text="Antes y después en fotos"/>
-      <Boton icon={<AiOutlineUser size="20px"/>} text="Tratamientos en SH"/>
-      <Boton icon={<TbDiscount2 size="20px"/>} text="Descuentos"/>
+      <Boton icon={<VscNotebook size="4vw"/>} text="Historia clínica completa"/>
+      <Boton icon={<FiCamera size="4vw"/>} text="Fotografias"/>
+      <Boton icon={<GiCardExchange size="4vw"/>} text="Antes y después en fotos"/>
+      <Boton icon={<AiOutlineUser size="4vw"/>} text="Tratamientos en SH"/>
+      <Boton icon={<TbDiscount2 size="4vw"/>} text="Descuentos"/>
     </div>
     <div className='containerBack'>
     <button className="botonBack">
-      <IoIosArrowBack size="20px"/>
+      <IoIosArrowBack size="4vw"/>
       <h3 className='back'>Volver</h3>
       </button>
     </div>

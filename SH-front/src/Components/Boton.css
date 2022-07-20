@@ -1,18 +1,17 @@
 .boton {
-    display: flex;
-    height: 45px;
-    width: 85%;
-    background-color: transparent;
-    align-items: center;
-    border: 0.15rem solid #2B6C78;
-    border-radius: 2rem;
-    margin: 0 auto;
-    padding-left: 5%;
-    margin-top: 2%;
-    margin-bottom: 5%;
+  display: flex;
+  height: 10vw;
+  width: 85vw;
+  background-color: transparent;
+  align-items: center;
+  border: 0.15rem solid #2b6c78;
+  border-radius: 2rem;
+  margin: 0 auto;
+  padding-left: 5vw;
+  margin-top: 5vw;
 }
 
-
-h3 {
-    padding-left: 2rem;
+.boton h3 {
+  font-size: 4vw;
+  padding-left: 5vw;
 }
