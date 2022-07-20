@@ -1,0 +1,19 @@
+.containerShareDown {
+  display: flex;
+  width: 25vw;
+  justify-content: left;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  bottom: 5vh;
+  left: 8vw;
+}
+
+.buttonPink {
+  width: 10vw;
+  height: 10vw;
+  border-color: transparent;
+  border-radius: 50%;
+  background-color: #c0a4c8;
+  margin-left: 2vw;
+}

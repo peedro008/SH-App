@@ -7,13 +7,16 @@ import store from "./Redux/store";
 import { Provider } from "react-redux";
 import ClinicalHistory from "./Components/ClinicalHistory/ClinicalHistory";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import PhotographicTracking from "./Components/PhotographicTracking/PhotographicTracking";
+import BeforeAndAfter from "./Components/BeforeAndAfter/BeforeAndAfter";
+import ButtonShareDown from "./Components/ButtonShareDown";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <Dashboard />
+        <ClinicalHistory />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>

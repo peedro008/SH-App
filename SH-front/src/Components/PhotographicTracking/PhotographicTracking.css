@@ -1,0 +1,9 @@
+.containerHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 25vw;
+  width: 80vw;
+}
