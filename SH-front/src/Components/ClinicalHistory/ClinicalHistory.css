@@ -1,0 +1,25 @@
+.containerHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 10vh;
+  width: 80vw;
+  background-color: rgb(240, 157, 157);
+}
+
+.containerFooter {
+  display: flex;
+
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.buttonPink {
+  width: 10vw;
+  height: 10vw;
+  border-color: transparent;
+  border-radius: 50%;
+  background-color: #c0a4c8;
+}

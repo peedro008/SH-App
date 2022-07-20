@@ -1,0 +1,22 @@
+.containerBack {
+  display: flex;
+  width: 25vw;
+  justify-content: right;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  bottom: 5vh;
+  right: 8vw;
+}
+
+.botonBack {
+  display: flex;
+  font-size: 3vw;
+  height: 10vw;
+  width: 100%;
+  background-color: transparent;
+  align-items: center;
+  border: 0.15rem solid #2b6c78;
+  border-radius: 2rem;
+  padding-left: 4vw;
+}

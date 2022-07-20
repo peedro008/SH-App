@@ -24,4 +24,18 @@ h4,
 h5,
 p {
   font-family: "Nunito";
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 8vw;
+}
+
+h2 {
+  font-size: 6vw;
+}
+
+h4 {
+  font-size: 5vw;
+  font-weight: 200;
 }
