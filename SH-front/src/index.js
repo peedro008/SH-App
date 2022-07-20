@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <Dashboard />
+        <ClinicalHistory />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>
