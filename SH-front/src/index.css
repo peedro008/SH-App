@@ -17,6 +17,16 @@ div {
   background-color: #ffffff;
 }
 
+.containerHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 10vh;
+  width: 80vw;
+}
+
 h1,
 h2,
 h3,

@@ -1,0 +1,70 @@
+import React, { useState } from "react";
+import ButtonBack from "../ButtonBack";
+import Navbar from "../Navbar";
+import "./Tratamientos.css";
+
+const Tratamientos = () => {
+  const [show, setShow] = useState({ pri: false, sec: false, thr: false });
+
+  return (
+    <div>
+      <Navbar />
+      <div className="containerHeader">
+        <h2>Tratamientos en SH</h2>
+        <h4>¿Qué estás buscando?</h4>
+      </div>
+      <div>
+        <div className="containerTrat">
+          <h4>Tratamientos Faciales</h4>
+          <button
+            className="SeeBtn"
+            onClick={() => {
+              setShow({ ...show, pri: !show.pri });
+            }}
+          >
+            ver
+          </button>
+        </div>
+
+        <div className="containerText">
+          {show.pri && (
+            <p>
+              N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1
+              N°1 N°1 N°1 N°1
+            </p>
+          )}
+        </div>
+
+        <div className="containerTrat">
+          <h4>Tratamientos Capilares</h4>
+          <button
+            className="SeeBtn"
+            onClick={() => {
+              setShow({ ...show, sec: !show.sec });
+            }}
+          >
+            ver
+          </button>
+        </div>
+
+        <div className="containerText">
+          {show.sec && (
+            <p>
+              N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2
+              N°2 N°2
+            </p>
+          )}
+        </div>
+
+        <div className="containerTrat">
+          <h4>Tratamientos Corporales</h4>
+          <button className="SeeBtn">ver</button>
+        </div>
+      </div>
+
+      <ButtonBack />
+    </div>
+  );
+};
+
+export default Tratamientos;

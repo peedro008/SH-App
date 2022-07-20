@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Boton.css";
-const Boton = ({ icon, text }) => {
+const Boton = ({ icon, text, nav }) => {
+  const navigate = useNavigate();
+
   return (
-    <button className="boton">
+    <button className="boton" onClick={() => navigate(nav)}>
       <div>{icon}</div>
       <h3>{text}</h3>
     </button>

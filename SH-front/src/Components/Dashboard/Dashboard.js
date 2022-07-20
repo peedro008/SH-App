@@ -24,16 +24,30 @@ function Dashboard() {
       </div>
       <div className="buttons">
         <Boton
+          nav="/clinical-history"
           icon={<VscNotebook size="4vw" />}
           text="Historia clínica completa"
         />
-        <Boton icon={<FiCamera size="4vw" />} text="Fotografias" />
         <Boton
+          nav="/photographic-tracking"
+          icon={<FiCamera size="4vw" />}
+          text="Fotografias"
+        />
+        <Boton
+          nav="/before-and-after"
           icon={<GiCardExchange size="4vw" />}
           text="Antes y después en fotos"
         />
-        <Boton icon={<AiOutlineUser size="4vw" />} text="Tratamientos en SH" />
-        <Boton icon={<TbDiscount2 size="4vw" />} text="Descuentos" />
+        <Boton
+          nav="/tratamientos"
+          icon={<AiOutlineUser size="4vw" />}
+          text="Tratamientos en SH"
+        />
+        <Boton
+          nav="/discount"
+          icon={<TbDiscount2 size="4vw" />}
+          text="Descuentos"
+        />
       </div>
       <ButtonBack />
     </div>

@@ -1,0 +1,39 @@
+.containerTrat {
+  display: flex;
+  height: 10vw;
+  width: 85vw;
+  background-color: transparent;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.15rem solid #2b6c78;
+  border-radius: 2rem;
+  margin: 0 auto;
+  padding-left: 5vw;
+  margin-top: 5vw;
+}
+
+.containerTrat h4 {
+  margin: 0;
+}
+
+.containerText {
+  display: flex;
+  max-width: 70vw;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vw;
+}
+
+.SeeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+  height: 8vw;
+  width: 12vw;
+  background: #c0a4c8;
+  border-color: transparent;
+  border-radius: 10px 50px 50px 10px;
+  margin-right: 2vw;
+}
