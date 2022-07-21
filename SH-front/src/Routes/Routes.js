@@ -9,7 +9,7 @@ import Discount from "../Components/Discount/Discount";
 
 const HandlerRoutes = () => {
   return (
-    <div>
+    <div className="containerRoutes">
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/clinical-history" element={<ClinicalHistory />} />

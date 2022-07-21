@@ -14,6 +14,21 @@ const ClinicalHistory = () => {
     { name: "Alfonso", data: "SADSADSADASDsadasdasdasdsd" },
   ];
 
+  let prescriptions = [
+    {
+      id: "1",
+      medication: "Roacutan x 100mg",
+      periodicity: "Cada: 8 horas",
+      treatment: "Durante: 2 meses",
+    },
+    {
+      id: "2",
+      medication: "Ibuprofeno 800g",
+      periodicity: "Cada: 8 horas",
+      treatment: "Durante: 4 dias",
+    },
+  ];
+
   const SCROLL_DIRECTION = {
     H: "horizontal",
   };
@@ -27,7 +42,23 @@ const ClinicalHistory = () => {
       </div>
       <div className="Carousel">
         <Carousel showStatus={false} showThumbs={false} infiniteLoop={true}>
-          <div className="ConsultaCard">asdas</div>
+          <div className="ConsultaCard">
+            <div className="consultaText">
+              <h3> Consulta 23/06/22 </h3>
+              <p>
+                El paciente presentó acné severo, anomalías y una clara
+                intencion en hacer tratamiento con la doc Sabi. Se habló de la
+                importancia de utilizar protector solar.
+              </p>
+              <h3> Se recetó: </h3>
+              {prescriptions.map((e) => (
+                <p key={e.id}>
+                  {e.medication} <br /> {e.periodicity} <br /> {e.treatment}
+                </p>
+              ))}
+              <p></p>
+            </div>
+          </div>
           <div className="ConsultaCard">aaa</div>
           <div className="ConsultaCard">ggg</div>
           <div className="ConsultaCard">asdas</div>
