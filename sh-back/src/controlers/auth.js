@@ -1,19 +1,24 @@
 
-const {User} =require("../db")
+const {User,Paciente} =require("../db")
 
 
 const login = (req, res, next) => {
     // checks if email exists
    
-    User.findOne({ where : {
-        DNI: req.body.DNI, 
-    }})
+  
+
+    let dbUser = User.findOne({ where : {
+        DNI: req.body.DNI, },
+        include:[
+            {model:Paciente},]
+    })
     .then(dbUser => {
         if (!dbUser) {
-            return res.status(404).json({message: "User logged in", UserRole: dbUser.UserRole, userId:dbUser.id, Name:dbUser.name});
+            return res.status(404).json({message: "Usuario no Registrado"});
         } else {
             if(dbUser.UserRole=="Paciente"){
-                res.status(200).json({message: "User logged in", UserRole: dbUser.UserRole, userId:dbUser.id, Name:dbUser.name});
+                
+                res.status(200).json({message: "User logged in", UserRole: dbUser.UserRole, userId:dbUser.id, Nombre:dbUser.Paciente.Nombre});
             }
             else {
                 res.status(300).send("Password");
