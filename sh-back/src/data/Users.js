@@ -1,6 +1,7 @@
 const {
     User,
-    Consulta
+    Consulta,
+    Paciente
   } = require("../db");
   
   const Pe = function () {
@@ -15,7 +16,11 @@ const {
       UserRole:"Paciente",
       deleted:false
       });
-      Consulta.create()
+  Paciente.create({
+    Nombre:"Pedro Sanchez",
+    UserId:2,
+    DNI:12345678
+  })
   
   
     

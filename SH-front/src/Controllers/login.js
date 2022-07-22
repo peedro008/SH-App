@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import LoginComponent from '../Components/Login/login'
-import { userSession } from '../Redux/actions';
+import { userId, userName, userRole } from '../Redux/actions';
 function Login() {
     const Navigate = useNavigate()
     const dispatch = useDispatch()
@@ -18,34 +18,40 @@ function Login() {
       },
       body: JSON.stringify({DNI:dni}),
     })
-             .then(async (res) => {
-              console.log(res)
-            try {
-          
-          
-               
-                if (res.status == 300) {
+
+
+    .then(async (res) => {
+      try {
+        const jsonRes = await res.json();
+        if (res.status == 300) {
                   
-                  Navigate("/password")
-                }
-                else if (res.status == 404) {
-                setIsError(true);
-                setMessage(res.message);
-            } else {
-                setIsError(false);
-                setMessage(res.message);
-                
-                dispatch(userSession(res.UserRole ));
-               
-              }
-            } catch (err) {
-            alert("arreglame");
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-         
-          });
+          Navigate("/password")
+        }
+        else if (res.status == 404) {
+          setIsError(true);
+          setMessage(jsonRes.message);
+        
+        } 
+        else {
+          setIsError(false);
+          setMessage(jsonRes.message);
+          console.log(jsonRes)
+          dispatch(userRole(jsonRes.UserRole));
+          dispatch(userName(jsonRes.Nombre));
+          dispatch(userId(jsonRes.userId));
+        }
+      } catch (err) {
+        
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+     
+    });
+
+
+
+        
   };
     
   return (
