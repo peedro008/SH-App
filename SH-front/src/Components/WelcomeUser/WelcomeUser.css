@@ -1,0 +1,69 @@
+.containerUser {
+  display: flex;
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.containerBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnComenzar {
+  display: flex;
+  font-size: 4vw;
+  color: white;
+  height: 10vw;
+  background-color: rgba(176, 141, 186, 0.8);
+  width: 40vw;
+  justify-content: center;
+  border: none;
+  align-items: center;
+  border-radius: 2rem;
+}
+
+.btnProx {
+  display: flex;
+  font-size: 4vw;
+  height: 10vw;
+  border: 2px solid rgba(176, 141, 186, 0.8);
+  background-color: transparent;
+  width: 40vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+}
+
+.Vector7 {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 677.23px;
+}
+
+.Vector8 {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 0px;
+}
+
+.Vector9 {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 626px;
+}
+
+.Vector10 {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 51.5px;
+}
