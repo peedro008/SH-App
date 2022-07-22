@@ -10,13 +10,13 @@ const login = (req, res, next) => {
     }})
     .then(dbUser => {
         if (!dbUser) {
-            return res.status(404).json({message: "User not found"});
+            return res.status(404).json({message: "User logged in", UserRole: dbUser.UserRole, userId:dbUser.id, Name:dbUser.name});
         } else {
             if(dbUser.UserRole=="Paciente"){
                 res.status(200).json({message: "User logged in", UserRole: dbUser.UserRole, userId:dbUser.id, Name:dbUser.name});
             }
             else {
-                res.status(200).send("Password");
+                res.status(300).send("Password");
             }
            
          
