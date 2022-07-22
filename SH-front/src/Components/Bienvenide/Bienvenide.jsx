@@ -8,6 +8,7 @@ import Vector6 from "../../assets/Vector6.svg";
 
 const BienvenideComponent = () => {
   return (
+    
     <div className="ContainerDiv">
       <img src={Vector6} className="Vector6" />
       <img src={Vector3} className="Vector3" />
