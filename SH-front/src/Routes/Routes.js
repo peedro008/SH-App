@@ -6,8 +6,11 @@ import PhotographicTracking from "../Components/PhotographicTracking/Photographi
 import BeforaAndAfter from "../Components/BeforeAndAfter/BeforeAndAfter";
 import Tratamientos from "../Components/Tratamientos/Tratamientos";
 import Discount from "../Components/Discount/Discount";
+import LoginComponent from "../Components/Login/login";
+import PasswordComponent from "../Components/Login/Password";
+import Login from "../Controllers/login";
 
-const HandlerRoutes = () => {
+export const PacienteRouter = () => {
   return (
     <div className="containerRoutes">
       <Routes>
@@ -25,4 +28,15 @@ const HandlerRoutes = () => {
   );
 };
 
-export default HandlerRoutes;
+export const LoginRouter = () => {
+  return (
+    <div className="containerRoutes">
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/password" element={< PasswordComponent/>} />
+      </Routes>
+    </div>
+  );
+};
+
+ 

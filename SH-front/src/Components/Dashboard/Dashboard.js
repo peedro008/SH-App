@@ -8,8 +8,10 @@ import { GiCardExchange } from "react-icons/gi";
 import { AiOutlineUser } from "react-icons/ai";
 import { TbDiscount2 } from "react-icons/tb";
 import ButtonBack from "../ButtonBack";
+import { useSelector } from "react-redux";
 
 function Dashboard() {
+  const userSession = useSelector((state) => state.userSession);
   return (
     <div className="containerBody">
       <Navbar />
@@ -18,7 +20,7 @@ function Dashboard() {
           <h1>J A</h1>
         </div>
         <div className="div3">
-          <h2 className="2">Jose Alfonso</h2>
+          <h2 className="2">{userSession?.userRole}</h2>
           <h4 className="3">Editar informacion personal</h4>
         </div>
       </div>

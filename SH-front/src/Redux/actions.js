@@ -1,14 +1,14 @@
 
 export const USER_ID = "USER";
-export const USER_ROLE = "USER_ROLE";
+export const USER_SESSION = "USER_SESSION";
 
 
 
 
-export function userRole(UserRole) {
+export function userSession(userSession) {
   return {
-    type: USER_ROLE,
-    payload: UserRole,
+    type: USER_SESSION,
+    payload: userSession,
   };
 }
 

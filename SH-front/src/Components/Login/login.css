@@ -59,8 +59,8 @@ color: #15353B;
 }
 .DNI{
     font-family: 'Nunito';
-font-weight: 400;
-font-size: 24px;
+    font-weight: 400;
+    font-size: 24px;
 
 /* identical to box height */
 
@@ -71,8 +71,9 @@ color: #252828;
 
 
 }
-.boton{
+.botonn{
     margin-top: 10%;
+    z-index: 999;
 }
 .footer{
     
