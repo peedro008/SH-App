@@ -1,32 +1,32 @@
-import {
-  USER_SESSION,
+import { USER_ROLE,
   USER_ID,
-  
-} from "./actions";
+  USER_NAME, } from "./actions";
 
 const initialState = {
-  
-  
-  UserRole: null,
-  UserId: null,
- 
+  userRole: null,
+  userId: null,
+  userName: null,
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-  
-    case USER_SESSION:
+    case USER_ROLE:
       return {
         ...state,
-        userSession: action.payload,
+        userRole: action.payload,
       };
     case USER_ID:
       return {
         ...state,
-        UserId: action.payload,
+        userId: action.payload,
       };
-    
-   
+
+    case USER_NAME:
+      return {
+        ...state,
+        userName: action.payload,
+      };
+
     default:
       return state;
   }
