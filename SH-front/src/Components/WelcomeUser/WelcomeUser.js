@@ -29,6 +29,8 @@ const WelcomeUser = () => {
         <br />
         <button className="btnProx">Próximo turno</button>
       </div>
+      <div></div>
+      <div></div>
     </div>
   );
 };

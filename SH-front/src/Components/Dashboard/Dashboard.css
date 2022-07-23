@@ -39,3 +39,9 @@
 .buttons {
   margin-top: 20px;
 }
+
+.Vector7Dash {
+  position: absolute;
+  width: 100vw;
+  top: 70vh;
+}

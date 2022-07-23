@@ -45,6 +45,7 @@
   width: 100vw;
   left: 0;
   top: 677.23px;
+  transform: scaleX(-1);
 }
 
 .Vector8 {

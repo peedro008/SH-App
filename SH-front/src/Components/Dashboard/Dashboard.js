@@ -8,12 +8,14 @@ import { GiCardExchange } from "react-icons/gi";
 import { AiOutlineUser } from "react-icons/ai";
 import { TbDiscount2 } from "react-icons/tb";
 import ButtonBack from "../ButtonBack";
+import Vector7 from "../../assets/Vector7.svg";
 import { useSelector } from "react-redux";
 
 function Dashboard() {
   const userSession = useSelector((state) => state.userSession);
   return (
     <div className="containerBody">
+      <img src={Vector7} alt="vector" className="Vector7Dash" />
       <Navbar />
       <div className="div1">
         <div className="div2">
