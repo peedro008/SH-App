@@ -1,13 +1,13 @@
 import React from "react";
-import Boton from "../Boton";
-import Navbar from "../Navbar";
+import Boton from "../Elementos/Boton";
+import Navbar from "../Elementos/Navbar";
 import "./Dashboard.css";
 import { FiCamera } from "react-icons/fi";
 import { VscNotebook } from "react-icons/vsc";
 import { GiCardExchange } from "react-icons/gi";
 import { AiOutlineUser } from "react-icons/ai";
 import { TbDiscount2 } from "react-icons/tb";
-import ButtonBack from "../ButtonBack";
+import ButtonBack from "../Elementos/ButtonBack";
 import Vector7 from "../../assets/Vector7.svg";
 import { useSelector } from "react-redux";
 

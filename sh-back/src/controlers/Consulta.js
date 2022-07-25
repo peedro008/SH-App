@@ -17,13 +17,16 @@ const AddConsulta = async (req, res) => {
 
   let PacienteId = req.body.PacienteId;
   let Indicacion = req.body.Indicacion;
+  let Detalle = req.body.Detalle;
   let Observacion = req.body.Observacion;
   let Fecha = req.body.Fecha;
   let Fotos = req.body.Fotos;
+
   try {
     let ConsultaDb = await Consulta.create({
       PacienteId: PacienteId,
       Indicacion: Indicacion,
+      Detalle: Detalle,
       Observacion: Observacion,
       Fecha: Fecha,
     })
@@ -33,7 +36,7 @@ const AddConsulta = async (req, res) => {
             Foto.create({
                 PacienteId: PacienteId,
                 ConsultaId: ConsultaDb.id,
-                URL: URL,
+                URL: e,
               });
         })
     })

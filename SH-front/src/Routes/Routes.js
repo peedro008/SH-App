@@ -9,6 +9,7 @@ import Discount from "../Components/Discount/Discount";
 import LoginComponent from "../Components/Login/login";
 import PasswordComponent from "../Components/Login/Password";
 import Login from "../Controllers/login";
+import AddConsulta from "../Controllers/AddConsulta";
 
 export const PacienteRouter = () => {
   return (
@@ -23,6 +24,7 @@ export const PacienteRouter = () => {
         <Route path="/before-and-after" element={<BeforaAndAfter />} />
         <Route path="/tratamientos" element={<Tratamientos />} />
         <Route path="/discount" element={<Discount />} />
+        <Route path="/addConsulta" element={<AddConsulta />} />
       </Routes>
     </div>
   );

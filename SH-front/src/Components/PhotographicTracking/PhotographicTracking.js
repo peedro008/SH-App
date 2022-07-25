@@ -1,6 +1,6 @@
 import React from "react";
-import ButtonBack from "../ButtonBack";
-import Navbar from "../Navbar";
+import ButtonBack from "../Elementos/ButtonBack";
+import Navbar from "../Elementos/Navbar";
 import "./PhotographicTracking.css";
 
 const PhotographicTracking = () => {

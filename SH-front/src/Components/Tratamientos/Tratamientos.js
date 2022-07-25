@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ButtonBack from "../ButtonBack";
-import Navbar from "../Navbar";
+import ButtonBack from "../Elementos/ButtonBack";
+import Navbar from "../Elementos/Navbar";
 import "./Tratamientos.css";
 
 const Tratamientos = () => {

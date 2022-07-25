@@ -1,3 +1,4 @@
+const { NOW } = require("sequelize");
 const { DataTypes } = require("sequelize");
 
 const Consulta = (sequelize) => {
@@ -11,9 +12,9 @@ const Consulta = (sequelize) => {
     Observacion: {
       type: DataTypes.TEXT,
     },
-
     Fecha: {
       type: DataTypes.DATEONLY,
+      defaultValue: NOW,
     },
   });
 };

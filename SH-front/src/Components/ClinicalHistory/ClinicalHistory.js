@@ -1,7 +1,7 @@
 import React from "react";
-import ButtonBack from "../ButtonBack";
-import ButtonShareDown from "../ButtonShareDown";
-import Navbar from "../Navbar";
+import ButtonBack from '../Elementos/ButtonBack';
+import ButtonShareDown from "../Elementos/ButtonShareDown";
+import Navbar from "../Elementos/Navbar";
 import "./ClinicalHistory.css";
 import { Carousel } from "react-responsive-carousel";
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
