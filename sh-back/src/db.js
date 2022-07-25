@@ -5,11 +5,9 @@ const path = require("path");
 const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize(
-  "postgres://postgres:pesanmene@localhost:5432/sh-app",
+  "postgres://postgres:Messiyyaco@localhost:5432/sh-app",
   { logging: false }
 );
-
-
 
 const basename = path.basename(__filename);
 
@@ -36,14 +34,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const {
-  User,
-Consulta,
-Cupon,
-Foto,
-Paciente,
-Turno
-} = sequelize.models;
+const { User, Consulta, Cupon, Foto, Paciente, Turno } = sequelize.models;
 User.hasOne(Paciente, {
   foreignKey: "UserId",
 });
@@ -51,25 +42,23 @@ Paciente.belongsTo(User);
 
 Consulta.hasMany(Foto, {
   foreignKey: "ConsultaId",
-})
-Foto.belongsTo(Consulta)
-
+});
+Foto.belongsTo(Consulta);
 
 Paciente.hasMany(Foto, {
   foreignKey: "PacienteId",
-})
-Foto.belongsTo(Paciente)
+});
+Foto.belongsTo(Paciente);
 
 Paciente.hasMany(Consulta, {
   foreignKey: "PacienteId",
-})
-Consulta.belongsTo(Paciente)
-
+});
+Consulta.belongsTo(Paciente);
 
 Paciente.hasMany(Turno, {
   foreignKey: "PacienteId",
-})
-Turno.belongsTo(Paciente)
+});
+Turno.belongsTo(Paciente);
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
