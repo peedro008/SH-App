@@ -11,7 +11,7 @@ import ButtonBack from "../Elementos/ButtonBack";
 import Vector7 from "../../assets/Vector7.svg";
 import { useSelector } from "react-redux";
 
-function Dashboard() {
+function DashboardComponent() {
   const userSession = useSelector((state) => state.userSession);
   return (
     <div className="containerBody">
@@ -58,4 +58,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default DashboardComponent;

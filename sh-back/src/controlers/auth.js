@@ -17,8 +17,8 @@ const login = (req, res, next) => {
             return res.status(404).json({message: "Usuario no Registrado"});
         } else {
             if(dbUser.UserRole=="Paciente"){
-                
-                res.status(200).json({message: "User logged in", UserRole: dbUser.UserRole, userId:dbUser.id, Nombre:dbUser.Paciente.Nombre});
+                console.log(dbUser)
+                res.status(200).json({message: "User logged in", UserRole: dbUser.UserRole, userId:dbUser.id, Nombre:dbUser.Paciente.Nombre,  PacienteId:dbUser.Paciente.id});
             }
             else {
                 res.status(300).send("Password");

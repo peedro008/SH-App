@@ -1,15 +1,21 @@
 import { USER_ROLE,
   USER_ID,
-  USER_NAME, } from "./actions";
+  USER_NAME, PACIENTE_ID } from "./actions";
 
 const initialState = {
   userRole: null,
   userId: null,
   userName: null,
+  pacienteId: null
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+    case PACIENTE_ID:
+      return {
+        ...state,
+        pacienteId: action.payload,
+      };
     case USER_ROLE:
       return {
         ...state,

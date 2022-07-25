@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "../Components/Dashboard/Dashboard";
-import ClinicalHistory from "../Components/ClinicalHistory/ClinicalHistory";
+import ClinicalHistory from "../Controllers/ClinicalHistory";
 import PhotographicTracking from "../Components/PhotographicTracking/PhotographicTracking";
 import BeforaAndAfter from "../Components/BeforeAndAfter/BeforeAndAfter";
 import Tratamientos from "../Components/Tratamientos/Tratamientos";
@@ -10,7 +10,7 @@ import Discount from "../Components/Discount/Discount";
 import PasswordComponent from "../Components/Login/Password";
 import Login from "../Controllers/login";
 import AddConsulta from "../Controllers/AddConsulta";
-import AddPaciente from "../Controllers/AddPaciente";
+import AddPaciente from "../Controllers/addPaciente";
 
 export const PacienteRouter = () => {
   return (

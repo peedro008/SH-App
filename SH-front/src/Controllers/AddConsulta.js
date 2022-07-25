@@ -8,10 +8,10 @@ function AddConsulta() {
   const [form, setForm] = useState({});
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState("");
-
+  const pacienteId = useSelector(state=>state.pacienteId)
   const userId = useSelector((state) => state.userId);
   useEffect(() => {
-    setForm({ ...form, PacienteId: 1 });
+    setForm({ ...form, PacienteId: pacienteId });
   }, [userId]);
 
   const onSubmit = () => {
