@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import ClinicalHistoryComponent from '../Components/ClinicalHistory/ClinicalHistory'
 
 function ClinicalHistory() {
-const PacienteId = useSelector(state=>state.pacienteId)
+  const PacienteId = useSelector(state=>state.userSession).pacienteId
 const [consultas, setConsultas] = useState([])
 
 useEffect(()=>{

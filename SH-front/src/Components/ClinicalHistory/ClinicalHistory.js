@@ -19,7 +19,7 @@ const ClinicalHistoryComponent = ({ consultas }) => {
       </div>
       <div className="Carousel">
         {consultas ? (
-          <Carousel showStatus={false} showThumbs={false} infiniteLoop={true}>
+          <Carousel  showStatus={false} showThumbs={false} >
             {consultas.map((e) => {
               return (
                 <div className="ConsultaCard" key={e.Paciente.Userid}>
@@ -28,7 +28,7 @@ const ClinicalHistoryComponent = ({ consultas }) => {
                     <p>{e.Detalle}</p>
                     <h3> Se recetó: </h3>
                     {e.Indicacion}
-                    <img src={e.Fotos[0]?.URL} />
+              
                     <p></p>
                   </div>
                 </div>

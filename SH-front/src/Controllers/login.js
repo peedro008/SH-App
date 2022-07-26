@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LoginComponent from "../Components/Login/login";
-import { PacienteId, userId, userName, userRole } from "../Redux/actions";
-
+import { userSession } from "../Redux/actions";
 function Login() {
   const Navigate = useNavigate();
   const dispatch = useDispatch();
@@ -31,10 +30,15 @@ function Login() {
             setIsError(false);
             setMessage(jsonRes.message);
             console.log(jsonRes);
-            dispatch(userRole(jsonRes.UserRole));
-            dispatch(userName(jsonRes.Nombre));
-            dispatch(userId(jsonRes.userId));
-            dispatch(PacienteId(jsonRes.PacienteId));
+           
+            dispatch(
+              userSession({
+                userRole: jsonRes.UserRole,
+                userId: jsonRes.userId,
+                userName: jsonRes.Nombre,
+                pacienteId: jsonRes.PacienteId,
+              })
+            );
           }
         } catch (err) {}
       })

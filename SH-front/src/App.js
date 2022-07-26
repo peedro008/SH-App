@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import { storage } from "./firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 function App() {
-  const userRole = useSelector((state) => state.userRole);
-  const userID = useSelector((state) => state.userID);
+  const userRole = useSelector((state) => state.userSession).userRole;
+  const userID = useSelector((state) => state.userSession).userID;
   console.log(userRole, userID);
   const [imagen, setImagen] = useState(null);
   const SubirImagen = () => {

@@ -8,8 +8,8 @@ function AddConsulta() {
   const [form, setForm] = useState({});
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState("");
-  const pacienteId = useSelector(state=>state.pacienteId)
-  const userId = useSelector((state) => state.userId);
+  const pacienteId = useSelector(state=>state.userSession).pacienteId
+  const userId = useSelector((state) => state.userSession).userId;
   useEffect(() => {
     setForm({ ...form, PacienteId: pacienteId });
   }, [userId]);

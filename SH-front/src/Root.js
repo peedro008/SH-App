@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { PacienteRouter, LoginRouter } from "./Routes/Routes";
 
 function Root() {
-  const UserRole = useSelector((state) => state.userRole);
+  const UserRole = useSelector((state) => state.userSession).userRole
   console.log(UserRole);
-  if (UserRole === null) {
+  if (!UserRole) {
     return <LoginRouter />;
   } else {
     return <PacienteRouter />;

@@ -2,8 +2,10 @@ import React from "react";
 import Boton from "../Elementos/Boton";
 import Navbar from "../Elementos/Navbar";
 import "./Dashboard.css";
+import AntDesp from "../../assets/AntDesp.svg"
+import UserLove from "../../assets/UserLove.svg"
 import { FiCamera } from "react-icons/fi";
-import { VscNotebook } from "react-icons/vsc";
+import { BsClipboard } from "react-icons/bs";
 import { GiCardExchange } from "react-icons/gi";
 import { AiOutlineUser } from "react-icons/ai";
 import { TbDiscount2 } from "react-icons/tb";
@@ -12,10 +14,10 @@ import Vector7 from "../../assets/Vector7.svg";
 import { useSelector } from "react-redux";
 
 function DashboardComponent() {
-  const userName = useSelector((state) => state.userName);
+  const userName = useSelector((state) => state.userSession)?.userName;
 
-  let name = userName.split(" ");
-  name = `${name[0][0]} ${name[name.length - 1][0]}`;
+  let name = userName?.split(" ");
+  name = `${name[0][0].toUpperCase() }${name[name.length - 1][0].toUpperCase() }`;
 
   return (
     <div className="containerBody">
@@ -33,27 +35,27 @@ function DashboardComponent() {
       <div className="buttons">
         <Boton
           nav="/clinical-history"
-          icon={<VscNotebook size="4vw" />}
+          icon={<BsClipboard size="22px" color="#15353B" />}
           text="Historia clínica completa"
         />
         <Boton
           nav="/photographic-tracking"
-          icon={<FiCamera size="4vw" />}
+          icon={<FiCamera size="22px" color="#15353B" />}
           text="Fotografias"
         />
         <Boton
           nav="/before-and-after"
-          icon={<GiCardExchange size="4vw" />}
+          icon={<img src={AntDesp} style={{ color:"#15353B",height:"22.9px", width:"22.9px", }} />}
           text="Antes y después en fotos"
         />
         <Boton
           nav="/tratamientos"
-          icon={<AiOutlineUser size="4vw" />}
+          icon={<img src={UserLove} style={{ color:"#15353B",height:"22px", width:"22px", }} />}
           text="Tratamientos en SH"
         />
         <Boton
           nav="/discount"
-          icon={<TbDiscount2 size="4vw" />}
+          icon={<TbDiscount2 size="24px" color="#15353B" />}
           text="Descuentos"
         />
       </div>

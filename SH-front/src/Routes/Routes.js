@@ -10,7 +10,7 @@ import Discount from "../Components/Discount/Discount";
 import PasswordComponent from "../Components/Login/Password";
 import Login from "../Controllers/login";
 import AddConsulta from "../Controllers/AddConsulta";
-import AddPaciente from "../Controllers/AddPaciente";
+import AddPaciente from "../Controllers/addPaciente"
 import AddTratamiento from "../Controllers/AddTratamiento";
 
 export const PacienteRouter = () => {

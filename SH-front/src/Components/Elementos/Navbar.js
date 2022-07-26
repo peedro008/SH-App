@@ -1,12 +1,12 @@
 import React from "react";
 import "./Navbar.css";
 import LogoLogin from "../../assets/LogoLogin.svg";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { HiMenu } from "react-icons/hi";
 
 const Navbar = () => {
   return (
     <div className="box">
-      <GiHamburgerMenu size="5vh" />
+      <HiMenu size="5vh" />
 
       <img src={LogoLogin} alt="logo" className="logo" />
     </div>

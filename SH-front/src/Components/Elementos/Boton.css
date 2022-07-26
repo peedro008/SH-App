@@ -1,9 +1,10 @@
 .boton {
   display: flex;
-  height: 10vw;
+  height: 51px;
   width: 85vw;
   background-color: transparent;
   align-items: center;
+  justify-content: flex-start;
   border: 0.15rem solid #2b6c78;
   border-radius: 2rem;
   margin: 0 auto;
@@ -12,6 +13,10 @@
 }
 
 .boton h3 {
-  font-size: 4vw;
+  font-size: 18px;
+  font-weight: 300;
   padding-left: 5vw;
+  text-align: start;
+ 
+  width: 100%;
 }
