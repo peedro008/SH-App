@@ -12,17 +12,21 @@ import Vector7 from "../../assets/Vector7.svg";
 import { useSelector } from "react-redux";
 
 function DashboardComponent() {
-  const userSession = useSelector((state) => state.userSession);
+  const userName = useSelector((state) => state.userName);
+
+  let name = userName.split(" ");
+  name = `${name[0][0]} ${name[name.length - 1][0]}`;
+
   return (
     <div className="containerBody">
       <img src={Vector7} alt="vector" className="Vector7Dash" />
       <Navbar />
       <div className="div1">
         <div className="div2">
-          <h1>J A</h1>
+          <h1>{name}</h1>
         </div>
         <div className="div3">
-          <h2 className="2">{userSession?.userRole}</h2>
+          <h2 className="2">{userName}</h2>
           <h4 className="3">Editar informacion personal</h4>
         </div>
       </div>

@@ -3,8 +3,10 @@ import ButtonBack from "../Elementos/ButtonBack";
 import Navbar from "../Elementos/Navbar";
 import "./Tratamientos.css";
 
-const Tratamientos = () => {
+const Tratamiento = ({ tratamientos }) => {
   const [show, setShow] = useState({ pri: false, sec: false, thr: false });
+
+  console.log({ tratamientos });
 
   return (
     <div>
@@ -29,8 +31,7 @@ const Tratamientos = () => {
         <div className="containerText">
           {show.pri && (
             <p>
-              N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1 N°1
-              N°1 N°1 N°1 N°1
+              {tratamientos[1].Categoria}
             </p>
           )}
         </div>
@@ -67,4 +68,4 @@ const Tratamientos = () => {
   );
 };
 
-export default Tratamientos;
+export default Tratamiento;

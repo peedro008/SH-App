@@ -28,7 +28,7 @@ const AddPacienteComponent = ( {setFormP, formP, onSubmit}) => {
     <input type={"text"}  onChange={(e)=>setFormP({...formP, Celular:e.target.value})} />
     <p>Cantidad de vacunas</p>
     <input type={"text"}  onChange={(e)=>setFormP({...formP, CantVacunas:e.target.value})} />
-    <button onClick={onSubmit}>Subir consulta</button>
+    <button onClick={onSubmit}>Cargar Paciente</button>
   </div>
   )
 }

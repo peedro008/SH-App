@@ -4,13 +4,14 @@ import Dashboard from "../Components/Dashboard/Dashboard";
 import ClinicalHistory from "../Controllers/ClinicalHistory";
 import PhotographicTracking from "../Components/PhotographicTracking/PhotographicTracking";
 import BeforaAndAfter from "../Components/BeforeAndAfter/BeforeAndAfter";
-import Tratamientos from "../Components/Tratamientos/Tratamientos";
+import Tratamiento from "../Components/Tratamientos/Tratamiento";
 import Discount from "../Components/Discount/Discount";
 // import LoginComponent from "../Components/Login/login";
 import PasswordComponent from "../Components/Login/Password";
 import Login from "../Controllers/login";
 import AddConsulta from "../Controllers/AddConsulta";
-import AddPaciente from "../Controllers/addPaciente";
+import AddPaciente from "../Controllers/AddPaciente";
+import AddTratamiento from "../Controllers/AddTratamiento";
 
 export const PacienteRouter = () => {
   return (
@@ -23,10 +24,11 @@ export const PacienteRouter = () => {
           element={<PhotographicTracking />}
         ></Route>
         <Route path="/before-and-after" element={<BeforaAndAfter />} />
-        <Route path="/tratamientos" element={<Tratamientos />} />
+        <Route path="/tratamientos" element={<Tratamiento />} />
         <Route path="/discount" element={<Discount />} />
         <Route path="/addConsulta" element={<AddConsulta />} />
         <Route path="/addPaciente" element={<AddPaciente />} />
+        <Route path="/addTratamiento" element={<AddTratamiento />} />
       </Routes>
     </div>
   );
