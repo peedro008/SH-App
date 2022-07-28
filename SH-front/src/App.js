@@ -8,15 +8,19 @@ function App() {
   const userRole = useSelector((state) => state.userSession).userRole;
   const userID = useSelector((state) => state.userSession).userID;
   console.log(userRole, userID);
-  const [imagen, setImagen] = useState(null);
+  const [imagen, setImagen] = useState([]);
+  const [url, setURL] = useState([]);
   const SubirImagen = () => {
+
     if (imagen == null) return;
-    const imagenRef = ref(
+
+    imagen.map(e=>{
+      const imagenRef = ref(
       storage,
-      `images/${333 * Math.random() + imagen.name}`
+      `images/${333 * Math.random() + e.name}`
     );
     console.log(imagenRef);
-    uploadBytes(imagenRef, imagen)
+    uploadBytes(imagenRef, e)
       .then(() => {
         getURL(imagenRef);
       })
@@ -24,17 +28,26 @@ function App() {
         console.log("Error", err);
         alert("Error", err);
       });
+    })
+    
   };
-  const getURL = (imagenRef) => {
+  const handleChange = (e) =>{
+    for(let i = 0; i < e.target.files.length;i++){
+      const newImage = e.target.files[i];
+      newImage["id"] = Math.random()
+      setImagen((prevState)=>[...prevState, newImage])
+    }
+  }
+  const  getURL = (imagenRef) => {
     getDownloadURL(imagenRef).then((url) => {
-      alert(url);
+      setURL((prevState)=>[...prevState, url]);
     });
   };
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <input type={"file"} onChange={(e) => setImagen(e.target.files[0])} />
+        <input type={"file"}  multiple onChange={handleChange} />
         <button onClick={SubirImagen}>Subir</button>
       </header>
     </div>
