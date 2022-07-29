@@ -21,16 +21,17 @@ function Login() {
       .then(async (res) => {
         try {
           const jsonRes = await res.json();
-          if (res.status == 300) {
+          if (res.status === 300) {
             Navigate("/password");
-          } else if (res.status == 404) {
+          } else if (res.status === 404) {
             setIsError(true);
+            console.log(isError);
             setMessage(jsonRes.message);
           } else {
             setIsError(false);
             setMessage(jsonRes.message);
-            console.log(jsonRes);
-           
+            console.log(message);
+
             dispatch(
               userSession({
                 userRole: jsonRes.UserRole,

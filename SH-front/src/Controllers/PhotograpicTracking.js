@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import ClinicalHistoryComponent from "../Components/ClinicalHistory/ClinicalHistory";
+import PhotographicTracking from "../Components/PhotographicTracking/PhotographicTracking";
 
-function ClinicalHistory() {
+function PhotograpicTracking() {
   const PacienteId = useSelector((state) => state.userSession).pacienteId;
   const userName = useSelector((state) => state.userSession).userName;
   const [consultas, setConsultas] = useState([]);
@@ -15,7 +15,7 @@ function ClinicalHistory() {
       });
   }, [PacienteId]);
 
-  return <ClinicalHistoryComponent userName={userName} consultas={consultas} />;
+  return <PhotographicTracking consultas={consultas} userName={userName} />;
 }
 
-export default ClinicalHistory;
+export default PhotograpicTracking;

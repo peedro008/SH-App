@@ -1,7 +1,7 @@
 .box {
   min-width: 90vw;
   max-width: 100vw;
-  
+  z-index: 100;
   height: 13vh;
   background-color: #7aafb9;
   display: flex;
