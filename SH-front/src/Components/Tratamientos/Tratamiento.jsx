@@ -29,9 +29,9 @@ const Tratamiento = ({ tratamientos }) => {
         </div>
 
         <div className="containerText">
-          {show.pri && (
+          { (show.pri && tratamientos?.length) && (
             <p>
-              {tratamientos[1].Categoria}
+              {tratamientos[1]?.Categoria}
             </p>
           )}
         </div>

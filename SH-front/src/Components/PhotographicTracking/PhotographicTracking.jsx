@@ -28,17 +28,79 @@ const PhotographicTracking = ({ userName, consultas }) => {
           modules={[Pagination]}
           className="swiper"
         >
-          {consultas?.map((e) => {
-            return (
               <SwiperSlide className="swiperSlide">
+               <div className="containerPhotoMain"> 
                 <div className="containerPhoto">
-                 <div>
-               
+                  <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                  <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                 </div>
+                 <div className="containerPhoto">
+                 <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                  <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
                  </div>
                 </div>
               </SwiperSlide>
-            )
-          })}
+              <SwiperSlide className="swiperSlide">
+                <div className="containerPhotoMain"> 
+                <div className="containerPhoto">
+                  <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                  <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                 </div>
+                 <div className="containerPhoto">
+                 <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                  <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                 </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="swiperSlide">
+                <div className="containerPhotoMain"> 
+                <div className="containerPhoto">
+                  <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                  <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                 </div>
+                 <div className="containerPhoto">
+                 <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                  <div className="Photo">
+                  <img src={consultas[0]?.Fotos[0].URL} alt="foto" className="img2"/>
+                  <p>{consultas[0]?.Fecha}</p>
+                  </div>
+                 </div>
+                </div>
+              </SwiperSlide>
+           
         </Swiper>
       </div>
       <div>

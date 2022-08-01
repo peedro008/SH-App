@@ -10,9 +10,9 @@ function Tratamientos() {
       .then((data) => {
         setTratamientos(data);
       });
+    console.log({ tratamientos });
   }, []);
 
-  console.log({ tratamientos });
   return <Tratamiento tratamientos={tratamientos} />;
 }
 
