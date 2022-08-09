@@ -19,25 +19,25 @@ function Login() {
       body: JSON.stringify({ DNI: dni }),
     })
       .then(async (res) => {
+        const jsonRes = await res.json();
         try {
-         
           if (res.status === 300) {
             Navigate("/password");
           } else if (res.status === 404) {
             setIsError(true);
             console.log(isError);
-            setMessage(res.json().message);
+            setMessage(jsonRes.message);
           } else {
             setIsError(false);
-            setMessage(res.json().message);
+            setMessage(jsonRes.message);
             console.log(message);
 
             dispatch(
               userSession({
-                userRole: res.json().UserRole,
-                userId: res.json().userId,
-                userName: res.json().Nombre,
-                pacienteId: res.json().PacienteId,
+                userRole: jsonRes.UserRole,
+                userId: jsonRes.userId,
+                userName: jsonRes.Nombre,
+                pacienteId: jsonRes.PacienteId,
               })
             );
           }
