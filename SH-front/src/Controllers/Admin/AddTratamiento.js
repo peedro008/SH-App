@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AddTratamientoComponent from "../Components/AddTratamiento/AddTratamientoComponent";
+import AddTratamientoComponent from "../../Components/Admin/AddTratamiento/AddTratamientoComponent";
 
 const AddTratamiento = () => {
   const [formT, setFormT] = useState({});

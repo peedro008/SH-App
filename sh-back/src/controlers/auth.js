@@ -35,7 +35,7 @@ const loginPassword = (req, res, next) => {
     // checks if email exists
    let Password = req.body.Password
     User.findOne({ where : {
-        DNI: req.body.DNI, 
+        id: 1, 
     }})
     .then(dbUser => {
        
@@ -43,7 +43,7 @@ const loginPassword = (req, res, next) => {
             return res.status(404).json({message: "Contraseña Incorrecta"});
         }
         else {
-            res.status(200).send("Bienvenida Sabina");
+            res.status(200).json({message: "User logged in", UserRole: dbUser.UserRole, userId:dbUser.id});
          
         };
     })

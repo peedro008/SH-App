@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import AddConsultaComponent from "../Components/AddConsulta/AddConsulta";
-import { storage } from "../firebase";
+import AddConsultaComponent from "../../Components/Admin/AddConsulta/AddConsulta";
+import { storage } from "../../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useSelector } from "react-redux";
 function AddConsulta() {

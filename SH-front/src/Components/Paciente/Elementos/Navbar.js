@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import LogoLogin from "../../assets/LogoLogin.svg";
+import LogoLogin from "../../../assets/LogoLogin.svg";
 import { HiMenu } from "react-icons/hi";
 
 const Navbar = () => {

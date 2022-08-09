@@ -2,15 +2,15 @@ import React from "react";
 import Boton from "../Elementos/Boton";
 import Navbar from "../Elementos/Navbar";
 import "./Dashboard.css";
-import AntDesp from "../../assets/AntDesp.svg"
-import UserLove from "../../assets/UserLove.svg"
+import AntDesp from "../../../assets/AntDesp.svg"
+import UserLove from "../../../assets/UserLove.svg"
 import { FiCamera } from "react-icons/fi";
 import { BsClipboard } from "react-icons/bs";
 import { GiCardExchange } from "react-icons/gi";
 import { AiOutlineUser } from "react-icons/ai";
 import { TbDiscount2 } from "react-icons/tb";
-import ButtonBack from "../Elementos/ButtonBack";
-import Vector7 from "../../assets/Vector7.svg";
+import ButtonBack from "../Elementos/ButtonBack"; 
+import Vector7 from "../../../assets/Vector7.svg";
 import { useSelector } from "react-redux";
 
 function DashboardComponent() {

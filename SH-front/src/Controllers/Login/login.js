@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import LoginComponent from "../Components/Login/login";
-import { userSession } from "../Redux/actions";
+import LoginComponent from "../../Components/Login/login";
+import { userSession } from "../../Redux/actions";
 function Login() {
   const Navigate = useNavigate();
   const dispatch = useDispatch();
@@ -20,24 +20,24 @@ function Login() {
     })
       .then(async (res) => {
         try {
-          const jsonRes = await res.json();
+         
           if (res.status === 300) {
             Navigate("/password");
           } else if (res.status === 404) {
             setIsError(true);
             console.log(isError);
-            setMessage(jsonRes.message);
+            setMessage(res.json().message);
           } else {
             setIsError(false);
-            setMessage(jsonRes.message);
+            setMessage(res.json().message);
             console.log(message);
 
             dispatch(
               userSession({
-                userRole: jsonRes.UserRole,
-                userId: jsonRes.userId,
-                userName: jsonRes.Nombre,
-                pacienteId: jsonRes.PacienteId,
+                userRole: res.json().UserRole,
+                userId: res.json().userId,
+                userName: res.json().Nombre,
+                pacienteId: res.json().PacienteId,
               })
             );
           }

@@ -1,16 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "../Components/Dashboard/Dashboard";
-import ClinicalHistory from "../Controllers/ClinicalHistory";
-import Tratamiento from "../Controllers/Tratamientos";
-import Discount from "../Components/Discount/Discount";
-import PasswordComponent from "../Components/Login/Password";
-import Login from "../Controllers/login";
-import AddConsulta from "../Controllers/AddConsulta";
-import AddPaciente from "../Controllers/AddPaciente";
-import AddTratamiento from "../Controllers/AddTratamiento";
-import PhotograpicTracking from "../Controllers/PhotograpicTracking";
-import BeforeAndAfterController from "../Controllers/BeforeAndAfter";
+import Dashboard from "../Components/Paciente/Dashboard/Dashboard";
+import ClinicalHistory from "../Controllers/Paciente/ClinicalHistory";
+import Tratamiento from "../Controllers/Paciente/Tratamientos";
+import Discount from "../Components/Paciente/Discount/Discount";
+import Password from "../Controllers/Login/password";
+import Login from "../Controllers/Login/login";
+import AddConsulta from "../Controllers/Admin/AddConsulta";
+import AddPaciente from "../Controllers/Admin/addPaciente";
+import AddTratamiento from "../Controllers/Admin/AddTratamiento";
+import PhotograpicTracking from "../Controllers/Paciente/PhotograpicTracking";
+import BeforeAndAfterController from "../Controllers/Paciente/BeforeAndAfter";
+import AdminControlPanel from "../Controllers/Admin/AdminControlPanel";
 
 export const PacienteRouter = () => {
   return (
@@ -41,7 +42,20 @@ export const LoginRouter = () => {
     <div className="containerRoutes">
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/password" element={<PasswordComponent />} />
+        <Route path="/password" element={<Password />} />
+      </Routes>
+    </div>
+  );
+};
+
+export const AdminRouter = () => {
+  return (
+    <div className="containerRoutes">
+      <Routes>
+        <Route path="/" element={<AdminControlPanel />} />
+        <Route path="/addConsulta" element={<AddConsulta />} />
+        <Route path="/addPaciente" element={<AddPaciente />} />
+        <Route path="/addTratamiento" element={<AddTratamiento />} />
       </Routes>
     </div>
   );

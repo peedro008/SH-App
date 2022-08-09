@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import PhotographicTracking from "../Components/PhotographicTracking/PhotographicTracking";
+import PhotographicTracking from "../../Components/Paciente/PhotographicTracking/PhotographicTracking";
 
 function PhotograpicTracking() {
   const PacienteId = useSelector((state) => state.userSession).pacienteId;

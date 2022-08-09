@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddPacienteComponent from "../Components/AddPaciente/AddPacienteComponent";
+import AddPacienteComponent from "../../Components/Admin/AddPaciente/AddPacienteComponent";
 
 function AddPaciente() {
   const [formP, setFormP] = useState({});

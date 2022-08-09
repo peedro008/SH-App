@@ -1,0 +1,176 @@
+.fector1 {
+  position: absolute;
+  width: 509px;
+  right: 0%;
+  bottom: -30px;
+
+  z-index: 2;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.fector2 {
+  position: absolute;
+  width: 525px;
+  right: 0%;
+  bottom: 0px;
+
+  z-index: 1;
+}
+.Main {
+  overflow: hidden;
+  display: flex;
+  max-height: 100vh;
+  height: 100vh;
+  max-width: 100vw;
+  flex-direction: column;
+}
+.LeftSide {
+  height: 87vh;
+  width: 30vw;
+  background-color: rgba(199, 240, 247, 0.29);
+  padding-top: 3%;
+}
+.RightSide {
+  height: max-content;
+  width: 70vw;
+  background-color: #fff;
+}
+.PacientesLista {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+}
+.ListaTitle {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.5vh;
+  line-height: 44px;
+
+  /* letra secundaria */
+  padding-left: 8%;
+  color: #15353b;
+  margin-bottom: 4%;
+}
+
+
+.botonContainer1 {
+  height: 5vh;
+  max-width: 75%;
+  width: 85%;
+  cursor:pointer;
+  border: 2.5px solid #2b6c78;
+  border-radius: 75px;
+  display: flex;
+  background-color: #7AAFB9;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 5px;
+  margin-bottom: 10px;
+}
+.botonContainer1:hover {
+  background-color:#C7F0F7;
+}
+.botonText1 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.8vh;
+  line-height: 30px;
+  width: 75%;
+  color: #252828;
+  text-align: Left;
+}
+.holaSabina {
+  font-family: "Nunito";
+  font-style: italic;
+  font-weight: 600;
+  font-size: 3.8vh;
+  line-height: 50px;
+  justify-self: center;
+  /* or 132% */
+
+  text-align: center;
+
+  color: #999999;
+  margin-top: 25vh;
+  padding-left: 23vw;
+  padding-right: 23vw;
+}
+.twoSides {
+  flex-direction: row;
+  display: flex;
+}
+
+.PacienteHeader {
+  max-width: 10vw;
+  background-color: red;
+}
+.Pacientediv1 {
+  display: flex;
+  flex-direction: row;
+  width: 18vw;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  padding: 2vw;
+}
+
+.Pacientediv2 {
+  background-color: rgba(185, 185, 185, 0.39);
+  border-radius: 50%;
+  max-height: 4.5vw;
+  max-width: 4.5vw;
+  min-height: 4.5vw;
+  min-width: 4.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+.Pacientediv3 {
+  width: 100%;
+}
+.Paciente2 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5vw;
+
+  /* Letra general */
+
+  color: #252828;
+}
+.Paciente3 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1vw;
+
+  /* or 100% */
+
+  color: #3e9aab;
+}
+.CircleName {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6vw;
+  line-height: 49px;
+  display: flex;
+
+  letter-spacing: 0.125em;
+
+  text-align: right;
+  color: #15353b;
+}
+.tramiteBotonContainer{
+ max-width: 30vw;
+ padding-left: 2vw;
+}

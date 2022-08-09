@@ -1,0 +1,52 @@
+.botonTramiteContainer {
+    height: 5vh;
+    min-height: 5vh;
+    max-width: 20vw;
+    width: 20vw;
+    background: #ffffff;
+    border: 2.5px solid #2b6c78;
+    border-radius: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 1vh;
+    margin-bottom: 2vw;
+    cursor: pointer;
+  }
+  .botonTramiteContainer:hover {
+ 
+    background:#7AAFB9;
+
+  }
+  .botonTramiteText {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.8vh;
+    line-height: 30px;
+    width: 100%;
+    color: #252828;
+    text-align: Left;
+    margin-left: 7%;
+  }
+  .subButonTramite{
+      height:3.5vh;
+      width: 55.54px; 
+      background-color: rgba(122, 175, 185, 0.56);
+      border-radius: 10px 50px 50px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .subButonTramiteText{
+      font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  
+  
+  
+  color: #252828;
+  }
+  

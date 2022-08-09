@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import ClinicalHistoryComponent from "../Components/ClinicalHistory/ClinicalHistory";
+import BeforeAndAfter from "../../Components/Paciente/BeforeAndAfter/BeforeAndAfter";
 
-function ClinicalHistory() {
+function BeforeAndAfterController() {
   const PacienteId = useSelector((state) => state.userSession).pacienteId;
   const userName = useSelector((state) => state.userSession).userName;
   const [consultas, setConsultas] = useState([]);
@@ -15,7 +15,7 @@ function ClinicalHistory() {
       });
   }, [PacienteId]);
 
-  return <ClinicalHistoryComponent userName={userName} consultas={consultas} />;
+  return <BeforeAndAfter consultas={consultas} userName={userName} />;
 }
 
-export default ClinicalHistory;
+export default BeforeAndAfterController;
