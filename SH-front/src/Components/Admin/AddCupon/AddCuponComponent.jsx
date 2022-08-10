@@ -14,8 +14,7 @@ function AddCupon({ setImagen, SubirImagenCupon, formC, setFormC, onSubmit }) {
       <input type={"text"} onChange={(e)=>setFormC({...formC, Porcentaje:e.target.value})}/>
       <p>Titulo</p>
       <input type={"text"} onChange={(e)=>setFormC({...formC, Titulo:e.target.value})}/>
-      <p>URL</p>
-      <input type={"text"}  onChange={(e)=>setFormC({...formC, URL:e.target.value})} />
+     
       <input type={"file"} onChange={(e) => setImagen(e.target.files[0])} />
       <button onClick={SubirImagenCupon}>Subir imagen del Cupon</button>
       <button onClick={onSubmit}>Subir Descuento</button>

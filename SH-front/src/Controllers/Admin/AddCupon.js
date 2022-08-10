@@ -15,7 +15,11 @@ const AddTratamiento = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formC),
+      body: JSON.stringify({
+        URL: formC.Fotos[0],
+        Titulo: formC.Titulo,
+        Porcentaje: formC.Porcentaje,
+      }),
     })
       .then(async (res) => {
         try {

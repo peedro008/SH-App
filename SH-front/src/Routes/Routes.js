@@ -11,7 +11,7 @@ import AddTratamiento from "../Controllers/Admin/AddTratamiento";
 import PhotograpicTracking from "../Controllers/Paciente/PhotograpicTracking";
 import BeforeAndAfterController from "../Controllers/Paciente/BeforeAndAfter";
 import AdminControlPanel from "../Controllers/Admin/AdminControlPanel";
-import AddCupon from "../Components/Admin/AddCupon/AddCuponComponent";
+import AddCupon from "../Controllers/Admin/AddCupon";
 import Cupones from "../Controllers/Paciente/Cupones";
 
 export const PacienteRouter = () => {
