@@ -45,6 +45,7 @@ const ClinicalHistoryComponent = ({ consultas, userName }) => {
         </Swiper>
       </div>
       <div>
+        <ButtonShareDown/>
         <ButtonBack />
       </div>
     </div>

@@ -5,7 +5,7 @@ const path = require("path");
 const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize(
-  "postgres://postgres:pesanmene@localhost:5432/sh-app",
+  "postgres://postgres:Messiyyaco@localhost:5432/sh-app",
   { logging: false }
 );
 

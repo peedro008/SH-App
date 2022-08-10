@@ -1,25 +1,26 @@
-import React, { useState } from "react";
-import AddCuponComponent from "../../Components/Admin/AddCupon/AddCuponComponent";
+import React, { useEffect, useState } from "react";
+import AddConsultaComponent from "../../Components/Admin/AddConsulta/AddConsulta";
 import { storage } from "../../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-
-const AddCupon = () => {
+import { useSelector } from "react-redux";
+function AddConsulta() {
   const [imagen, setImagen] = useState(null);
-  const [formC, setFormC] = useState({});
+  const [form, setForm] = useState({});
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState("");
+  const pacienteId = useSelector((state) => state.userSession).pacienteId;
+  const userId = useSelector((state) => state.userSession).userId;
+  useEffect(() => {
+    setForm({ ...form, PacienteId: pacienteId });
+  }, [userId]);
 
   const onSubmit = () => {
-    fetch(`http://localhost:8080/AddCupones`, {
+    fetch(`http://localhost:8080/AddConsulta`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        URL: formC.Fotos[0],
-        Titulo: formC.Titulo,
-        Porcentaje: formC.Porcentaje,
-      }),
+      body: JSON.stringify(form),
     })
       .then(async (res) => {
         try {
@@ -39,7 +40,7 @@ const AddCupon = () => {
       });
   };
 
-  const SubirImagenCupon = () => {
+  const SubirImagen = () => {
     if (imagen == null) return;
     const imagenRef = ref(
       storage,
@@ -57,19 +58,19 @@ const AddCupon = () => {
   };
   const getURL = (imagenRef) => {
     getDownloadURL(imagenRef).then((url) => {
-      setFormC({ ...formC, Fotos: [url] });
+      setForm({ ...form, Fotos: [url] });
     });
   };
-
   return (
-    <AddCuponComponent
+    <AddConsultaComponent
+      imagen={imagen}
       setImagen={setImagen}
-      SubirImagenCupon={SubirImagenCupon}
-      formC={formC}
-      setFormC={setFormC}
+      SubirImagen={SubirImagen}
+      form={form}
+      setForm={setForm}
       onSubmit={onSubmit}
     />
   );
-};
+}
 
-export default AddCupon;
+export default AddConsulta;
