@@ -4,9 +4,9 @@ import Navbar from "../Elementos/Navbar";
 import "./Tratamientos.css";
 
 const Tratamiento = ({ tratamientos }) => {
-  const [show, setShow] = useState({ pri: false, sec: false, thr: false });
+  const [show, setShow] = useState({ trat: false });
+  const [dataShow, setDataShow] = useState({text:""})
 
-  console.log({ tratamientos });
 
   return (
     <div>
@@ -15,53 +15,35 @@ const Tratamiento = ({ tratamientos }) => {
         <h2>Tratamientos en SH</h2>
         <h4>¿Qué estás buscando?</h4>
       </div>
-      <div>
-        <div className="containerTrat">
-          <h4>Tratamientos Faciales</h4>
+      {tratamientos.map( e => {
+        return <div key={e.id}>
+           <div className={dataShow === e.Descripcion ? "containerTrat" : "containerTratOff"}>
+          <h4>{e.Categoria}</h4>
           <button
-            className="SeeBtn"
+        
+            className={dataShow === e.Descripcion ? "off" : "on"}
             onClick={() => {
-              setShow({ ...show, pri: !show.pri });
+               if (dataShow === e.Descripcion) {
+                 setShow({ ...show, trat: !show.trat })
+               } else {
+                setShow({ ...show, trat: true })
+                 setDataShow(e.Descripcion)
+          
+               }
             }}
           >
             ver
           </button>
         </div>
-
         <div className="containerText">
-          { (show.pri && tratamientos?.length) && (
+          { (show.trat && dataShow === e.Descripcion) && (
             <p>
-              {tratamientos[1]?.Categoria}
+              {dataShow}
             </p>
           )}
         </div>
-
-        <div className="containerTrat">
-          <h4>Tratamientos Capilares</h4>
-          <button
-            className="SeeBtn"
-            onClick={() => {
-              setShow({ ...show, sec: !show.sec });
-            }}
-          >
-            ver
-          </button>
         </div>
-
-        <div className="containerText">
-          {show.sec && (
-            <p>
-              N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2 N°2
-              N°2 N°2
-            </p>
-          )}
-        </div>
-
-        <div className="containerTrat">
-          <h4>Tratamientos Corporales</h4>
-          <button className="SeeBtn">ver</button>
-        </div>
-      </div>
+      })}
 
       <ButtonBack />
     </div>

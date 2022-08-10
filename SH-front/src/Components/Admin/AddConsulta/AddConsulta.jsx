@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddConsultaComponent({ imagen, setImagen, SubirImagen, form, setForm, onSubmit }) {
+function AddConsultaComponent({ setImagen, SubirImagen, form, setForm, onSubmit }) {
   return (
     <div
       style={{

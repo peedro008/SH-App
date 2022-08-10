@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "../Components/Paciente/Dashboard/Dashboard";
 import ClinicalHistory from "../Controllers/Paciente/ClinicalHistory";
 import Tratamiento from "../Controllers/Paciente/Tratamientos";
-import Discount from "../Components/Paciente/Discount/Discount";
 import Password from "../Controllers/Login/password";
 import Login from "../Controllers/Login/login";
 import AddConsulta from "../Controllers/Admin/AddConsulta";
@@ -12,6 +11,8 @@ import AddTratamiento from "../Controllers/Admin/AddTratamiento";
 import PhotograpicTracking from "../Controllers/Paciente/PhotograpicTracking";
 import BeforeAndAfterController from "../Controllers/Paciente/BeforeAndAfter";
 import AdminControlPanel from "../Controllers/Admin/AdminControlPanel";
+import AddCupon from "../Controllers/Admin/AddCupon";
+import Cupones from "../Controllers/Paciente/Cupones";
 
 export const PacienteRouter = () => {
   return (
@@ -28,8 +29,10 @@ export const PacienteRouter = () => {
           element={<BeforeAndAfterController />}
         />
         <Route path="/tratamientos" element={<Tratamiento />} />
-        <Route path="/discount" element={<Discount />} />
+        <Route path="/cupon" element={<Cupones />} />
+        <Route path="/addCupon" element={<AddCupon />} />
         <Route path="/addConsulta" element={<AddConsulta />} />
+        <Route path="/addCupon" element={<AddCupon />} />
         <Route path="/addPaciente" element={<AddPaciente />} />
         <Route path="/addTratamiento" element={<AddTratamiento />} />
       </Routes>

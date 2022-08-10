@@ -2,6 +2,20 @@
   display: flex;
   height: 10vw;
   width: 85vw;
+  background-color: #dfd1e3;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.15rem solid #2b6c78;
+  border-radius: 2rem;
+  margin: 0 auto;
+  padding-left: 5vw;
+  margin-top: 5vw;
+}
+
+.containerTratOff {
+  display: flex;
+  height: 10vw;
+  width: 85vw;
   background-color: transparent;
   align-items: center;
   justify-content: space-between;
@@ -25,7 +39,21 @@
   font-size: 4vw;
 }
 
-.SeeBtn {
+.on {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+  height: 8vw;
+  width: 12vw;
+  background: #c0a4c8;
+  border-color: transparent;
+  border-radius: 10px 50px 50px 10px;
+  margin-right: 2vw;
+}
+
+.off {
+  visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;

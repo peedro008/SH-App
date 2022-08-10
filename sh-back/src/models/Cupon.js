@@ -11,6 +11,6 @@ const Cupon = (sequelize) => {
     URL: {
       type: DataTypes.STRING,
     },
- });
+  });
 };
 module.exports = Cupon;
