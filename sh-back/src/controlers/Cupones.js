@@ -16,7 +16,7 @@ const AddCupones = async (req, res) => {
       URL: URL,
     });
 
-    res.status(200).send("Agregado");
+    res.status(200).json(CuponesDb);
   } catch (e) {
     console.log("Error in Cupon controller" + e);
   }

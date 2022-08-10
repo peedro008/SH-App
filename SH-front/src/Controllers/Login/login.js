@@ -19,8 +19,9 @@ function Login() {
       body: JSON.stringify({ DNI: dni }),
     })
       .then(async (res) => {
-        const jsonRes = await res.json();
+        const jsonRes = await res.json()
         try {
+         
           if (res.status === 300) {
             Navigate("/password");
           } else if (res.status === 404) {
