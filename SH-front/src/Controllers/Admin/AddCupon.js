@@ -10,7 +10,7 @@ const AddTratamiento = () => {
   const [message, setMessage] = useState("");
 
   const onSubmit = () => {
-    fetch(`http://localhost:8080/AddCupon`, {
+    fetch(`http://localhost:8080/AddCupones`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

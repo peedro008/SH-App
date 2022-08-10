@@ -21,7 +21,7 @@ const login = (req, res, next) => {
                 res.status(200).json({message: "User logged in", UserRole: dbUser.UserRole, userId:dbUser.id, Nombre:dbUser.Paciente.Nombre,  PacienteId:dbUser.Paciente.id});
             }
             else {
-                res.status(300).send("Password");
+                res.status(300).json({Password:"Password"});
             }
            
          

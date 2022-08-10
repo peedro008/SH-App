@@ -56,6 +56,7 @@ export const AdminRouter = () => {
     <div className="containerRoutes">
       <Routes>
         <Route path="/" element={<AdminControlPanel />} />
+        <Route path="/addCupon" element={<AddCupon />} />
         <Route path="/addConsulta" element={<AddConsulta />} />
         <Route path="/addPaciente" element={<AddPaciente />} />
         <Route path="/addTratamiento" element={<AddTratamiento />} />
