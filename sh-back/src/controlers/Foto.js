@@ -5,7 +5,6 @@ const GetFotosPaciente = async (req, res) => {
   let FotosDb = await Foto.findAll({
     where: {
       PacienteId: PacienteId,
-      deleted: false,
     },
   });
   FotosDb.length
