@@ -13,6 +13,7 @@ import BeforeAndAfterController from "../Controllers/Paciente/BeforeAndAfter";
 import AdminControlPanel from "../Controllers/Admin/AdminControlPanel";
 import AddCupon from "../Controllers/Admin/AddCupon";
 import Cupones from "../Controllers/Paciente/Cupones";
+import Comparation from "../Components/Paciente/BeforeAndAfter/Comparation";
 
 export const PacienteRouter = () => {
   return (
@@ -28,6 +29,7 @@ export const PacienteRouter = () => {
           path="/before-and-after"
           element={<BeforeAndAfterController />}
         />
+        <Route path="/compare" element={<Comparation />} />
         <Route path="/tratamientos" element={<Tratamiento />} />
         <Route path="/cupon" element={<Cupones />} />
         <Route path="/addCupon" element={<AddCupon />} />

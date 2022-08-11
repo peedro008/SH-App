@@ -49,3 +49,13 @@ h4 {
   font-size: 5vw;
   font-weight: 200;
 }
+
+.swiper-pagination {
+  background-color: transparent !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #6b6954 !important;
+  width: 2vh !important;
+  height: 2vh !important;
+}

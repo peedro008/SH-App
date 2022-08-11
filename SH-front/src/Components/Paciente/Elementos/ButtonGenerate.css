@@ -1,0 +1,23 @@
+.containerGenerate {
+  display: flex;
+  width: 25vw;
+  justify-content: right;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  bottom: 5vh;
+  border-radius: 2rem;
+  left: 8vw;
+}
+
+.botonGenerate {
+  display: flex;
+  font-size: 3vw;
+  height: 10vw;
+  width: 100%;
+  color: white;
+  background-color: #c0a4c8;
+  border: transparent;
+  align-items: center;
+  border-radius: 2rem;
+}

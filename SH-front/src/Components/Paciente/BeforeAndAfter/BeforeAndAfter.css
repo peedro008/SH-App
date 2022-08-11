@@ -46,3 +46,60 @@
   width: 90% !important;
   height: 90% !important;
 }
+
+.main {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 33% 33% 33%;
+  z-index: 999;
+  height: 95%;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.cubo {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80% 20%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.containerImg {
+  display: flex;
+  margin: 0 auto;
+  height: 20vw;
+  width: 20vw;
+  border-radius: 100%;
+}
+
+.containerImgSelected {
+  display: flex;
+  margin: 0 auto;
+  height: 20vw;
+  width: 20vw;
+  border: 5px #73e87f solid;
+  border-radius: 100%;
+}
+
+.imagen {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 100%;
+}
+
+.selected {
+  position: absolute;
+
+  height: 10%;
+  width: 10%;
+  border-radius: 100%;
+}
+
+.selectedHidden {
+  visibility: hidden;
+}

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import ButtonBack from "../Elementos/ButtonBack";
+import imagen from "../../../assets/vichy.webp";
+import selected from "../../../assets/selected.svg"
 import Navbar from "../Elementos/Navbar";
-import "./BeforeAndAfter.css"
+import "./BeforeAndAfter.css";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,13 +12,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
+import ButtonGenerate from "../Elementos/ButtonGenerate";
+
 
 const BeforeAndAfter = ({ consultas }) => {
-  // const [styleForm, setStyleForm] = useState({})
-  if (consultas.length === 0)
-  if ( consultas.length > 0 && consultas.length < 10  ) {<h1>1 SwiperSlide desde 0 hasta consultas.length-1</h1>}
-  if ( consultas.length > 9  && consultas.length < 19 ) {<h1>2 SwiperSlide hasta consultas.length-1</h1>}
-  if ( consultas.length > 18 && consultas.length < 28  ) {<h1>3 SwiperSlide hasta consultas.length-1</h1>}
+  
+  const [selected1, setSelected1] = useState("")
+  const [selected2, setSelected2] = useState("")
+
+  const arrayFoto = [[ {imagen, fecha: "16/07/2005", id: 1}, {imagen, fecha: "16/07/2005", id: 9}, {imagen, fecha: "16/07/2005", id: 10}, {imagen, fecha: "16/07/2005", id: 11}, {imagen, fecha: "16/07/2005", id: 2}, {imagen, fecha: "16/07/2005", id: 3},{imagen, fecha: "16/07/2005", id: 4}],[{imagen, fecha: "16/07/2005", id: 5}, {imagen, fecha: "16/07/2005", id: 6}, {imagen, fecha: "16/07/2005", id: 7},{imagen, fecha: "16/07/2005", id: 8}]]
 
   return (
     <div>
@@ -34,256 +38,35 @@ const BeforeAndAfter = ({ consultas }) => {
           modules={[Pagination]}
           className="swiper"
         >
-          
-          {/* <SwiperSlide className="swiperSlide">
-            <div className="containerPhotoMainBA">
-            <div className="containerPhotoBA">
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                    // onClick={setStyleForm()}
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
+          {arrayFoto.map(e => {
+            return <>
+            <SwiperSlide className="swiperSlide">
+              <div className="main">
+            {e.map(i => {
+              return<>
+                <div className="cubo">
+                  <div className={selected1 === i.id || selected2 === i.id ? "containerImgSelected" : "containerImg"}
+                    onClick={() => {
+                      if (selected1 === "") {setSelected1(i.id)}
+                      else if (selected2 === "") {setSelected2(i.id)}
+                      else{ setSelected1(i.id); setSelected2("")}
+                    }}
+                  >
+                    <img src={i.imagen} alt="holi" className="imagen"/>
+                    <img src={selected} alt="holi" className={selected1 === i.id || selected2 === i.id ? "selected" : "selectedHidden"}/>
+                  </div>
+                  <p style={{ fontSize:"4vw"}}>{i.fecha}</p>
                 </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-              </div>
-              <div className="containerPhotoBA">
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-              </div>
-              <div className="containerPhotoBA">
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-              </div>
+              </>
+            })} 
             </div>
-          </SwiperSlide>
-          <SwiperSlide className="swiperSlide">
-          <div className="containerPhotoMainBA">
-            <div className="containerPhotoBA">
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-              </div>
-              <div className="containerPhotoBA">
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-              </div>
-              <div className="containerPhotoBA">
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="swiperSlide">
-          <div className="containerPhotoMainBA">
-            <div className="containerPhotoBA">
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-              </div>
-              <div className="containerPhotoBA">
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-              </div>
-              <div className="containerPhotoBA">
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-                <div className="Photo3">
-                  <img
-                    src={consultas[0]?.Fotos[0].URL}
-                    alt="foto"
-                    className="img3"
-                  />
-                  <p  className="fechaImg">{consultas[0]?.Fecha}</p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide> */}
+            </SwiperSlide>
+            </>
+          })}
+
         </Swiper>
       </div>
+      <ButtonGenerate/>
       <ButtonBack />
     </div>
   );
