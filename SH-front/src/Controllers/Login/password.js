@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import PasswordComponent from "../../Components/Login/Password";
+import PasswordDComponent from "../../Components/Login/PasswordD";
 import { userSession } from "../../Redux/actions";
 
 
@@ -50,7 +51,8 @@ function Password() {
         });
     };
   
-  return <PasswordComponent password={password} setPassword={setPassword} onSubmit={onSubmit} />;
+  return (
+    window.innerWidth<750? <PasswordComponent password={password} setPassword={setPassword} onSubmit={onSubmit} />:<PasswordDComponent password={password} setPassword={setPassword} onSubmit={onSubmit} />)
 }
 
 export default Password;

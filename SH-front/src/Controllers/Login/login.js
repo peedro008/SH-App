@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LoginComponent from "../../Components/Login/login";
+import LoginDComponent from "../../Components/Login/loginD";
 import { userSession } from "../../Redux/actions";
 function Login() {
   const Navigate = useNavigate();
@@ -48,8 +49,8 @@ function Login() {
         console.log(err);
       });
   };
-
-  return <LoginComponent dni={dni} setDni={setDni} onSubmit={onSubmit} />;
+  return(
+    window.innerWidth<750? <LoginComponent dni={dni} setDni={setDni} onSubmit={onSubmit} />:<LoginDComponent dni={dni} setDni={setDni} onSubmit={onSubmit} />)
 }
 
 export default Login;
