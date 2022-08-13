@@ -10,7 +10,6 @@ function Cupones() {
       .then((data) => {
         setCupones(data);
       });
-    console.log({ Cupones });
   }, []);
 
   return <Cupon Cupones={Cupones} />;

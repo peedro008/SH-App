@@ -13,13 +13,13 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 const ClinicalHistoryComponent = ({ consultas, userName }) => {
-  console.log(consultas)
+  
   return (
     <div>
       <Navbar />
       <div className="containerHeader">
         <h2>{userName}</h2>
-        <h3>Historia clínica</h3>
+        <h4>Historia clínica</h4>
       </div>
       <div>
         <Swiper

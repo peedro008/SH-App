@@ -1,19 +1,13 @@
 .imgCupon {
-  height: auto !important;
-  max-height: 100%;
-  margin: 5% auto;
-  width: 80% !important;
-  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  border-radius: 20%;
 }
 
 .containerImgCupon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: transparent;
   border-radius: 20%;
-  min-height: 60% !important;
-  max-height: 60%;
+  height: 60%;
   width: 80%;
 }
 

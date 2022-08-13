@@ -4,7 +4,7 @@
   right: 0%;
   bottom: -30px;
 
-  z-index: 0.5;
+  z-index: 2;
   overflow: hidden;
   margin-bottom: 30px;
 }
@@ -15,7 +15,7 @@
   right: 0%;
   bottom: 0px;
 
-  z-index: 0;
+  z-index: 1;
 }
 .Main {
   overflow: hidden;
@@ -173,107 +173,4 @@
 .tramiteBotonContainer{
  max-width: 30vw;
  padding-left: 2vw;
-}
-
-
-
-
-
-.CliniCard{
-  background: rgba(199, 240, 247, 0.29);
-/* sombra */
-margin-left:8%;
-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-border-radius: 32.3922px;
-min-height: 52vh!important;
-max-height: 52vh!important;
-
-max-width: 28%;
-height: 52vh !important;
-width: 29%;
-
-
-border-radius: 32.392215728759766px;
-overflow-y: scroll;
-}
-.DCHTitle{
-  font-family: 'Nunito';
-font-style: normal;
-font-weight: 700;
-padding:20px 20px 20px 20px;
-font-size:2.5vh;
-color: #252828;
-
-}
-.DCHText{
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.1vh;
-  color: #252828;
-  padding-left:20px;
-
-}
-
-.CliniCard::-webkit-scrollbar {
-  display: none;
-}
-.DswiperSlide{
-  background-color: transparent !important;
-
-  font-size: large;
-}
-.swiperD {
-  width: 100%;
-  height: 63vh;
-
-}
-.swiperD>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
-  bottom: 0px !important;
-  left:25% !important;
-
-}
-.FotoCard{
-  background:  #DAE9EC;
-/* sombra */
-margin-left: 8%;
-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-height: 52vh !important;
-min-height: 52vh !important;
-max-height: 52vh !important;
-
-display:flex;
-align-items: center;
-justify-content: center;
-
-
-
-width: 33%;
-min-width: 33%;
-max-width: 33%;
-
-
-border-radius: 32.392215728759766px;
-
-}
-.FotoCard::-webkit-scrollbar {
-  display: none;
-}
-.DdivFoto{
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-  width:5vw;
-  height: 5vw;
-  border-radius: 50%;
-}
-.FotosContainerr{
-  display: grid;
-
-  grid-template-columns: 36% 36% 36% ;
-  grid-template-rows: 36% 36% 36% ;
-  width: 90%;
-  min-height:90%;
-  background-color: transparent;
-}
-.W370razor::-webkit-scrollbar {
-  display: none;
 }

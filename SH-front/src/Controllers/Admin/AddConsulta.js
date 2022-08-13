@@ -4,16 +4,15 @@ import { storage } from "../../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useSelector } from "react-redux";
 function AddConsulta() {
- const [imagen, setImagen] = useState([]);
-  const [url, setURL] = useState([]);
+  const [imagen, setImagen] = useState(null);
   const [form, setForm] = useState({});
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState("");
   const pacienteId = useSelector((state) => state.userSession).pacienteId;
   const userId = useSelector((state) => state.userSession).userId;
   useEffect(() => {
-    setForm({ ...form, Fotos: url });
-  }, [url]);
+    setForm({ ...form, PacienteId: pacienteId });
+  }, [userId]);
 
   const onSubmit = () => {
     fetch(`http://localhost:8080/AddConsulta`, {
@@ -41,18 +40,14 @@ function AddConsulta() {
       });
   };
 
- 
   const SubirImagen = () => {
-
     if (imagen == null) return;
-
-    imagen.map(e=>{
-      const imagenRef = ref(
+    const imagenRef = ref(
       storage,
-      `images/${333 * Math.random() + e.name}`
+      `images/${333 * Math.random() + imagen.name}`
     );
     console.log(imagenRef);
-    uploadBytes(imagenRef, e)
+    uploadBytes(imagenRef, imagen)
       .then(() => {
         getURL(imagenRef);
       })
@@ -60,19 +55,10 @@ function AddConsulta() {
         console.log("Error", err);
         alert("Error", err);
       });
-    })
-    
   };
-  const handleChange = (e) =>{
-    for(let i = 0; i < e.target.files.length;i++){
-      const newImage = e.target.files[i];
-      newImage["id"] = Math.random()
-      setImagen((prevState)=>[...prevState, newImage])
-    }
-  }
-  const  getURL = (imagenRef) => {
+  const getURL = (imagenRef) => {
     getDownloadURL(imagenRef).then((url) => {
-      setURL((prevState)=>[...prevState, url]);
+      setForm({ ...form, Fotos: [url] });
     });
   };
   return (
@@ -83,7 +69,6 @@ function AddConsulta() {
       form={form}
       setForm={setForm}
       onSubmit={onSubmit}
-      handleChange={handleChange}
     />
   );
 }

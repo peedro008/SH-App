@@ -5,17 +5,26 @@ import PhotographicTracking from "../../Components/Paciente/PhotographicTracking
 function PhotograpicTracking() {
   const PacienteId = useSelector((state) => state.userSession).pacienteId;
   const userName = useSelector((state) => state.userSession).userName;
-  const [consultas, setConsultas] = useState([]);
+  const [fotos, setFotos] = useState([]);
+  const [fotosP, setFotosP] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/GetConsultasPaciente?PacienteId=${PacienteId}`)
+    let temp = [];
+    for (let i = 0; i < fotos.length; i + 4) {
+      temp.push(fotos.splice(i, i + 4));
+    }
+    setFotosP(temp);
+  }, [fotos]);
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/GetFotosPaciente?PacienteId=${PacienteId}`)
       .then((response) => response.json())
       .then((data) => {
-        setConsultas(data);
+        setFotos(data);
       });
   }, [PacienteId]);
 
-  return <PhotographicTracking consultas={consultas} userName={userName} />;
+  return <PhotographicTracking fotosP={fotosP} userName={userName} />;
 }
 
 export default PhotograpicTracking;

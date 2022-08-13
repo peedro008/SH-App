@@ -10,7 +10,7 @@
 
 .swiper {
   width: 100vw;
-  height: 60vh;
+  height: 65vh;
 }
 
 .swiperSlide {
@@ -33,6 +33,6 @@
 }
 
 .consulta {
-  width: 100%;
+  width: 90%;
   padding-left: 5%;
 }

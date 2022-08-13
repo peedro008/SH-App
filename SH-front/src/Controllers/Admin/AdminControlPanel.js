@@ -7,32 +7,20 @@ function AdminControlPanel() {
     const [PacienteSelected, setPacienteSelected] = useState(null)
     const [Tramite, setTramite] = useState(null)
 
-
- const getConsulta = (PacienteId) => {
-   
-  fetch(`http://localhost:8080/GetConsultasPaciente?PacienteId=${PacienteId}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setConsultas(data);
-        }) 
-         .catch((err)=>setConsultas([]))
-    
-    };
-  useEffect(() => {
-   PacienteSelected&&
- getConsulta(PacienteSelected?.id)
- setTramite(null)
-  }, [PacienteSelected])
   
-
- 
+    const getConsulta = (PacienteId) => {
+        fetch(`http://localhost:8080/GetConsultasPaciente?PacienteId=${PacienteId}`)
+          .then((response) => response.json())
+          .then((data) => {
+            setConsultas(data);
+          });
+      };
     useEffect(() => {
         fetch(`http://localhost:8080/GetPacientes`)
           .then((response) => response.json())
           .then((data) => {
             setPacientes(data);
-          })
-    
+          });
       }, []);
       const SelectPaciente = (e)=>{
         setPacienteSelected(e)

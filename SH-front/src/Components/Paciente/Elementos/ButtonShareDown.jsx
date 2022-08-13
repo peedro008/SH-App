@@ -1,18 +1,15 @@
 import React from "react";
-import { BsShare } from "react-icons/bs";
-import { FiDownload } from "react-icons/fi";
+import share from "../../../assets/share.svg"
+import download from "../../../assets/download.svg"
+
 import "./ButtonShareDown.css";
 
 const ButtonShareDown = () => {
   return (
     <div>
       <div className="containerShareDown">
-        <button className="buttonPink">
-          <BsShare size="5vw" />
-        </button>
-        <button className="buttonPink">
-          <FiDownload size="5vw" />
-        </button>
+        <img src={share} alt="share" style={{width:"10vw", height:"10vw" , marginLeft:"2vw"}}/>
+        <img src={download} alt="download" style={{width:"10vw", height:"10vw", marginLeft:"2vw"}}/>
       </div>
     </div>
   );

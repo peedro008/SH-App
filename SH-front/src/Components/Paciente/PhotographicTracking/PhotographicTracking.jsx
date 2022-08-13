@@ -12,10 +12,9 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 
-const PhotographicTracking = ({ userName, consultas }) => {
+const PhotographicTracking = ({ userName, fotosP }) => {
 
-  const arrayFoto = [[ {imagen, fecha: "16/07/2005", id: 1}, {imagen, fecha: "16/07/2005", id: 9}, {imagen, fecha: "16/07/2005", id: 10}, {imagen, fecha: "16/07/2005", id: 11}],[{imagen, fecha: "16/07/2005", id: 5},{imagen, fecha: "16/07/2005", id: 8}]]
-
+  
   return (
     <div>
       <Navbar />
@@ -31,23 +30,22 @@ const PhotographicTracking = ({ userName, consultas }) => {
           modules={[Pagination]}
           className="swiper"
         >
-          {arrayFoto.map(e => {
-            return <>
-            <SwiperSlide className="swiperSlide">
+          {fotosP.map((e, index) => {
+            return <SwiperSlide className="swiperSlide" key={index}>
               <div className="mainTrack">
-            {e.map(i => {
-              return<>
-                <div className="cuboTrack">
+           {e.map((i, index) => {
+            return <div className="cuboTrack" key={index}>
                   <div className="containerImgTrack">
-                    <img src={i.imagen} alt="holi" className="imagen"/>
+                    <img src={i.URL} alt="holi" className="imagen"/>
                   </div>
-                  <p style={{ fontSize:"4vw"}}>{i.fecha}</p>
+                  <p style={{ fontSize:"4vw"}}>{i.createdAt.substring(0,10)}</p>
                 </div>
-              </>
-            })} 
-            </div>
+            
+           })}
+           </div>
             </SwiperSlide>
-            </>
+              
+           
           })}
 
         </Swiper>

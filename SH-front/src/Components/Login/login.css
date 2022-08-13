@@ -204,15 +204,34 @@
   }
 }
 
+.offPop {
+  position: absolute;
+  top: -20vh;
+  z-index: 10000;
+}
 
+.onPop {
+  position: absolute;
+  top: 3%;
+  animation: pop 1s ease-in-out;
+  z-index: 10000;
+}
 
+@keyframes pop {
+  0% {
+    top: -10vh;
+  }
 
+  50% {
+    top: 5%;
+  }
 
-
-
+  100% {
+    top: 3%;
+  }
+}
 
 .DContainerDiv {
-
   max-height: 100vh;
   max-width: 100vw;
   min-width: 100vw;
@@ -224,39 +243,39 @@
   flex-direction: column;
   align-items: center;
 }
-.VectorD1{
+.VectorD1 {
   width: 12%;
   position: absolute;
   left: 0%;
-  top:0%;
+  top: 0%;
   z-index: 0;
 }
-.VectorD2{
+.VectorD2 {
   width: 72%;
   position: absolute;
   left: 20%;
-  top:0%;
+  top: 0%;
   z-index: 0;
 }
-.VectorD3{
-  width:69%;
+.VectorD3 {
+  width: 69%;
   position: absolute;
   left: 0%;
-  top:0%;
+  top: 0%;
   z-index: 0;
 }
-.VectorD4{
+.VectorD4 {
   width: 24%;
   position: absolute;
   right: 0%;
-  bottom:0%;
+  bottom: 0%;
   z-index: 5;
 }
-.VectorD5{
+.VectorD5 {
   width: 18%;
   position: absolute;
   right: 0%;
-  bottom:0%;
+  bottom: 0%;
   z-index: 0;
 }
 
@@ -274,7 +293,7 @@
   left: 63px;
   background-color: rgba(196, 196, 196, 0.35);
   border-radius: 75px;
-  z-index: 1;
+  z-index: 1000;
   font-family: "Nunito";
   font-size: 15px;
   padding-left: 15px;

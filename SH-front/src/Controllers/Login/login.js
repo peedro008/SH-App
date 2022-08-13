@@ -20,9 +20,8 @@ function Login() {
       body: JSON.stringify({ DNI: dni }),
     })
       .then(async (res) => {
-        const jsonRes = await res.json()
+        const jsonRes = await res.json();
         try {
-         
           if (res.status === 300) {
             Navigate("/password");
           } else if (res.status === 404) {
@@ -49,8 +48,21 @@ function Login() {
         console.log(err);
       });
   };
-  return(
-    window.innerWidth<750? <LoginComponent dni={dni} setDni={setDni} onSubmit={onSubmit} />:<LoginDComponent dni={dni} setDni={setDni} onSubmit={onSubmit} />)
+  return window.innerWidth < 750 ? (
+    <LoginComponent
+      dni={dni}
+      setDni={setDni}
+      onSubmit={onSubmit}
+      isError={isError}
+    />
+  ) : (
+    <LoginDComponent
+      dni={dni}
+      setDni={setDni}
+      onSubmit={onSubmit}
+      isError={isError}
+    />
+  );
 }
 
 export default Login;

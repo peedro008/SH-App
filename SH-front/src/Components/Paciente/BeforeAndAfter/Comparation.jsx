@@ -1,20 +1,19 @@
 import React from "react";
 import ButtonBack from "../Elementos/ButtonBack";
+
+import share from "../../../assets/share.svg"
+import download from "../../../assets/download.svg"
 import Navbar from "../Elementos/Navbar";
-import imagen from "../../../assets/vichy.webp";
+
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import "./Comparation.css";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-// import required modules
-import { Pagination } from "swiper";
 
-const Comparation = ({ userName, imagenes }) => {
+const Comparation = ({ imagenes }) => {
+  const userName = useSelector((state) => state.userSession).userName;
+  const location = useLocation();
 
-  const arrayFoto = [[ {imagen, fecha: "16/07/2005", id: 1}, {imagen, fecha: "16/07/2005", id: 9}],[{imagen, fecha: "16/07/2005", id: 5},{imagen, fecha: "16/07/2005", id: 8}]]
 
   return (
     <div>
@@ -23,31 +22,34 @@ const Comparation = ({ userName, imagenes }) => {
         <h2>{userName}</h2>
         <h4>Antes y después</h4>
       </div>
-      <div>
-        <Swiper
-          pagination={{
-            dynamicBullets: true,
-          }}
-          modules={[Pagination]}
-          className="swiper"
-        >
-          {arrayFoto.map(e => {
-            return <>
-            <SwiperSlide className="swiperSlide">
-              <div className="mainComp">
-            {e.map(i => {
-              return<>
-                <div className="cuboComp">
-                    <img src={i.imagen} alt="holi" className="imagenComp"/>
-                </div>
-              </>
-            })} 
-            </div>
-            </SwiperSlide>
-            </>
-          })}
+     
+      <div className="mainComp">
+        <div className="cuboComp">
+          <p style={{ marginLeft: "10%", fontSize:"4vw" }}>
+            {location.state[0].createdAt.substring(0, 10)}
+          </p>
+          <img
+            src={location.state[0].URL}
+            alt="holi"
+            className="imagenGenerate"
+          />
+        </div>
 
-        </Swiper>
+        <div className="cuboComp">
+          <p style={{ marginLeft: "10%", fontSize:"4vw" }}>
+            {location.state[0].createdAt.substring(0, 10)}
+          </p>
+          <img
+            src={location.state[1].URL}
+            alt="holi"
+            className="imagenGenerate"
+          />
+        </div>
+        <div className="containerButtons">
+        <img src={share} alt="share" style={{width:"10vw", height:"10vw" , marginLeft:"2vw"}}/>
+        <img src={download} alt="download" style={{width:"10vw", height:"10vw", marginLeft:"2vw"}}/>
+          <p style={{ marginLeft: "25%", fontSize:"4vw" }}>SH consultorios</p>
+        </div>
       </div>
       <div>
         <ButtonBack />
