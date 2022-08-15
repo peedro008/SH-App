@@ -8,13 +8,24 @@ function AdminControlPanel() {
     const [Tramite, setTramite] = useState(null)
 
   
-    const getConsulta = (PacienteId) => {
-        fetch(`http://localhost:8080/GetConsultasPaciente?PacienteId=${PacienteId}`)
-          .then((response) => response.json())
-          .then((data) => {
-            setConsultas(data);
-          });
-      };
+
+ const getConsulta = (PacienteId) => {
+
+  fetch(`http://localhost:8080/GetConsultasPaciente?PacienteId=${PacienteId}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setConsultas(data);
+        }) 
+         .catch((err)=>setConsultas([]))
+
+    };
+  useEffect(() => {
+   PacienteSelected&&
+ getConsulta(PacienteSelected?.id)
+ setTramite(null)
+  }, [PacienteSelected])
+
+  
     useEffect(() => {
         fetch(`http://localhost:8080/GetPacientes`)
           .then((response) => response.json())
