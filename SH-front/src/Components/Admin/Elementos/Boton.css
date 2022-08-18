@@ -23,22 +23,20 @@
   color: #252828;
   text-align: Left;
 }
-.subButon{
-    height:3.5vh;
-    width: 55.54px; 
-    background-color: #7AAFB9;
-    border-radius: 10px 50px 50px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.subButon {
+  height: 3.5vh;
+  width: 55.54px;
+  background-color: #7aafb9;
+  border-radius: 10px 50px 50px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.subButonText{
-    font-family: 'Nunito';
-font-style: normal;
-font-weight: 300;
-font-size: 17px;
+.subButonText {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
 
-
-
-color: #252828;
+  color: #252828;
 }

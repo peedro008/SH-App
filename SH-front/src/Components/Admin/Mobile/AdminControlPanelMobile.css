@@ -1,0 +1,71 @@
+.botonTextAdd {
+  font-size: 4.5vw;
+}
+
+.ListaTitleMob {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.5vh;
+  line-height: 44px;
+
+  /* letra secundaria */
+  padding-left: 12%;
+  color: #15353b;
+  margin-bottom: 4%;
+}
+
+.containerPatients {
+  margin-top: 8%;
+}
+
+.patientsList {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  margin-top: 8%;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+}
+
+.botonContainerMob {
+  height: 6vh;
+  max-width: 75%;
+  margin-top: 3%;
+  width: 85%;
+  background: #ffffff;
+  border: 2.5px solid #2b6c78;
+  border-radius: 75px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 1vh;
+  margin-bottom: 10px;
+}
+.botonTextMob {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.8vh;
+  line-height: 30px;
+  width: 60%;
+  color: #252828;
+  text-align: Left;
+}
+.subButonMob {
+  height: 70%;
+  width: 10vw;
+  background-color: #7aafb9;
+  border-radius: 10px 50px 50px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subButonTextMob {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 3.5vw;
+}

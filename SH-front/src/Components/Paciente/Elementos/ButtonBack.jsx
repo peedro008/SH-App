@@ -3,7 +3,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import "./ButtonBack.css";
 
-const ButtonBack = () => {
+const ButtonBack = ({ admin }) => {
   const navigate = useNavigate();
 
   return (
