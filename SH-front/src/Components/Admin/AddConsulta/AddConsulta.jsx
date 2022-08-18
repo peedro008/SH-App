@@ -11,71 +11,76 @@ function AddConsultaComponent({
 }) {
   const [up, setUp] = useState(null);
 
-  const inputVal = document.getElementById("archivo");
-  const text = document.getElementById("text");
-  const btn = document.getElementById("upload-btn");
+  const [up, setUp] = useState(null);
 
   // inputVal.addEventListener("change", () => {
   //   const path = inputVal.value.split('\\')
   //   const filename = path[path.length - 1]
 
-  //   text.innerText = filename ? filename : "Choose file"
-  // })
+  inputVal.addEventListener("change", () => {
+    const path = inputVal.value.split("\\");
+    const filename = path[path.length - 1];
+
+    text.innerText = filename ? filename : "Choose file";
+  });
 
   return (
     <div className="fondo">
       <div className="containerAddConsulta">
         <div class="formContainer">
           <div className="hola">
-            <div class="formGroup">
+            <div className="formGroup">
               <input
                 type="text"
                 id="name"
-                class="formInput"
+                className="formInput"
                 placeholder=" "
                 onChange={(e) => setForm({ ...form, Detalle: e.target.value })}
               />
-              <label for="name" class="formLabel">
+              <label htmlFor="name" className="formLabel">
                 Detalle:
               </label>
-              <span class="formLine"></span>
+              <span className="formLine"></span>
             </div>
-            <div class="formGroup">
+            <div className="formGroup">
               <input
                 type="text"
                 id="user"
-                class="formInput"
+                className="formInput"
                 placeholder=" "
                 onChange={(e) =>
                   setForm({ ...form, Indicacion: e.target.value })
                 }
               />
-              <label for="user" class="formLabel">
+              <label htmlFor="user" className="formLabel">
                 Indicación:
               </label>
-              <span class="formLine"></span>
+              <span className="formLine"></span>
             </div>
-            <div class="formGroup">
+            <div className="formGroup">
               <input
                 type="text"
                 id="password"
-                class="formInput"
+                className="formInput"
                 placeholder=" "
                 onChange={(e) =>
                   setForm({ ...form, Observacion: e.target.value })
                 }
               />
-              <label for="password" class="formLabel">
+              <label htmlFor="password" className="formLabel">
                 Observación:
               </label>
-              <span class="formLine"></span>
+              <span className="formLine"></span>
             </div>
 
             <input
               type={"file"}
               style={{ display: "none" }}
               id="archivo"
-              onChange={(e) => setImagen(e.target.files[0])}
+              onChange={(e) => {
+                setImagen(e.target.files[0]);
+                setText(e.target.files[0].name);
+              }}
             />
             <label id="text" for="archivo">
               <span

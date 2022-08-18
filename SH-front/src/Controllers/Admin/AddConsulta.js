@@ -3,6 +3,8 @@ import AddConsultaComponent from "../../Components/Admin/AddConsulta/AddConsulta
 import { storage } from "../../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 function AddConsulta() {
   const [imagen, setImagen] = useState(null);
   const [form, setForm] = useState({});
@@ -10,6 +12,8 @@ function AddConsulta() {
   const [message, setMessage] = useState("");
   const pacienteId = useSelector((state) => state.userSession).pacienteId;
   const userId = useSelector((state) => state.userSession).userId;
+  const navigate = useNavigate();
+
   useEffect(() => {
     setForm({ ...form, PacienteId: pacienteId });
   }, [userId]);
@@ -38,6 +42,7 @@ function AddConsulta() {
       .catch((err) => {
         console.log(err);
       });
+    navigate("/");
   };
 
   const SubirImagen = () => {
