@@ -14,6 +14,12 @@ import AdminControlPanel from "../Controllers/Admin/AdminControlPanel";
 import AddCupon from "../Controllers/Admin/AddCupon";
 import Cupones from "../Controllers/Paciente/Cupones";
 import Comparation from "../Components/Paciente/BeforeAndAfter/Comparation";
+import AdminControlPanelMobile from "../Controllers/Admin/AdminControlPanelMobile";
+
+import ClinicalHistoryAdmin from "../Components/Admin/Mobile/ClinicalHistoryAdmin/ClinicalHistoryAdmin";
+import Fotos from "../Components/Admin/Mobile/Fotos/Fotos";
+import DashboardAdminComponent from "../Components/Admin/Mobile/DashboardAdmin/DashboardAdmin";
+import BeforeAndAfterAdmin from "../Components/Admin/Mobile/BeforeAndAfterAdmin/BeforeAndAfterAdmin";
 
 export const PacienteRouter = () => {
   return (
@@ -24,7 +30,7 @@ export const PacienteRouter = () => {
         <Route
           path="/photographic-tracking"
           element={<PhotograpicTracking />}
-        ></Route>
+        />
         <Route
           path="/before-and-after"
           element={<BeforeAndAfterController />}
@@ -57,7 +63,23 @@ export const AdminRouter = () => {
   return (
     <div className="containerRoutes">
       <Routes>
-        <Route path="/" element={<AdminControlPanel />} />
+        <Route
+          path="/"
+          element={
+            document.documentElement.scrollWidth < 750 ? (
+              <AdminControlPanelMobile />
+            ) : (
+              <AdminControlPanel />
+            )
+          }
+        />
+        <Route path="/patient" element={<DashboardAdminComponent />} />
+        <Route
+          path="/clinicalHistoryAdmin"
+          element={<ClinicalHistoryAdmin />}
+        />
+        <Route path="/fotos" element={<Fotos />} />
+        <Route path="/beforeAndAfterAdmin" element={<BeforeAndAfterAdmin />} />
         <Route path="/addCupon" element={<AddCupon />} />
         <Route path="/addConsulta" element={<AddConsulta />} />
         <Route path="/addPaciente" element={<AddPaciente />} />
