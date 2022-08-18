@@ -11,18 +11,18 @@ function AddConsultaComponent({
 }) {
   const [up, setUp] = useState(null);
 
-  const [up, setUp] = useState(null);
+
 
   // inputVal.addEventListener("change", () => {
   //   const path = inputVal.value.split('\\')
   //   const filename = path[path.length - 1]
 
-  inputVal.addEventListener("change", () => {
-    const path = inputVal.value.split("\\");
-    const filename = path[path.length - 1];
+  // inputVal.addEventListener("change", () => {
+  //   const path = inputVal.value.split("\\");
+  //   const filename = path[path.length - 1];
 
-    text.innerText = filename ? filename : "Choose file";
-  });
+  //   text.innerText = filename ? filename : "Choose file";
+  // });
 
   return (
     <div className="fondo">
@@ -78,8 +78,8 @@ function AddConsultaComponent({
               style={{ display: "none" }}
               id="archivo"
               onChange={(e) => {
-                setImagen(e.target.files[0]);
-                setText(e.target.files[0].name);
+                // setImagen(e.target.files[0]);
+                // setText(e.target.files[0].name);
               }}
             />
             <label id="text" for="archivo">
