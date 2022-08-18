@@ -12,6 +12,8 @@ import AntDesp from "../../../assets/AntDesp.svg"
 import calen from "../../../assets/calen.svg"
 import Edit from "../../../assets/Edit.svg"
 import Cam from "../../../assets/Cam.svg"
+import AdminClinicalHistoryComponent from "./ClinicalHistory";
+import AddConsultaComponent from "./AddConsulta";
 function AdminControlPanelComponent({
   Consultas,
   Pacientes,
@@ -77,33 +79,20 @@ function AdminControlPanelComponent({
                   </div>
                 </div>
                 <div className="tramiteBotonContainer">
-                <BotonTramiteComponent Titulo={"Historia Clinica Completa"} Icon={<img src={Notas} style={{width:"2.5vw", height:"2.5vh", }}/>} onSubmit={()=>{setTramite(1)}} />
-                <BotonTramiteComponent Titulo={"Agregar última consulta"} Icon={<img src={Edit} style={{width:"2.5vw", height:"2.5vh", }}/>}onSubmit={()=>{setTramite(2)}} />
-                <BotonTramiteComponent Titulo={"Agregar próximo turno"} Icon={<img src={calen} style={{width:"2.5vw", height:"2.5vh", }}/>} onSubmit={()=>{setTramite(3)}} />
-                <BotonTramiteComponent Titulo={"Fotografías"} Icon={<img src={Cam} style={{width:"2.5vw", height:"2.5vh", }}/>} onSubmit={()=>{setTramite(4)}}/>
-                <BotonTramiteComponent Titulo={"Antes y después en fotos"} Icon={<img src={AntDesp} style={{width:"2.5vw", height:"2.5vh", }}/>}  onSubmit={()=>{setTramite(5)}} />
+                <BotonTramiteComponent Titulo={"Historia Clinica Completa"} Icon={<img src={Notas} style={{width:"2.5vw", height:"2.5vh", }}/>} submit={()=>{setTramite(1)}} />
+                <BotonTramiteComponent Titulo={"Agregar última consulta"} Icon={<img src={Edit} style={{width:"2.5vw", height:"2.5vh", }}/>}submit={()=>{setTramite(2)}} />
+                <BotonTramiteComponent Titulo={"Agregar próximo turno"} Icon={<img src={calen} style={{width:"2.5vw", height:"2.5vh", }}/>} submit={()=>{setTramite(3)}} />
+                <BotonTramiteComponent Titulo={"Fotografías"} Icon={<img src={Cam} style={{width:"2.5vw", height:"2.5vh", }}/>} submit={()=>{setTramite(4)}}/>
+                <BotonTramiteComponent Titulo={"Antes y después en fotos"} Icon={<img src={AntDesp} style={{width:"2.5vw", height:"2.5vh", }}/>}  submit={()=>{setTramite(5)}} />
                  </div>
               </div>
-            ):
-            <div className="RightMain">
-            <div className="PacienteHeader">
-              <div className="Pacientediv1">
-                <div className="Pacientediv2">
-                  <p className="CircleName">{name.substring(0, 2)}</p>
-                </div>
-                <div className="Pacientediv3">
-                  <h2 className="Paciente2">{PacienteSelected?.Nombre}</h2>
-                  <h4 className="Paciente3">
-                    Ver información personal del paciente
-                  </h4>
-                </div>
-              </div>
-            </div>
-         
-          </div>
+            ):Tramite==1?
+            <AdminClinicalHistoryComponent PacienteSelected={PacienteSelected} Consultas={Consultas} setTramite={setTramite}/>:
+            Tramite==2&&<AddConsultaComponent  PacienteSelected={PacienteSelected} Consultas={Consultas} setTramite={setTramite}/>
           )}
+          {/* <div style={{zIndex:0}}>
           <img className="fector1" src={Vector1} />
-          <img className="fector2" src={Vector2} />
+          <img className="fector2" src={Vector2} /></div> */}
         </div>
       </div>
     </div>
