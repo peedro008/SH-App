@@ -88,11 +88,11 @@ function AdminControlPanelComponent({
               </div>
             ):Tramite==1?
             <AdminClinicalHistoryComponent PacienteSelected={PacienteSelected} Consultas={Consultas} setTramite={setTramite}/>:
-            Tramite==2&&<AddConsultaComponent/>
+            Tramite==2&&<AddConsultaComponent  PacienteSelected={PacienteSelected} Consultas={Consultas} setTramite={setTramite}/>
           )}
-          <div style={{zIndex:0}}>
+          {/* <div style={{zIndex:0}}>
           <img className="fector1" src={Vector1} />
-          <img className="fector2" src={Vector2} /></div>
+          <img className="fector2" src={Vector2} /></div> */}
         </div>
       </div>
     </div>
