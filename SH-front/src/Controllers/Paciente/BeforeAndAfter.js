@@ -17,7 +17,7 @@ function BeforeAndAfterController() {
   }, [fotos]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/GetFotosPaciente?PacienteId=${PacienteId}`)
+    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetFotosPaciente?PacienteId=${PacienteId}`)
       .then((response) => response.json())
       .then((data) => {
         setFotos(data);

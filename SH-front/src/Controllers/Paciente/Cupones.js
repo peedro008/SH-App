@@ -5,7 +5,7 @@ function Cupones() {
   const [Cupones, setCupones] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/GetCupones`)
+    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetCupones`)
       .then((response) => response.json())
       .then((data) => {
         setCupones(data);

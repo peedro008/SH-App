@@ -12,7 +12,7 @@ function Login() {
   const [message, setMessage] = useState("");
 
   const onSubmit = () => {
-    fetch(`http://localhost:8080/Login`, {
+    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/Login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

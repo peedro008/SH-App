@@ -14,6 +14,7 @@ import Edit from "../../../assets/Edit.svg"
 import Cam from "../../../assets/Cam.svg"
 import AdminClinicalHistoryComponent from "./ClinicalHistory";
 import AddConsultaComponent from "./AddConsulta";
+import AddTurnoComponent from "./AddTurno";
 function AdminControlPanelComponent({
   Consultas,
   Pacientes,
@@ -23,6 +24,12 @@ function AdminControlPanelComponent({
   SelectPaciente,
   Tramite,
   setTramite,
+  ImageHandleChange,
+  SubirImagen,
+  setForm,
+  onSubmitConsulta,
+  form,
+  imagen
 }) {
   let name = PacienteSelected?.Nombre.split(" ");
   if (name) {
@@ -88,7 +95,8 @@ function AdminControlPanelComponent({
               </div>
             ):Tramite==1?
             <AdminClinicalHistoryComponent PacienteSelected={PacienteSelected} Consultas={Consultas} setTramite={setTramite}/>:
-            Tramite==2&&<AddConsultaComponent  PacienteSelected={PacienteSelected} Consultas={Consultas} setTramite={setTramite}/>
+            Tramite==2?<AddConsultaComponent imagen={imagen} onSubmitConsulta={onSubmitConsulta} setForm={setForm} form={form} SubirImagen={SubirImagen} PacienteSelected={PacienteSelected} Consultas={Consultas} ImageHandleChange={ImageHandleChange} setTramite={setTramite}/>:
+            Tramite==3&&<AddTurnoComponent PacienteSelected={PacienteSelected}  setTramite={setTramite}/>
           )}
           {/* <div style={{zIndex:0}}>
           <img className="fector1" src={Vector1} />

@@ -25,7 +25,7 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
 
   useEffect(() => {
     fetch(
-      `http://localhost:8080/GetFotosPaciente?PacienteId=${location.state[0].id}`
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetFotosPaciente?PacienteId=${location.state[0].id}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -47,7 +47,7 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
 
   useEffect(() => {
     fetch(
-      `http://localhost:8080/GetFotosPaciente?PacienteId=${location.state[0].id}`
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetFotosPaciente?PacienteId=${location.state[0].id}`
     )
       .then((response) => response.json())
       .then((data) => {

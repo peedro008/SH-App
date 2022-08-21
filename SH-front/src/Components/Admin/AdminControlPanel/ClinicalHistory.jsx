@@ -37,7 +37,8 @@ function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite 
         className="swiperD"
         style={{ backgroundColor: "transparent"}}
       >
-        {Consultas?.map((e) => {
+        {Consultas?.map((e,i) => {
+       
           return (
             <SwiperSlide className="DswiperSlide"  key={e.id}>
               <div  style={{display:"flex", flexDirection:"row",  paddingTop:"20px", backgroundColor: "transparent"}}>
@@ -55,7 +56,7 @@ function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite 
                 <div className="FotoCard">
                   <div className="FotosContainerr">
                   {
-                    e.Fotos.map(f=>{return(<img  src={f.URL}className="DdivFoto"></img>)})
+                              e.Fotos.map((f,i)=>{ if(i<9)return(<img  src={f.URL}className="DdivFoto"></img>)})
 
                   }
 

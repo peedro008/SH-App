@@ -7,7 +7,7 @@ const AddTratamiento = () => {
   const [message, setMessage] = useState("");
 
   const onSubmit = () => {
-    fetch(`http://localhost:8080/AddTratamientos`, {
+    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddTratamientos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

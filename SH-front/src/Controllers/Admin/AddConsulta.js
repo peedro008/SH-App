@@ -19,7 +19,7 @@ function AddConsulta() {
   }, [userId]);
 
   const onSubmit = () => {
-    fetch(`http://localhost:8080/AddConsulta`, {
+    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddConsulta`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

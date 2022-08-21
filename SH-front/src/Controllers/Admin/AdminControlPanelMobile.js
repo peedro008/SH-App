@@ -8,14 +8,14 @@ function AdminControlPanelMobile() {
   const [Tramite, setTramite] = useState(null);
 
   const getConsulta = (PacienteId) => {
-    fetch(`http://localhost:8080/GetConsultasPaciente?PacienteId=${PacienteId}`)
+    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetConsultasPaciente?PacienteId=${PacienteId}`)
       .then((response) => response.json())
       .then((data) => {
         setConsultas(data);
       });
   };
   useEffect(() => {
-    fetch(`http://localhost:8080/GetPacientes`)
+    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetPacientes`)
       .then((response) => response.json())
       .then((data) => {
         setPacientes(data);

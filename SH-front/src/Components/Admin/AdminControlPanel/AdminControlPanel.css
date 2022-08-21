@@ -472,9 +472,34 @@ abbr {
   width: 100%;
   justify-content: space-evenly;
 }
+.AddForm1{
+  max-width:23vw;
+  max-height:58vh;
+  width:30vw;
+  height:60vh;
+  background-color: rgba(199, 240, 247, 0.29);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+border-radius: 32.3922px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+}
+
+.AddFormTitle1{
+  font-family: 'Nunito';
+font-style: normal;
+font-weight: 500;
+font-size: 3.2vh;
+line-height: 16px;
+color: #252828;
+text-align: start;
+padding-left: 10%;
+width: 100%;
+}
 .AddForm{
-  max-width:30vw;
-  max-height:60vh;
+  max-width:25vw;
+  max-height:55vh;
   width:30vw;
   height:60vh;
   background-color: rgba(199, 240, 247, 0.29);
@@ -495,7 +520,7 @@ justify-content: space-evenly;
 .AddFormFotoRow{
   display: flex;
   flex-direction: row;
-  width: 50%;
+  width: 70%;
   background-color:transparent;
   align-items: center;
 padding-left: 5% ;

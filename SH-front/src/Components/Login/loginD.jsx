@@ -27,7 +27,7 @@ const LoginDComponent = ({
            
             <img src={LogoLogin} alt="vector" className="DLogoLogin" />
            
-            <p className="DBienvenide">BIENVE22NIDA/O</p>
+            <p className="DBienvenide">BIENVENIDA/O</p>
             <p className="DDNI">D.N.I</p>
   
             <input

@@ -5,7 +5,7 @@ function Tratamientos() {
   const [tratamientos, setTratamientos] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/GetTratamientos`)
+    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetTratamientos`)
       .then((response) => response.json())
       .then((data) => {
         setTratamientos(data);
