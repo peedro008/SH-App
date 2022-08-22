@@ -16,7 +16,7 @@ function AddConsultaComponent({ PacienteSelected,SubirImagen, Consultas, setTram
       <div className="PacienteHeader">
         <div className="Pacientediv1">
           <div className="Pacientediv2">
-            <p className="CircleName">{name.substring(0, 2)}</p>
+            {/* <p className="CircleName">{name.substring(0, 2)}</p> */}
           </div>
           <div className="Pacientediv3">
             <p className="Paciente2">{PacienteSelected?.Nombre}</p>
