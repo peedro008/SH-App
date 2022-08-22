@@ -15,7 +15,8 @@ import { useNavigate } from "react-router-dom";
 
 function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
   const location = useLocation();
-  const { Nombre, Fotos, Consulta } = location.state[0];
+  console.log(location.state[0]);
+  const { Nombre, Fotos, Consulta, UserID } = location.state[0];
   const [fotos4, setFotos4] = useState([]);
   const [fotos9, setFotos9] = useState([]);
   const [fotosArray4, setFotosArray4] = useState([]);
@@ -84,7 +85,15 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
           </div>
           <div className="div3">
             <h2 className="2">{Nombre}</h2>
-            <h4 className="3" style={{ color: "#3E9AAB", fontSize: "4vw" }}>
+            <h4
+              className="3"
+              style={{ color: "#3E9AAB", fontSize: "4vw" }}
+              onClick={() =>
+                navigate("/infoPaciente", {
+                  state: [location.state[0]],
+                })
+              }
+            >
               Editar informacion personal
             </h4>
           </div>
@@ -108,7 +117,7 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
 
           <div
             className="botonTramiteCont"
-            onClick={() => navigate("/addconsulta")}
+            onClick={() => navigate("/addconsulta", { state: [Nombre] })}
           >
             <img
               src={Edit}

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
 import Navbar from "../../../Paciente/Elementos/Navbar";
 import imagen from "../../../../assets/vichy.webp";
+import btnQuit from "../../../../assets/btnQuit.svg";
 import "./Fotos.css";
 import { useLocation } from "react-router-dom";
 
@@ -12,10 +13,17 @@ import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
+import { useState } from "react";
 
 const Fotos = () => {
+  const [photoViz, setPhotoViz] = useState(null);
+  const [photoStyle, setPhotoStyle] = useState("photoHidden");
+
+  useEffect(() => {
+    photoViz === null ? setPhotoStyle("photoHidden") : setPhotoStyle("photoOn");
+  }, [photoViz]);
+
   const location = useLocation();
-  console.log(location);
 
   return (
     <div>
@@ -39,7 +47,10 @@ const Fotos = () => {
                   {e.map((i, index) => {
                     return (
                       <div className="cuboTrack" key={index}>
-                        <div className="containerImgTrack">
+                        <div
+                          className="containerImgTrack"
+                          onClick={() => setPhotoViz(i.URL)}
+                        >
                           <img src={i.URL} alt="holi" className="imagen" />
                         </div>
                         <p style={{ fontSize: "4vw" }}>
@@ -58,6 +69,31 @@ const Fotos = () => {
         <ButtonBack />
       </div>
       <ButtonBack />
+
+      <div className={photoStyle}>
+        <img
+          src={btnQuit}
+          alt="Viz"
+          onClick={() => setPhotoViz(null)}
+          style={{
+            position: "absolute",
+            right: "9%",
+            top: "16%",
+            height: "5%",
+          }}
+        ></img>
+        <img
+          src={photoViz}
+          alt="Viz"
+          style={{
+            height: "80vh",
+            width: "90vw",
+            borderRadius: "8%",
+            margin: "0 auto",
+            marginTop: "25%",
+          }}
+        ></img>
+      </div>
     </div>
   );
 };

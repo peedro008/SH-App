@@ -7,13 +7,16 @@ function AddPaciente() {
   const [message, setMessage] = useState("");
 
   const onSubmit = () => {
-    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddPaciente`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formP),
-    })
+    fetch(
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddPaciente`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formP),
+      }
+    )
       .then(async (res) => {
         try {
           const jsonRes = await res.json();

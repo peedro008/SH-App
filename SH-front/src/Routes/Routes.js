@@ -20,6 +20,9 @@ import ClinicalHistoryAdmin from "../Components/Admin/Mobile/ClinicalHistoryAdmi
 import Fotos from "../Components/Admin/Mobile/Fotos/Fotos";
 import DashboardAdminComponent from "../Components/Admin/Mobile/DashboardAdmin/DashboardAdmin";
 import BeforeAndAfterAdmin from "../Components/Admin/Mobile/BeforeAndAfterAdmin/BeforeAndAfterAdmin";
+import ComparationAdmin from "../Components/Admin/Mobile/BeforeAndAfterAdmin/ComparationAdmin";
+import InfoPaciente from "../Components/Admin/Mobile/InfoPaciente/InfoPaciente";
+import AddTurnoMobile from "../Components/Admin/AddTurno/AddTurnoMobile";
 
 export const PacienteRouter = () => {
   return (
@@ -79,9 +82,12 @@ export const AdminRouter = () => {
           element={<ClinicalHistoryAdmin />}
         />
         <Route path="/fotos" element={<Fotos />} />
+        <Route path="/compareAdmin" element={<ComparationAdmin />} />
         <Route path="/beforeAndAfterAdmin" element={<BeforeAndAfterAdmin />} />
+        <Route path="/infoPaciente" element={<InfoPaciente />} />
         <Route path="/addCupon" element={<AddCupon />} />
         <Route path="/addConsulta" element={<AddConsulta />} />
+        <Route path="/addturno" element={<AddTurnoMobile />} />
         <Route path="/addPaciente" element={<AddPaciente />} />
         <Route path="/addTratamiento" element={<AddTratamiento />} />
       </Routes>

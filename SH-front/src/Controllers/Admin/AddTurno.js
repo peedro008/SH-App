@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import AdminControlPanelComponent from "../../Components/Admin/AdminControlPanel/AdminControlPanel";
+
 import { storage } from "../../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-function AdminControlPanel() {
+import AddTurnoMobile from "../../Components/Admin/AddTurno/AddTurnoMobile";
+function AddTurno() {
   const [Consultas, setConsultas] = useState([]);
   const [Pacientes, setPacientes] = useState([]);
   const [PacienteSelected, setPacienteSelected] = useState(null);
@@ -49,7 +50,7 @@ function AdminControlPanel() {
 
   const onSubmitConsulta = () => {
     fetch(
-      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddConsulta`,
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddTurno`,
       {
         method: "POST",
         headers: {
@@ -77,18 +78,6 @@ function AdminControlPanel() {
       });
   };
 
-  const SubirImagen = () => {};
-  useEffect(() => {
-    setForm({ ...form, Fotos: url });
-  }, [url]);
-
-  const ImageHandleChange = (e) => {
-    for (let i = 0; i < e.target.files.length; i++) {
-      const newImage = e.target.files[i];
-      newImage["id"] = Math.random();
-      setImagen((prevState) => [...prevState, newImage]);
-    }
-  };
   const getURL = (imagenRef) => {
     getDownloadURL(imagenRef).then((url) => {
       setURL((prevState) => [...prevState, url]);
@@ -110,7 +99,7 @@ function AdminControlPanel() {
     });
   }, [imagen]);
   return (
-    <AdminControlPanelComponent
+    <AddTurnoMobile
       Consultas={Consultas}
       Pacientes={Pacientes}
       getConsulta={getConsulta}
@@ -122,11 +111,8 @@ function AdminControlPanel() {
       onSubmitConsulta={onSubmitConsulta}
       setForm={setForm}
       form={form}
-      ImageHandleChange={ImageHandleChange}
-      SubirImagen={SubirImagen}
-      imagen={imagen}
     />
   );
 }
 
-export default AdminControlPanel;
+export default AddTurno;

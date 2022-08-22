@@ -78,11 +78,11 @@
 // export default AddConsulta;
 
 import React, { useEffect, useState } from "react";
-import AdminControlPanelComponent from "../../Components/Admin/AdminControlPanel/AdminControlPanel";
+
 import { storage } from "../../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import AddConsultaComponent from "../../Components/Admin/AddConsulta/AddConsultaMobile";
-function AdminControlPanel() {
+function AddConsulta() {
   const [Consultas, setConsultas] = useState([]);
   const [Pacientes, setPacientes] = useState([]);
   const [PacienteSelected, setPacienteSelected] = useState(null);
@@ -209,4 +209,4 @@ function AdminControlPanel() {
   );
 }
 
-export default AdminControlPanel;
+export default AddConsulta;

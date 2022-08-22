@@ -1,0 +1,25 @@
+.containerAdd {
+  display: flex;
+  width: 25vw;
+  justify-content: right;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  bottom: 12vh;
+  background-color: #7aafb9;
+  border-radius: 2rem;
+  right: 8vw;
+}
+
+.botonAdd {
+  display: flex;
+  font-size: 3vw;
+  color: white;
+  height: 10vw;
+  width: 100%;
+  background-color: transparent;
+  align-items: center;
+  border: 0.15rem solid transparent;
+  border-radius: 2rem;
+  padding-left: 4vw;
+}

@@ -12,7 +12,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
-import ButtonGenerate from "../../../Paciente/Elementos/ButtonGenerate";
+import ButtonGenerateAdmin from "../../Elementos/ButtonGenerateAdmin";
 
 const BeforeAndAfterAdmin = ({ fotosP }) => {
   const [selected1, setSelected1] = useState(null);
@@ -93,7 +93,7 @@ const BeforeAndAfterAdmin = ({ fotosP }) => {
         </Swiper>
       </div>
 
-      <ButtonGenerate
+      <ButtonGenerateAdmin
         clase={claseSelected}
         selected1={selected1}
         selected2={selected2}

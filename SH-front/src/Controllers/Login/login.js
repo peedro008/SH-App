@@ -12,13 +12,16 @@ function Login() {
   const [message, setMessage] = useState("");
 
   const onSubmit = () => {
-    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/Login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ DNI: dni }),
-    })
+    fetch(
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/Login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ DNI: dni }),
+      }
+    )
       .then(async (res) => {
         const jsonRes = await res.json();
         try {

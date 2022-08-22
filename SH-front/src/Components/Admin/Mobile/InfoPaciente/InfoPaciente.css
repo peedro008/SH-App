@@ -1,0 +1,58 @@
+.containerHeaderInfo {
+  display: flex;
+  flex-direction: row;
+  width: 70vw;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.circleName {
+  background-color: rgba(185, 185, 185, 0.39);
+  border-radius: 50%;
+  height: 15vw;
+  width: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4%;
+  z-index: 999;
+  height: 55vh;
+
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0px 1vh 2vh #00000025;
+  border-radius: 10% 10% 10% 10%;
+  background-color: rgba(199, 240, 247, 0.29);
+}
+
+.infoPaciente {
+  display: flex;
+  width: auto;
+  margin-bottom: 5% !important;
+  margin-left: 10%;
+  justify-content: left;
+  text-align: left;
+}
+
+.infoTit {
+  width: auto;
+  display: flex;
+  margin: 0 !important;
+  font-size: large;
+  font-weight: 600;
+}
+
+.infoP {
+  width: auto;
+  margin-left: 2% !important;
+  display: flex;
+  font-size: large;
+}

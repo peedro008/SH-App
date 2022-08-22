@@ -8,7 +8,9 @@ function ClinicalHistory() {
   const [consultas, setConsultas] = useState([]);
 
   useEffect(() => {
-    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetConsultasPaciente?PacienteId=${PacienteId}`)
+    fetch(
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetConsultasPaciente?PacienteId=${PacienteId}`
+    )
       .then((response) => response.json())
       .then((data) => {
         setConsultas(data);

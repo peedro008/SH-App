@@ -10,17 +10,20 @@ const AddCupon = () => {
   const [message, setMessage] = useState("");
 
   const onSubmit = () => {
-    fetch(`http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddCupones`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        URL: formC.Fotos[0],
-        Titulo: formC.Titulo,
-        Porcentaje: formC.Porcentaje,
-      }),
-    })
+    fetch(
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddCupones`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          URL: formC.Fotos[0],
+          Titulo: formC.Titulo,
+          Porcentaje: formC.Porcentaje,
+        }),
+      }
+    )
       .then(async (res) => {
         try {
           const jsonRes = await res.json();

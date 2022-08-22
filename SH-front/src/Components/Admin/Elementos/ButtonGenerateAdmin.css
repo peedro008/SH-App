@@ -1,0 +1,27 @@
+.containerGenerateOn {
+  display: flex;
+  width: 25vw;
+  justify-content: right;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  bottom: 5vh;
+  border-radius: 2rem;
+  left: 8vw;
+}
+
+.botonGenerate:disabled {
+  background-color: rgba(122, 174, 185, 0.548);
+}
+
+.botonGenerate {
+  display: flex;
+  font-size: 3vw;
+  height: 10vw;
+  width: 100%;
+  color: white;
+  background-color: rgba(122, 175, 185, 1);
+  border: transparent;
+  align-items: center;
+  border-radius: 2rem;
+}
