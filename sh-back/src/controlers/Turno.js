@@ -23,12 +23,14 @@ const GetTurnos = async (req, res) => {
 
 const AddTurno = async (req, res) => {
   let PacienteID = req.body.PacienteID;
-  let FechaHora = req.body.FechaHora;
+  let Fecha = req.body.Fecha;
+  let Hora = req.body.Hora;
   let Observacion = req.body.Observacion;
   try {
     let TurnoDb = await Turno.create({
       PacienteID: PacienteID,
-      FechaHora: FechaHora,
+      Fecha: Fecha,
+      Hora: Hora,
       Observacion: Observacion,
     });
     res.status(200).send("Turno Agregado");

@@ -15,8 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
   const location = useLocation();
-  console.log(location.state[0]);
-  const { Nombre, Fotos, Consulta, UserID } = location.state[0];
+  const { Nombre, Consulta } = location.state[0];
   const [fotos4, setFotos4] = useState([]);
   const [fotos9, setFotos9] = useState([]);
   const [fotosArray4, setFotosArray4] = useState([]);
@@ -66,9 +65,6 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
 
   // Fin array de 9
 
-  console.log(fotosArray4);
-  console.log(fotosArray9);
-
   const navigate = useNavigate();
 
   // Nombre
@@ -103,7 +99,7 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
             className="botonTramiteCont"
             onClick={() =>
               navigate("/clinicalHistoryAdmin", {
-                state: [Consulta, Nombre],
+                state: [Consulta, Nombre, location.state[0]],
               })
             }
           >
@@ -117,7 +113,9 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
 
           <div
             className="botonTramiteCont"
-            onClick={() => navigate("/addconsulta", { state: [Nombre] })}
+            onClick={() =>
+              navigate("/addconsulta", { state: [location.state[0]] })
+            }
           >
             <img
               src={Edit}
@@ -129,7 +127,9 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
 
           <div
             className="botonTramiteCont"
-            onClick={() => navigate("/addturno")}
+            onClick={() =>
+              navigate("/addturno", { state: [location.state[0]] })
+            }
           >
             <img
               src={calen}
@@ -141,7 +141,11 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
 
           <div
             className="botonTramiteCont"
-            onClick={() => navigate("/fotos", { state: [fotosArray4, Nombre] })}
+            onClick={() =>
+              navigate("/fotos", {
+                state: [fotosArray4, Nombre, location.state[0]],
+              })
+            }
           >
             <img
               src={Cam}
@@ -154,7 +158,9 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
           <div
             className="botonTramiteCont"
             onClick={() =>
-              navigate("/BeforeAndAfterAdmin", { state: [fotosArray9] })
+              navigate("/BeforeAndAfterAdmin", {
+                state: [fotosArray9, location.state[0]],
+              })
             }
           >
             <img

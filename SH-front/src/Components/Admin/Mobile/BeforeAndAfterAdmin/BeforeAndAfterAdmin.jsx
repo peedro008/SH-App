@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 import ButtonGenerateAdmin from "../../Elementos/ButtonGenerateAdmin";
+import ButtonBackAdmin from "../../Elementos/ButtonBackAdmin";
 
 const BeforeAndAfterAdmin = ({ fotosP }) => {
   const [selected1, setSelected1] = useState(null);
@@ -97,8 +98,9 @@ const BeforeAndAfterAdmin = ({ fotosP }) => {
         clase={claseSelected}
         selected1={selected1}
         selected2={selected2}
+        Paciente={location.state[1]}
       />
-      <ButtonBack />
+      <ButtonBackAdmin Paciente={location.state[1]} />
     </div>
   );
 };

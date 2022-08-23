@@ -45,6 +45,40 @@
   font-size: 15px;
   padding-left: 15px;
 }
+
+.Input:focus {
+  outline: none !important;
+  border: 2px solid #000000;
+}
+
+.InputOff {
+  height: 49px;
+  border-width: 0;
+  width: 264px;
+  left: 63px;
+  background-color: rgba(196, 196, 196, 0.35);
+  border-radius: 75px;
+  z-index: 1;
+  font-family: "Nunito";
+  border: 2px solid #ff0000;
+  font-size: 15px;
+  padding-left: 15px;
+}
+
+.InputOff:focus {
+  outline: none !important;
+  border: 2px solid #ff0000c0;
+}
+
+@keyframes popInput {
+  0% {
+    border: 2px solid black;
+  }
+  100% {
+    border: 2px solid #ff0000;
+  }
+}
+
 .Bienvenide {
   font-family: "Nunito";
   font-style: normal;

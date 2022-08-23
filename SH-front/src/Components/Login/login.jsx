@@ -8,17 +8,25 @@ import Continuar from "../../assets/Continuar.svg";
 import LogoStart from "../../assets/LogoStart.svg";
 
 const LoginComponent = ({ dni, setDni, onSubmit, isError }) => {
-  console.log(isError)
-const [error, setError] = useState("offPop")
+  console.log(isError);
+  const [error, setError] = useState("offPop");
+  const [errorInput, setErrorInput] = useState("Input");
 
-useEffect(() => {
-  if (isError === true) {setError("onPop")}
-}, [isError])
+  useEffect(() => {
+    if (isError === true) {
+      setError("onPop");
+    }
+  }, [isError]);
 
+  useEffect(() => {
+    if (isError === true) {
+      setErrorInput("InputOff");
+    }
+  }, [isError]);
 
   return (
     <div className="container">
-      <img src={PopUpDNI} alt="popUp" className={error}/>
+      <img src={PopUpDNI} alt="popUp" className={error} />
       <div className="loader"></div>
       <div className="grow"></div>
       <img src={LogoStart} className="logo" alt="logo"></img>
@@ -31,7 +39,7 @@ useEffect(() => {
           <p className="DNI">D.N.I</p>
           <input
             value={dni}
-            className="Input"
+            className={errorInput}
             onChange={(e) => {
               setDni(e.target.value);
             }}
@@ -45,7 +53,6 @@ useEffect(() => {
           <p className="footer">
             Sabina Hairabedian Consultorios Bv. San Juan 670 - Piso 6
           </p>
-         
         </div>
       </div>
     </div>

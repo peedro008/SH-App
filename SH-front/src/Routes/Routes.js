@@ -23,6 +23,7 @@ import BeforeAndAfterAdmin from "../Components/Admin/Mobile/BeforeAndAfterAdmin/
 import ComparationAdmin from "../Components/Admin/Mobile/BeforeAndAfterAdmin/ComparationAdmin";
 import InfoPaciente from "../Components/Admin/Mobile/InfoPaciente/InfoPaciente";
 import AddTurnoMobile from "../Components/Admin/AddTurno/AddTurnoMobile";
+import AddTurno from "../Controllers/Admin/AddTurno";
 
 export const PacienteRouter = () => {
   return (
@@ -87,7 +88,7 @@ export const AdminRouter = () => {
         <Route path="/infoPaciente" element={<InfoPaciente />} />
         <Route path="/addCupon" element={<AddCupon />} />
         <Route path="/addConsulta" element={<AddConsulta />} />
-        <Route path="/addturno" element={<AddTurnoMobile />} />
+        <Route path="/addturno" element={<AddTurno />} />
         <Route path="/addPaciente" element={<AddPaciente />} />
         <Route path="/addTratamiento" element={<AddTratamiento />} />
       </Routes>

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
 import Navbar from "../../../Paciente/Elementos/Navbar";
-import imagen from "../../../../assets/vichy.webp";
+
 import btnQuit from "../../../../assets/btnQuit.svg";
 import "./Fotos.css";
 import { useLocation } from "react-router-dom";
@@ -14,6 +14,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 import { useState } from "react";
+import ButtonBackAdmin from "../../Elementos/ButtonBackAdmin";
 
 const Fotos = () => {
   const [photoViz, setPhotoViz] = useState(null);
@@ -65,10 +66,8 @@ const Fotos = () => {
           })}
         </Swiper>
       </div>
-      <div>
-        <ButtonBack />
-      </div>
-      <ButtonBack />
+
+      <ButtonBackAdmin Paciente={location.state[2]} />
 
       <div className={photoStyle}>
         <img

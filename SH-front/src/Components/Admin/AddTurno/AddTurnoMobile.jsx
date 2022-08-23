@@ -4,53 +4,51 @@ import ButtonBack from "../../Paciente/Elementos/ButtonBack";
 import "./AddTurnoMobile.css";
 import Navbar from "../../Paciente/Elementos/Navbar";
 import ButtonAdd from "../Elementos/ButtonAdd";
-function AddTurnoMobile({
-  form,
-  setForm,
-  onSubmitConsulta,
-  ImageHandleChange,
-  setTramite,
-  imagen,
-}) {
+import ButtonBackAdmin from "../Elementos/ButtonBackAdmin";
+function AddTurnoMobileComponent({ form, setForm, onSubmitTurno, Paciente }) {
   return (
-    <div className="containerAddConsultaMob">
+    <>
       <Navbar />
-      <div className="containerHeader">
-        <h2>Denis Peralta</h2>
-        <h4>Historia clínica</h4>
-      </div>
-      <div className="containerTurno">
-        <div className="AddFormMob">
-          <div className="containerAddTurno">
-            <p className="AddFormTitleMob">Observaciones </p>
-            <textarea
-              onChange={(e) => setForm({ ...form, Indicacion: e.target.value })}
-              className="textareaForm"
-              placeholder="Ingrese aquí"
-            ></textarea>
+      <div className="containerAddTurnoMob">
+        <div className="containerHeader">
+          <h2>{Paciente.Nombre}</h2>
+          <h4>Historia clínica</h4>
+        </div>
+        <div className="contForm">
+          <div className="AddFormMobT">
+            <div className="containerAddTurnoInput">
+              <p className="AddFormTitleMobInput">Fecha: </p>
+              <input
+                type="date"
+                className="inputDate"
+                onChange={(e) => setForm({ ...form, Fecha: e.target.value })}
+              />
+            </div>
+            <div className="containerAddTurnoInput">
+              <p className="AddFormTitleMobInput">Hora: </p>
+              <input
+                type="time"
+                className="inputTime"
+                onChange={(e) => setForm({ ...form, Hora: e.target.value })}
+              />
+            </div>
+            <div className="containerAddTurno" style={{ marginBottom: "10%" }}>
+              <p className="AddFormTitleMob">Observaciones </p>
+              <textarea
+                onChange={(e) =>
+                  setForm({ ...form, Indicacion: e.target.value })
+                }
+                className="textareaForm"
+                placeholder="Ingrese aquí"
+              ></textarea>
+            </div>
           </div>
         </div>
+        <ButtonBackAdmin Paciente={Paciente} />
+        <ButtonAdd onSubmitConsulta={onSubmitTurno} />
       </div>
-      <ButtonBack />
-      <ButtonAdd onSubmitConsulta={onSubmitConsulta} />
-      {/* <div className="containerBack">
-        <img
-          alt="btnAdd"
-          src={Añadir}
-          style={{
-            position: "absolute",
-            width: "95px",
-            height: "48px",
-            bottom: "5vh",
-            right: "1vw",
-            zIndex: 5,
-            cursor: "pointer",
-          }}
-          onClick={onSubmitConsulta}
-        />
-      </div> */}
-    </div>
+    </>
   );
 }
 
-export default AddTurnoMobile;
+export default AddTurnoMobileComponent;

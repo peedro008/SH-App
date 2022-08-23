@@ -5,8 +5,11 @@ const Turno = (sequelize) => {
     PacienteID: {
       type: DataTypes.INTEGER,
     },
-    FechaHora: {
+    Fecha: {
       type: DataTypes.DATE,
+    },
+    Hora: {
+      type: DataTypes.TIME,
     },
     Observacion: {
       type: DataTypes.TEXT,

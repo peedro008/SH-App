@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
+import ButtonBackAdmin from "../../Elementos/ButtonBackAdmin";
 
 import Navbar from "../../../Paciente/Elementos/Navbar";
 import "./ClinicalHistoryAdmin.css";
@@ -49,7 +49,7 @@ const ClinicalHistoryAdmin = ({ userName }) => {
       </div>
       <div>
         <ButtonShareDown />
-        <ButtonBack admin="/patient" />
+        <ButtonBackAdmin Paciente={location.state[2]} />
       </div>
     </div>
   );

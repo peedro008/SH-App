@@ -9,10 +9,12 @@ import { useLocation } from "react-router-dom";
 import "./ComparationAdmin.css";
 import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
 import ButtonShareDown from "../../Elementos/ButtonShareDownAdmin";
+import ButtonBackAdmin from "../../Elementos/ButtonBackAdmin";
 
 const Comparation = ({ imagenes }) => {
   const userName = useSelector((state) => state.userSession).userName;
   const location = useLocation();
+  console.log(location);
 
   return (
     <div>
@@ -59,7 +61,7 @@ const Comparation = ({ imagenes }) => {
         </div>
       </div>
 
-      <ButtonBack />
+      <ButtonBackAdmin Paciente={location.state[2]} />
     </div>
   );
 };

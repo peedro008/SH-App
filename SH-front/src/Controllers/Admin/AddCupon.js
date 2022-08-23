@@ -1,27 +1,42 @@
-import React, { useState } from "react";
-import AddCuponComponent from "../../Components/Admin/AddCupon/AddCuponComponent";
+import React, { useEffect, useState } from "react";
+
 import { storage } from "../../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import AddConsultaComponent from "../../Components/Admin/AddConsulta/AddConsultaMobile";
+import { useLocation } from "react-router-dom";
 
-const AddCupon = () => {
-  const [imagen, setImagen] = useState(null);
-  const [formC, setFormC] = useState({});
+function AddConsulta() {
+  const [PacienteSelected, setPacienteSelected] = useState(null);
+  const [Tramite, setTramite] = useState(null);
+  const [url, setURL] = useState([]);
+  const [imagen, setImagen] = useState([]);
+  const [form, setForm] = useState({
+    Fecha: new Date().toISOString().split("T")[0],
+  });
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState("");
 
-  const onSubmit = () => {
+  const location = useLocation();
+
+  let pE = location.state[0];
+
+  useEffect(() => {
+    setPacienteSelected(pE);
+  }, [pE]);
+
+  useEffect(() => {
+    setForm({ ...form, PacienteId: location.state[0]?.id });
+  }, [PacienteSelected]);
+
+  const onSubmitTurno = () => {
     fetch(
-      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddCupones`,
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddTurno`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          URL: formC.Fotos[0],
-          Titulo: formC.Titulo,
-          Porcentaje: formC.Porcentaje,
-        }),
+        body: JSON.stringify(form),
       }
     )
       .then(async (res) => {
@@ -33,6 +48,7 @@ const AddCupon = () => {
             console.log(`Hubo un error? ${isError}. Mensaje: ${message}`);
           } else {
             setIsError(false);
+            window.location.reload();
             setMessage(jsonRes.message);
           }
         } catch (err) {}
@@ -42,37 +58,53 @@ const AddCupon = () => {
       });
   };
 
-  const SubirImagenCupon = () => {
-    if (imagen == null) return;
-    const imagenRef = ref(
-      storage,
-      `images/${333 * Math.random() + imagen.name}`
-    );
-    console.log(imagenRef);
-    uploadBytes(imagenRef, imagen)
-      .then(() => {
-        getURL(imagenRef);
-      })
-      .catch((err) => {
-        console.log("Error", err);
-        alert("Error", err);
-      });
+  const SubirImagen = () => {};
+  useEffect(() => {
+    setForm({ ...form, Fotos: url });
+  }, [url]);
+
+  const ImageHandleChange = (e) => {
+    for (let i = 0; i < e.target.files.length; i++) {
+      const newImage = e.target.files[i];
+      newImage["id"] = Math.random();
+      setImagen((prevState) => [...prevState, newImage]);
+    }
   };
   const getURL = (imagenRef) => {
     getDownloadURL(imagenRef).then((url) => {
-      setFormC({ ...formC, Fotos: [url] });
+      setURL((prevState) => [...prevState, url]);
     });
   };
+  useEffect(() => {
+    imagen.map((e) => {
+      const imagenRef = ref(storage, `images/${333 * Math.random() + e.name}`);
+      console.log(imagenRef);
+      uploadBytes(imagenRef, e)
+        .then(() => {
+          getURL(imagenRef);
+        })
 
+        .catch((err) => {
+          console.log("Error", err);
+          alert("Error", err);
+        });
+    });
+  }, [imagen]);
   return (
-    <AddCuponComponent
-      setImagen={setImagen}
-      SubirImagenCupon={SubirImagenCupon}
-      formC={formC}
-      setFormC={setFormC}
-      onSubmit={onSubmit}
+    <AddConsultaComponent
+      PacienteSelected={PacienteSelected}
+      Tramite={Tramite}
+      setTramite={setTramite}
+      setPacienteSelected={setPacienteSelected}
+      onSubmitTurno={onSubmitTurno}
+      setForm={setForm}
+      form={form}
+      ImageHandleChange={ImageHandleChange}
+      SubirImagen={SubirImagen}
+      imagen={imagen}
+      Paciente={location.state[0]}
     />
   );
-};
+}
 
-export default AddCupon;
+export default AddConsulta;
