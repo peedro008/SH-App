@@ -67,6 +67,7 @@
 .subButonTextMob {
   font-family: "Nunito";
   font-style: normal;
-  font-weight: 300;
-  font-size: 3.5vw;
+  font-weight: 600;
+  /* font-size: 3.5vmin; */
+  font-size: 4vmin;
 }

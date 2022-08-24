@@ -5,7 +5,7 @@ import Vector2 from "../../assets/Vector2.svg";
 import LogoLogin from "../../assets/LogoLogin.svg";
 import PopUpDNI from "../../assets/PopUpDNI.svg";
 import Continuar from "../../assets/Continuar.svg";
-import LogoStart from "../../assets/LogoStart.svg";
+import LogoStartNew from "../../assets/LogoStartNew.svg";
 
 const LoginComponent = ({ dni, setDni, onSubmit, isError }) => {
   console.log(isError);
@@ -26,10 +26,14 @@ const LoginComponent = ({ dni, setDni, onSubmit, isError }) => {
 
   return (
     <div className="container">
-      <img src={PopUpDNI} alt="popUp" className={error} />
+      <img
+        src={PopUpDNI}
+        alt="popUp"
+        className={isError === false ? "offPop" : "onPop"}
+      />
       <div className="loader"></div>
       <div className="grow"></div>
-      <img src={LogoStart} className="logo" alt="logo"></img>
+      <img src={LogoStartNew} className="logo2" alt="logo"></img>
       <div className="whi">
         <div className="ContainerDiv">
           <img src={Vector1} alt="vector" className="Vector1" />
@@ -39,7 +43,7 @@ const LoginComponent = ({ dni, setDni, onSubmit, isError }) => {
           <p className="DNI">D.N.I</p>
           <input
             value={dni}
-            className={errorInput}
+            className={isError === false ? "Input" : "InputOff"}
             onChange={(e) => {
               setDni(e.target.value);
             }}

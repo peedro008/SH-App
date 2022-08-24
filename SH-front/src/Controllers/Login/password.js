@@ -56,12 +56,14 @@ function Password() {
       password={password}
       setPassword={setPassword}
       onSubmit={onSubmit}
+      isError={isError}
     />
   ) : (
     <PasswordDComponent
       password={password}
       setPassword={setPassword}
       onSubmit={onSubmit}
+      isError={isError}
     />
   );
 }

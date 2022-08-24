@@ -77,19 +77,20 @@ const Fotos = () => {
           style={{
             position: "absolute",
             right: "9%",
-            top: "16%",
+            top: "27%",
             height: "5%",
+            opacity: 0.7,
           }}
         ></img>
         <img
           src={photoViz}
           alt="Viz"
           style={{
-            height: "80vh",
-            width: "90vw",
+            height: "65vh",
+            width: "95vw",
             borderRadius: "8%",
             margin: "0 auto",
-            marginTop: "25%",
+            marginTop: "50%",
           }}
         ></img>
       </div>

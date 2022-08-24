@@ -6,26 +6,23 @@ import PopUpContra from "../../assets/PopUpContra.svg";
 import LogoLogin from "../../assets/LogoLogin.svg";
 import Continuar from "../../assets/Continuar.svg";
 const PasswordComponent = ({ password, setPassword, onSubmit, isError }) => {
-
-    console.log(isError)
-    const [error, setError] = useState("offPop")
-    
-    useEffect(() => {
-      if (isError === true) {setError("onPop")}
-    }, [isError])
   return (
     <div className="ContainerDiv">
-        <img src={PopUpContra} alt="popUp" className={error}/>
-      <img src={Vector1} className="Vector1" alt="vector"/>
-      <img src={LogoLogin} className="LogoLogin" alt="vector"/>
-      <img src={Vector2} className="Vector2" alt="vector"/>
+      <img
+        src={PopUpContra}
+        alt="popUp"
+        className={isError === false ? "offPop" : "onPop"}
+      />
+      <img src={Vector1} className="Vector1" alt="vector" />
+      <img src={LogoLogin} className="LogoLogin" alt="vector" />
+      <img src={Vector2} className="Vector2" alt="vector" />
       <p className="Bienvenide">BIENVENIDA SABINA</p>
       <p className="DNI">PASSWORD</p>
 
       <input
         type={"password"}
         value={password}
-        className="Input"
+        className={isError === false ? "Input" : "InputOff"}
         onChange={(e) => {
           setPassword(e.target.value);
         }}
