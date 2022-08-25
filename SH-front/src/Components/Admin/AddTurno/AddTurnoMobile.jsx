@@ -5,7 +5,12 @@ import "./AddTurnoMobile.css";
 import Navbar from "../../Paciente/Elementos/Navbar";
 import ButtonAdd from "../Elementos/ButtonAdd";
 import ButtonBackAdmin from "../Elementos/ButtonBackAdmin";
-function AddTurnoMobileComponent({ form, setForm, onSubmitTurno, Paciente }) {
+function AddTurnoMobileComponent({
+  form,
+  setForm,
+  onSubmitConsulta,
+  Paciente,
+}) {
   return (
     <>
       <Navbar />
@@ -36,7 +41,7 @@ function AddTurnoMobileComponent({ form, setForm, onSubmitTurno, Paciente }) {
               <p className="AddFormTitleMob">Observaciones </p>
               <textarea
                 onChange={(e) =>
-                  setForm({ ...form, Indicacion: e.target.value })
+                  setForm({ ...form, Observacion: e.target.value })
                 }
                 className="textareaForm"
                 placeholder="Ingrese aquí"
@@ -45,7 +50,7 @@ function AddTurnoMobileComponent({ form, setForm, onSubmitTurno, Paciente }) {
           </div>
         </div>
         <ButtonBackAdmin Paciente={Paciente} />
-        <ButtonAdd onSubmitConsulta={onSubmitTurno} />
+        <ButtonAdd onSubmitConsulta={onSubmitConsulta} />
       </div>
     </>
   );

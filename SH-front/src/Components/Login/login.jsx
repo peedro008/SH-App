@@ -36,11 +36,11 @@ const LoginComponent = ({ dni, setDni, onSubmit, isError }) => {
       <img src={LogoStartNew} className="logo2" alt="logo"></img>
       <div className="whi">
         <div className="ContainerDiv">
-          <img src={Vector1} alt="vector" className="Vector1" />
+          {/* <img src={Vector1} alt="vector" className="Vector1" /> */}
           <img src={LogoLogin} alt="vector" className="LogoLogin" />
-          <img src={Vector2} alt="vector" className="Vector2" />
+          {/* <img src={Vector2} alt="vector" className="Vector2" /> */}
           <p className="Bienvenide">BIENVENIDA/O</p>
-          <p className="DNI">D.N.I</p>
+          <p className="Bienvenide">D.N.I</p>
           <input
             value={dni}
             className={isError === false ? "Input" : "InputOff"}

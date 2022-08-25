@@ -17,7 +17,7 @@ function AddTurno() {
   }, [pacienteNum]);
 
   useEffect(() => {
-    setForm({ ...form, PacienteId: location.state[0]?.id });
+    setForm({ ...form, PacienteID: location.state[0]?.id });
   }, [PacienteSelected]);
 
   const onSubmitConsulta = () => {
