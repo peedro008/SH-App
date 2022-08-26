@@ -13,7 +13,6 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 const ClinicalHistoryComponent = ({ consultas, userName }) => {
-  
   return (
     <div>
       <Navbar />
@@ -21,7 +20,7 @@ const ClinicalHistoryComponent = ({ consultas, userName }) => {
         <h2>{userName}</h2>
         <h4>Historia clínica</h4>
       </div>
-      <div>
+      <div className="containerSwiper">
         <Swiper
           pagination={{
             dynamicBullets: true,
@@ -34,18 +33,18 @@ const ClinicalHistoryComponent = ({ consultas, userName }) => {
               <SwiperSlide className="swiperSlide" key={e.id}>
                 <div className="containerConsulta">
                   <h2 className="consulta">Consulta: {e.Fecha}</h2>
-                  <p className="consulta"> {e.Detalle} </p>
+                  <p className="parrafoConsulta"> {e.Detalle} </p>
                   <br />
                   <h2 className="consulta">Se Recetó:</h2>
-                  <p className="consulta">{e.Indicacion}</p>
+                  <p className="parrafoConsulta">{e.Indicacion}</p>
                 </div>
               </SwiperSlide>
-            )
+            );
           })}
         </Swiper>
       </div>
       <div>
-        <ButtonShareDown/>
+        <ButtonShareDown />
         <ButtonBack />
       </div>
     </div>

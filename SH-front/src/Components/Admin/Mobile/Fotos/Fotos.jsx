@@ -76,8 +76,8 @@ const Fotos = () => {
           onClick={() => setPhotoViz(null)}
           style={{
             position: "absolute",
-            right: "9%",
-            top: "27%",
+            right: "5%",
+            top: "5%",
             height: "5%",
             opacity: 0.7,
           }}

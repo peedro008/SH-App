@@ -45,7 +45,7 @@ const BeforeAndAfter = ({ fotosP }) => {
           {fotosP?.map((e, index) => {
             return (
               <SwiperSlide className="swiperSlide" key={index}>
-                <div className="main">
+                <div className="mainPaciente">
                   {e.map((i, index) => {
                     return (
                       <div className="cubo" key={index}>

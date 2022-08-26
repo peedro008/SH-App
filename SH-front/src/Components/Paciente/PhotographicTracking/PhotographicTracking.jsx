@@ -1,7 +1,6 @@
 import React from "react";
 import ButtonBack from "../Elementos/ButtonBack";
 import Navbar from "../Elementos/Navbar";
-import imagen from "../../../assets/vichy.webp";
 import "./PhotographicTracking.css";
 
 // Import Swiper React components
@@ -13,8 +12,6 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 const PhotographicTracking = ({ userName, fotosP }) => {
-
-  
   return (
     <div>
       <Navbar />
@@ -22,7 +19,7 @@ const PhotographicTracking = ({ userName, fotosP }) => {
         <h2>{userName}</h2>
         <h4>Seguimiento fotográfico</h4>
       </div>
-      <div>
+      <div className="containerSwiper">
         <Swiper
           pagination={{
             dynamicBullets: true,
@@ -31,23 +28,25 @@ const PhotographicTracking = ({ userName, fotosP }) => {
           className="swiper"
         >
           {fotosP.map((e, index) => {
-            return <SwiperSlide className="swiperSlide" key={index}>
-              <div className="mainTrack">
-           {e.map((i, index) => {
-            return <div className="cuboTrack" key={index}>
-                  <div className="containerImgTrack">
-                    <img src={i.URL} alt="holi" className="imagen"/>
-                  </div>
-                  <p style={{ fontSize:"4vw"}}>{i.createdAt.substring(0,10)}</p>
+            return (
+              <SwiperSlide className="swiperSlide" key={index}>
+                <div className="mainTrack">
+                  {e.map((i, index) => {
+                    return (
+                      <div className="cuboTrack" key={index}>
+                        <div className="containerImgTrack">
+                          <img src={i.URL} alt="holi" className="imagen" />
+                        </div>
+                        <p style={{ fontSize: "3vh" }}>
+                          {i.createdAt.substring(0, 10)}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
-            
-           })}
-           </div>
-            </SwiperSlide>
-              
-           
+              </SwiperSlide>
+            );
           })}
-
         </Swiper>
       </div>
       <div>

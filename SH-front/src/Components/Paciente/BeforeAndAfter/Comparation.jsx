@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import "./Comparation.css";
 
-
 const Comparation = ({ imagenes }) => {
   const userName = useSelector((state) => state.userSession).userName;
   const location = useLocation();
@@ -22,7 +21,7 @@ const Comparation = ({ imagenes }) => {
         <h4>Antes y después</h4>
       </div>
 
-      <div className="mainComp">
+      <div className="mainCompPaciente">
         <div className="cuboComp">
           <p style={{ marginLeft: "10%", fontSize: "4vw" }}>
             {location.state[0].createdAt.substring(0, 10)}
@@ -62,7 +61,6 @@ const Comparation = ({ imagenes }) => {
         <ButtonBack />
       </div>
       <ButtonBack />
-  
     </div>
   );
 };

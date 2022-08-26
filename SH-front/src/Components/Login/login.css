@@ -29,8 +29,11 @@
 }
 .LogoLogin {
   margin-top: 5vh;
-  height: auto;
-  width: 29vh;
+
+  min-width: 20vh !important;
+  max-width: 25vh;
+  min-height: 20vh !important;
+  max-height: 25vh;
   align-self: center;
 }
 .Input {
@@ -86,10 +89,7 @@
   font-family: "Nunito";
   font-style: normal;
   font-weight: 700;
-  font-size: 2vmin;
-
-  font-size: 4.5vmax;
-  line-height: 41px;
+  font-size: 4vmax;
 
   color: #15353b;
 }
