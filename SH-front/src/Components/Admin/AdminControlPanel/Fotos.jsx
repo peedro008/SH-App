@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
+
 import { Pagination } from "swiper";
-import volver from "./volver.svg"
-function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite }) {
+import volver from "./volver.svg";
+import "./AdminControlPanel.css";
+import { useState } from "react";
+
+function Fotos({ PacienteSelected, setTramite, fotosP }) {
   const [FS, SetFS]= useState(false)
   const [IS, SetIS]= useState("")
   let name = PacienteSelected?.Nombre.split(" ");
@@ -17,8 +21,9 @@ function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite 
     ][0].toUpperCase()}`;
   }
   let consultas = [1, 2, 3, 4];
+  console.log(fotosP);
   return (
-    <div className="RightMain" style={{ height:"100vh"}}>
+    <div className="RightMain" style={{ height: "100vh" }}>
       <div className="PacienteHeader">
         <div className="Pacientediv1">
           <div className="Pacientediv2">
@@ -33,51 +38,57 @@ function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite 
       <Swiper
         pagination={{
           dynamicBullets: true,
-
         }}
         modules={[Pagination]}
         className="swiperD"
-        style={{ backgroundColor: "transparent"}}
+        style={{ backgroundColor: "transparent" }}
       >
-        {Consultas?.map((e,i) => {
-       
+        {fotosP?.map((e, i) => {
           return (
-            <SwiperSlide className="DswiperSlide"  key={e.id}>
-              <div  style={{display:"flex", flexDirection:"row",  paddingTop:"20px", backgroundColor: "transparent"}}>
-                <div className="CliniCard"><div className="W370razor"style={ {maxHeight:"95%",maxWidth:"95%", backgroundColor:"transparent", overflowY:"scroll"} }>
-                  <p className="DCHTitle">Consulta: {e.updatedAt.substring(0,10)}</p>
-                  <p className="DCHText">
-                  {e.Detalle}
-                  </p>
-                  <br />
-                  <p className="DCHTitle">Se Recetó:</p>
-                  <p className="DCHText" style={{ paddingRight: "55%",}}>
-                   {e.Indicacion}
-                  </p></div>
-                </div>
-                <div className="FotoCard">
-                  <div className="FotosContainerr">
+            <SwiperSlide className="DswiperSlide" key={i}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  paddingTop: "20px",
+                  backgroundColor: "transparent",
+                }}
+              >
+                <div className="FotoCard1">
+                    <div className="fotosGridDiv">
+                
                   {
-                              e.Fotos.map((f,i)=>{ if(i<9)return(<img  src={f.URL}className="DdivFoto" onClick={()=>{SetIS(f.URL); SetFS(true)}}></img>)})
+                              e.map((f,i)=>{ return(<div onClick={()=>{SetIS(f.URL); SetFS(true)}} style={{backgroundImage:`url(${f.URL}`, backgroundSize:"100%"}} className="DdivFoto1"></div>)})
 
-                  }
-
-                </div>
+                  }</div>
+             
                 </div>
               </div>
             </SwiperSlide>
           );
         })}
       </Swiper>
-      <img style={{position:"absolute", width:"115px", height:"48px", bottom:"5%", right:"5%", zIndex:5, cursor: "pointer"}}src={volver} onClick={()=>setTramite(null)}/>
+      <img
+        style={{
+          position: "absolute",
+          width: "115px",
+          height: "48px",
+          bottom: "5%",
+          right: "5%",
+          zIndex: 5,
+          cursor: "pointer",
+        }}
+        src={volver}
+        onClick={() => setTramite(null)}
+      />
       {FS&&
        <div className="modalCont1">
           <img className="FullScreenImg" src={IS} />
           <div style={{backgroundColor:"#7aafb9",position:"absolute", top:"5%", right:"5%", width:"25px", height:"25px", display:"flex", alignItems:"center", borderRadius:"50%", cursor:"pointer"}}>
           <p style={{ fontSize:"25px", color:"white"}} onClick={()=>{SetIS(""); SetFS(false)}}>x</p></div>
        </div>}
-   </div>
+    </div>
   );
 }
 
-export default AdminClinicalHistoryComponent;
+export default Fotos;

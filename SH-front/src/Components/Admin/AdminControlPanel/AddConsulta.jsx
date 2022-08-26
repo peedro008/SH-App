@@ -4,7 +4,7 @@ import BotonMas from "./BotonMas.svg"
 import "./AdminControlPanel.css";
 import Añadir from "./Añadir.svg" 
 import volver from "./volver.svg"
-function AddConsultaComponent({ PacienteSelected,SubirImagen, Consultas, setTramite ,imagen, setImagen,onSubmitConsulta, ImageHandleChange,ImageHandleClick, setForm, form}) {
+function AddConsultaComponent({ PacienteSelected, Consultas, setTramite ,imagen, setImagen,onSubmitConsulta, ImageHandleChange,ImageHandleClick, setForm, form}) {
   let name = PacienteSelected?.Nombre.split(" ");
   if (name) {
     name = `${name[0][0].toUpperCase()}${name[
@@ -16,7 +16,7 @@ function AddConsultaComponent({ PacienteSelected,SubirImagen, Consultas, setTram
       <div className="PacienteHeader">
         <div className="Pacientediv1">
           <div className="Pacientediv2">
-            {/* <p className="CircleName">{name.substring(0, 2)}</p> */}
+            <p className="CircleName">{name.substring(0, 2)}</p>
           </div>
           <div className="Pacientediv3">
             <p className="Paciente2">{PacienteSelected?.Nombre}</p>

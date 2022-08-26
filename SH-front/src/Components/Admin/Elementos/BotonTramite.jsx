@@ -6,7 +6,7 @@ const BotonTramiteComponent = ({Titulo,  submit, Icon}) => {
   return (
     <div className='botonTramiteContainer' onClick={submit}>
         {Icon}
-      <p className='botonTramiteText'>{Titulo}</p>
+      <p className='botonTramite1Text'>{Titulo}</p>
       
     </div>
   )
