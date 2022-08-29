@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./login.css";
-import Vector1 from "../../assets/Vector1.svg";
-import Vector2 from "../../assets/Vector2.svg";
+
 import LogoLogin from "../../assets/LogoLogin.svg";
 import PopUpDNI from "../../assets/PopUpDNI.svg";
 import Continuar from "../../assets/Continuar.svg";

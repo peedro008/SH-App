@@ -19,12 +19,11 @@
   max-width: 100%;
 }
 
-.cuboTrack {
+.cuboTracking {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 80% 20%;
   justify-content: center;
-  align-items: center;
   margin-top: 3%;
   max-height: 100%;
   max-width: 100%;
@@ -38,9 +37,11 @@
   border-radius: 100%;
 }
 
-.imagen {
-  height: 100%;
-  width: 100%;
+.imagenTrack {
+  height: 20vh;
+  max-width: 110px;
+  max-height: 110px;
+  width: 20vh;
   margin: 0 auto;
   border-radius: 100%;
 }

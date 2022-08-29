@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./DashboardAdmin.css";
 import AntDesp from "../../../../assets/AntDesp.svg";
 import Notas from "../../../../assets/Notas.svg";
-import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
+
 import calen from "../../../../assets/calen.svg";
 import Edit from "../../../../assets/Edit.svg";
 import Cam from "../../../../assets/Cam.svg";
@@ -172,7 +172,6 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
           </div>
         </div>
       </div>
-      <ButtonBack />
     </>
   ) : (
     <div className="RightMain">
