@@ -30,7 +30,7 @@ const ClinicalHistoryAdmin = ({ userName }) => {
             dynamicBullets: true,
           }}
           modules={[Pagination]}
-          className="swiper"
+          className="swiperAdmin"
         >
           {location.state[0]?.map((e) => {
             return (

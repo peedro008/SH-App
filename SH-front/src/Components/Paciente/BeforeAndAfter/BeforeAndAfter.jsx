@@ -34,7 +34,7 @@ const BeforeAndAfter = ({ fotosP }) => {
         <h2>Generar antes y después</h2>
         <h4>Seleccionar dos fotografías</h4>
       </div>
-      <div>
+      <div className="swiperBaF">
         <Swiper
           pagination={{
             dynamicBullets: true,

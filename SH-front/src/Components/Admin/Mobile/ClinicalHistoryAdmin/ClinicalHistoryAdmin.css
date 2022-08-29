@@ -9,3 +9,8 @@
   border-radius: 10% 10% 10% 10%;
   background-color: rgba(199, 240, 247, 0.29);
 }
+
+.swiperAdmin {
+  width: 100vw;
+  height: 60vh;
+}

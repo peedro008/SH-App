@@ -33,9 +33,9 @@ const PhotographicTracking = ({ userName, fotosP }) => {
                 <div className="mainTrack">
                   {e.map((i, index) => {
                     return (
-                      <div className="cuboTrack" key={index}>
+                      <div className="cuboTracking" key={index}>
                         <div className="containerImgTrack">
-                          <img src={i.URL} alt="holi" className="imagen" />
+                          <img src={i.URL} alt="holi" className="imagenTrack" />
                         </div>
                         <p style={{ fontSize: "3vh" }}>
                           {i.createdAt.substring(0, 10)}

@@ -7,7 +7,7 @@ import UserLove from "../../../assets/UserLove.svg";
 import { FiCamera } from "react-icons/fi";
 import { BsClipboard } from "react-icons/bs";
 import { TbDiscount2 } from "react-icons/tb";
-import ButtonBack from "../Elementos/ButtonBack";
+
 // import Vector7 from "../../../assets/Vector7.svg";
 import { useSelector } from "react-redux";
 
@@ -67,7 +67,6 @@ function DashboardComponent() {
           text="Descuentos"
         />
       </div>
-      <ButtonBack />
     </div>
   );
 }

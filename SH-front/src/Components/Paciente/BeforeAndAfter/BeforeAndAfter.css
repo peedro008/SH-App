@@ -52,8 +52,7 @@
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 33% 33% 33%;
   z-index: 999;
-
-  height: 60vh;
+  height: 55vh;
 }
 
 .cubo {
@@ -101,4 +100,8 @@
 
 .selectedHidden {
   visibility: hidden;
+}
+
+.swiperBaF {
+  height: 60vh;
 }
