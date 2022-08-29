@@ -47,12 +47,12 @@ const Fotos = () => {
                 <div className="mainTrack">
                   {e.map((i, index) => {
                     return (
-                      <div className="cuboTrack" key={index}>
+                      <div className="cuboTrackFotos" key={index}>
                         <div
                           className="containerImgTrack"
                           onClick={() => setPhotoViz(i.URL)}
                         >
-                          <img src={i.URL} alt="holi" className="imagen" />
+                          <img src={i.URL} alt="holi" className="imagenFotos" />
                         </div>
                         <p style={{ fontSize: "4vw" }}>
                           {i.createdAt.substring(0, 10)}
@@ -79,6 +79,7 @@ const Fotos = () => {
             right: "5%",
             top: "5%",
             height: "5%",
+            minHeight: "30px",
             opacity: 0.7,
           }}
         ></img>
@@ -88,9 +89,10 @@ const Fotos = () => {
           style={{
             height: "65vh",
             width: "95vw",
+            maxHeight: "300px",
             borderRadius: "8%",
             margin: "0 auto",
-            marginTop: "50%",
+            marginTop: "20vh",
           }}
         ></img>
       </div>
