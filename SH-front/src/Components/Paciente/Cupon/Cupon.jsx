@@ -7,6 +7,7 @@ import "./Cupon.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
+import Givenchy from "../../../assets/Givenchy.jpg";
 import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
@@ -14,15 +15,22 @@ import { Pagination } from "swiper";
 import ButtonShareDown from "../Elementos/ButtonShareDown";
 
 const Cupon = ({ Cupones }) => {
+  const Kupones = [
+    {
+      Porcentaje: "10%",
+      Titulo: "Desodorante",
+      URL: Givenchy,
+    },
+  ];
   return (
     <div>
       <Navbar />
-      <div className="containerHeader">
+      <div className="containerHeaderCupon">
         <h2>Descuentos del mes</h2>
         <h4> ¡Descargá tu cupón!</h4>
         <p>Sólo descuento por mes</p>
       </div>
-      <div>
+      <div className="containerCuponSwiper">
         <Swiper
           pagination={{
             dynamicBullets: true,
@@ -30,7 +38,7 @@ const Cupon = ({ Cupones }) => {
           modules={[Pagination]}
           className="swiper"
         >
-          {Cupones?.map((e) => {
+          {Kupones?.map((e) => {
             return (
               <SwiperSlide className="swiperSlide" key={e.id}>
                 <div className="containerCupon">

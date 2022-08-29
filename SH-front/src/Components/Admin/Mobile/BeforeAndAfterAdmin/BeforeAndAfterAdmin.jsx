@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
+
 import selected from "../../../../assets/selected.svg";
 import Navbar from "../../../Paciente/Elementos/Navbar";
 import "./BeforeAndAfterAdmin.css";
