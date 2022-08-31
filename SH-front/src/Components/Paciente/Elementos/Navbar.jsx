@@ -14,14 +14,16 @@ const Navbar = () => {
         size={"7vh"}
         color="white"
         className="hamburgerBtn"
-        onClick={dispatch(
-          userSession({
-            userRole: null,
-            userId: null,
-            userName: null,
-            pacienteId: null,
-          })
-        )}
+        onClick={() =>
+          dispatch(
+            userSession({
+              userRole: null,
+              userId: null,
+              userName: null,
+              pacienteId: null,
+            })
+          )
+        }
       />
 
       <img src={LogoLogin} alt="logo" className="logo" />
