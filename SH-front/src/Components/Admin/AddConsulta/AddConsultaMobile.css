@@ -12,9 +12,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   margin: 0 auto;
-  height: 20vw;
+  height: 12vh;
   width: 80vw;
 }
 
@@ -108,7 +107,6 @@
   border-radius: 32.3922px;
   display: flex;
   margin-bottom: 5%;
-
   flex-direction: column;
   justify-content: space-between;
 }

@@ -5,10 +5,10 @@
   align-items: center;
   position: fixed;
   z-index: 999;
-  bottom: 12vh;
+  bottom: 3.5vh;
   background-color: #7aafb9;
   border-radius: 2rem;
-  right: 8vw;
+  right: 35vw;
 }
 
 .botonAdd {

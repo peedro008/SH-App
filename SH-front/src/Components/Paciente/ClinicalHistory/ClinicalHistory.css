@@ -5,11 +5,13 @@
   align-items: center;
   margin: 0 auto;
   height: 10vh;
+
   width: 80vw;
 }
 
 .containerSwiper {
   height: 60vh;
+  margin-top: 2vh;
 }
 .swiper {
   width: 100vw;
@@ -38,12 +40,11 @@
 .consulta {
   width: 90%;
   padding-left: 5%;
-
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .parrafoConsulta {
   width: 90%;
-  font-size: 3vmax;
+  font-size: 20px;
   padding-left: 5%;
 }

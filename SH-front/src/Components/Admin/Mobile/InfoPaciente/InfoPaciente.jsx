@@ -31,9 +31,9 @@ const InfoPaciente = () => {
 
       <div className="containerHeaderInfo">
         <div className="circleName">
-          <h2>{name}</h2>
+          <h2 style={{ fontSize: "5vh" }}>{name}</h2>
         </div>
-        <h3>{Nombre}</h3>
+        <h3 style={{ fontSize: "30px" }}>{Nombre}</h3>
       </div>
       <div>
         <div className="containerInfo">

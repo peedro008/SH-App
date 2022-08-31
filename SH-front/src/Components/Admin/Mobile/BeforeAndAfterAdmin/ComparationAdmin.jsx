@@ -47,16 +47,8 @@ const Comparation = ({ imagenes }) => {
           />
         </div>
         <div className="containerButtons">
-          <img
-            src={shareAdmin}
-            alt="share"
-            style={{ width: "10vw", height: "10vw", marginLeft: "2vw" }}
-          />
-          <img
-            src={downloadAdmin}
-            alt="download"
-            style={{ width: "10vw", height: "10vw", marginLeft: "2vw" }}
-          />
+          <img src={shareAdmin} alt="share" className="btnShare" />
+          <img src={downloadAdmin} alt="download" className="btnShare" />
           <p style={{ marginLeft: "25%", fontSize: "4vw" }}>SH consultorios</p>
         </div>
       </div>

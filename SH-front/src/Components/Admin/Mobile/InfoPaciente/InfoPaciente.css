@@ -1,6 +1,7 @@
 .containerHeaderInfo {
   display: flex;
   flex-direction: row;
+  height: 12vh;
   width: 70vw;
   align-items: center;
   justify-content: space-between;
@@ -12,8 +13,10 @@
 .circleName {
   background-color: rgba(185, 185, 185, 0.39);
   border-radius: 50%;
-  height: 15vw;
-  width: 15vw;
+  height: 15vh;
+  max-height: 100px;
+  width: 15vh;
+  max-width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +39,7 @@
 .infoPaciente {
   display: flex;
   width: auto;
-  margin-bottom: 5% !important;
+  margin-bottom: 1.5vh;
   margin-left: 10%;
   justify-content: left;
   text-align: left;

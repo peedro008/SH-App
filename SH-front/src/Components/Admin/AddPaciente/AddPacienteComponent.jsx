@@ -1,6 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+
 import ButtonBack from "../../Paciente/Elementos/ButtonBack";
 import Navbar from "../../Paciente/Elementos/Navbar";
 import "./AddPacienteComponent.css";
@@ -11,12 +10,12 @@ const AddPacienteComponent = ({ setFormP, formP, onSubmit }) => {
       <Navbar />
       <div className="containerAddPacienteMob">
         <div className="div1" style={{ marginBottom: "5vh" }}>
-          <div className="div2">
-            <h1>SH</h1>
+          <div className="divAddP">
+            <h2>SH</h2>
           </div>
           <div className="div3">
             <input
-              style={{ height: "10vw", fontSize: "2.2vh" }}
+              style={{ height: "3vh", fontSize: "2.2vh" }}
               placeholder="Nombre Completo"
               className="inputText"
               type={"text"}
@@ -92,7 +91,7 @@ const AddPacienteComponent = ({ setFormP, formP, onSubmit }) => {
               />
             </div>
             <div className="containerAddPacienteInput">
-              <p className="pAddPaciente">Cant. de vacunas</p>
+              <p className="pAddPaciente">Cant. vacunas</p>
               <input
                 className="inputText"
                 type={"text"}

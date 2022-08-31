@@ -12,6 +12,15 @@ function AdminControlPanelMobileComponent({ Pacientes, PacienteId }) {
       <Navbar />
 
       <div className="containerPatients">
+        <div
+          style={{ margin: " auto" }}
+          className="botonContainer1"
+          onClick={() => {
+            navigate("/addtratamiento");
+          }}
+        >
+          <p className="botonTextAdd">Agregar nuevo tratamiento</p>
+        </div>
         <p className="ListaTitleMob">Listado de Pacientes</p>
         <div className="patientsList">
           <div

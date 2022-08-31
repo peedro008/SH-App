@@ -2,9 +2,21 @@
   height: 83vh;
   width: 100vw;
   display: grid;
-  margin-top: 8%;
+  margin-top: 3vh;
   grid-template-columns: 100%;
   grid-template-rows: 8% 85%;
+}
+
+.divAddP {
+  background-color: rgba(185, 185, 185, 0.39);
+  border-radius: 50%;
+  height: 10vh;
+  max-height: 85px;
+  max-width: 85px;
+  width: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contAddFormPaciente {
@@ -17,16 +29,15 @@
 
 .AddFormMobP {
   width: 90vw;
-  max-height: 60vh;
-  margin-bottom: 8%;
-  padding-top: 5%;
+
+  margin-bottom: 2%;
+  padding-top: 2vh;
   height: 60vh;
   background-color: rgba(199, 240, 247, 0.29);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 32.3922px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .textForm {
@@ -55,15 +66,14 @@
 .containerAddPacienteInput {
   display: grid;
   grid-template-columns: 30% 60%;
-  margin: 0;
-  margin-bottom: 5%;
+  margin-bottom: 11px;
   margin-left: 5%;
   width: 100%;
   align-items: center;
 }
 
 .pAddPaciente {
-  font-size: 2vh;
+  font-size: 2.5vh;
   margin: 0px;
   margin-left: 5%;
   margin-right: 5%;
@@ -77,7 +87,7 @@
   padding-left: 4%;
   padding-right: 3%;
   margin-right: 5%;
-  font-size: 1.8vh;
+  font-size: 2.6vh;
   background-color: transparent;
   border: 2px solid #7aafb9;
   border-radius: 20px;
@@ -94,7 +104,7 @@
   justify-content: right;
   align-items: center;
   position: fixed;
-  bottom: 5vh;
+  bottom: 3.5vh;
   margin-left: 10vw;
   z-index: 999;
   background-color: #7aafb9;

@@ -13,15 +13,13 @@ code {
   font-family: "Nunito";
 }
 
-
-
 .containerHeader {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 10vh;
+  height: 12vh;
   width: 80vw;
 }
 
@@ -58,9 +56,9 @@ h4 {
   height: 2vh !important;
 }
 
-input:focus{
+input:focus {
   outline: none;
 }
-textarea:focus{
+textarea:focus {
   outline: none;
 }

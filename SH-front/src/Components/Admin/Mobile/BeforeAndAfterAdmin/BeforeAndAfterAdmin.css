@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 25vw;
+  height: 12vw;
   width: 80vw;
 }
 
@@ -52,7 +52,7 @@
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 33% 33% 33%;
   z-index: 999;
-  height: 52vh;
+  height: 60vh;
   margin-bottom: 20px;
 }
 
