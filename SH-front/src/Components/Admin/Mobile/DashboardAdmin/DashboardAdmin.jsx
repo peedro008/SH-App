@@ -136,7 +136,7 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
               style={{ width: "5vw", height: "5vh" }}
               alt="imagen"
             />
-            <p className="botonTramiteText">Agregar próximo turno</p>
+            <p className="botonTramiteText">Agregar tratamiento</p>
           </div>
 
           <div

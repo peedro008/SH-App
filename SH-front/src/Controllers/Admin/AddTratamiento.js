@@ -6,7 +6,7 @@ const AddTratamiento = () => {
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState("");
 
-  const onSubmit = () => {
+  const onSubmitTrat = () => {
     fetch(
       `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddTratamientos`,
       {
@@ -39,7 +39,7 @@ const AddTratamiento = () => {
     <AddTratamientoComponent
       formT={formT}
       setFormT={setFormT}
-      onSubmit={onSubmit}
+      onSubmitTrat={onSubmitTrat}
     />
   );
 };

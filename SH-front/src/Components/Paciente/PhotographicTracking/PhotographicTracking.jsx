@@ -21,42 +21,48 @@ const PhotographicTracking = ({ userName, fotosP }) => {
   return (
     <div>
       <Navbar />
-      <div className="containerHeader">
-        <h2>{userName}</h2>
-        <h4>Seguimiento fotográfico</h4>
-      </div>
-      <div className="containerSwiper">
-        <Swiper
-          pagination={{
-            dynamicBullets: true,
-          }}
-          modules={[Pagination]}
-          className="swiper"
-        >
-          {fotosP.map((e, index) => {
-            return (
-              <SwiperSlide className="swiperSlide" key={index}>
-                <div className="mainTrack">
-                  {e.map((i, index) => {
-                    return (
-                      <div className="cuboTracking" key={index}>
-                        <div
-                          className="containerImgTrack"
-                          onClick={() => setPhotoViz(i.URL)}
-                        >
-                          <img src={i.URL} alt="holi" className="imagenTrack" />
+      <div className="containerPhoto">
+        <div className="containerHeader">
+          <h2>{userName}</h2>
+          <h4>Seguimiento fotográfico</h4>
+        </div>
+        <div className="containerCarrousel">
+          <Swiper
+            pagination={{
+              dynamicBullets: true,
+            }}
+            modules={[Pagination]}
+            className="swiper"
+          >
+            {fotosP.map((e, index) => {
+              return (
+                <SwiperSlide className="swiperSlide" key={index}>
+                  <div className="mainTrack">
+                    {e.map((i, index) => {
+                      return (
+                        <div className="cuboTrackFotos" key={index}>
+                          <div
+                            className="containerImgTrack"
+                            onClick={() => setPhotoViz(i.URL)}
+                          >
+                            <img
+                              src={i.URL}
+                              alt="holi"
+                              className="imagenFotos"
+                            />
+                          </div>
+                          <p style={{ fontSize: "5vw" }}>
+                            {i.createdAt.substring(0, 10)}
+                          </p>
                         </div>
-                        <p style={{ fontSize: "25px" }}>
-                          {i.createdAt.substring(0, 10)}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+                      );
+                    })}
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
       </div>
       <div>
         <ButtonBack />
@@ -79,12 +85,8 @@ const PhotographicTracking = ({ userName, fotosP }) => {
           src={photoViz}
           alt="Viz"
           style={{
-            height: "65vh",
-            width: "95vw",
-            maxHeight: "400px",
-            borderRadius: "8%",
-            margin: "0 auto",
-            marginTop: "20vh",
+            height: "100vh",
+            width: "100vw",
           }}
         ></img>
       </div>

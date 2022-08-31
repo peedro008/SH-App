@@ -1,33 +1,33 @@
 .containerTrat {
   display: flex;
   height: 10vw;
-  width: 85vw;
+  width: 75vw;
   background-color: #dfd1e3;
   align-items: center;
   justify-content: space-between;
   border: 0.15rem solid #2b6c78;
   border-radius: 2rem;
   margin: 0 auto;
-  padding-left: 5vw;
+
   margin-top: 5vw;
 }
 
 .containerTratOff {
   display: flex;
   height: 10vw;
-  width: 85vw;
+  width: 75vw;
   background-color: transparent;
   align-items: center;
   justify-content: space-between;
   border: 0.15rem solid #2b6c78;
   border-radius: 2rem;
   margin: 0 auto;
-  padding-left: 5vw;
+
   margin-top: 5vw;
 }
 
 .containerTrat h4 {
-  margin: 0;
+  margin: 0 auto;
 }
 
 .containerText {
@@ -36,7 +36,7 @@
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  font-size: 4vw;
+  font-size: 5vw;
 }
 
 .on {
@@ -54,7 +54,7 @@
 
 .off {
   visibility: hidden;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   font-size: 4vw;

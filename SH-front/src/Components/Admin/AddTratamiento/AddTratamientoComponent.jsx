@@ -4,7 +4,7 @@ import ButtonAdd from "../Elementos/ButtonAdd";
 import "./AddTratamientoComponent.css";
 import ButtonBack from "../../Paciente/Elementos/ButtonBack";
 
-const AddTratamientoComponent = ({ formT, setFormT, onSubmit }) => {
+const AddTratamientoComponent = ({ formT, setFormT, onSubmitTrat }) => {
   return (
     //   <div
     //   style={{
@@ -80,7 +80,7 @@ const AddTratamientoComponent = ({ formT, setFormT, onSubmit }) => {
         </div>
 
         <ButtonBack />
-        <ButtonAdd onSubmit={onSubmit} />
+        <ButtonAdd onSubmitConsulta={onSubmitTrat} />
       </div>
     </>
   );

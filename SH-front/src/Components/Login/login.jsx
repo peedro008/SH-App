@@ -5,6 +5,7 @@ import LogoLogin from "../../assets/LogoLogin.svg";
 import PopUpDNI from "../../assets/PopUpDNI.svg";
 import Continuar from "../../assets/Continuar.svg";
 import LogoStartNew from "../../assets/LogoStartNew.svg";
+import PdfFile from "../Paciente/Elementos/PdfFile";
 
 const LoginComponent = ({ dni, setDni, onSubmit, isError }) => {
   console.log(isError);
@@ -55,6 +56,7 @@ const LoginComponent = ({ dni, setDni, onSubmit, isError }) => {
               onClick={onSubmit}
             />
           </div>
+          <PdfFile />
           <p className="footer">
             Sabina Hairabedian Consultorios Bv. San Juan 670 - Piso 6
           </p>

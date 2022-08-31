@@ -9,6 +9,10 @@
   width: 80vw;
 }
 
+.containerCarrousel {
+  height: 100%;
+}
+
 .mainTrack {
   display: grid;
   grid-template-columns: 50% 50%;

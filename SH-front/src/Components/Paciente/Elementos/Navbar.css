@@ -27,3 +27,9 @@
   max-width: 10vh;
   min-width: 8vh;
 }
+
+.hamburgerBtn {
+  z-index: 999;
+  position: absolute;
+  right: 8%;
+}
