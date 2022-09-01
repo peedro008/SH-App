@@ -1,7 +1,7 @@
 import React from "react";
 import { TbDiscount2 } from "react-icons/tb";
 import { IoPersonAddOutline } from "react-icons/io5";
-import Navbar from "../../Paciente/Elementos/Navbar";
+
 import "./AdminControlPanel.css";
 import BotonComponent from "../Elementos/Boton";
 import Vector1 from "./Vector1.svg";
@@ -17,7 +17,9 @@ import AddConsultaComponent from "./AddConsulta";
 import AddTurnoComponent from "./AddTurno";
 import Fotos from "./Fotos";
 import AddPacienteComponent from "./AddPaciente";
-import Desk2 from "./Desk2.svg"
+import Desk2 from "./Desk2.svg";
+import NavBarCP from "./NavBarCP";
+import DetallePacienteComponent from "./DetallePaciente";
 function AdminControlPanelComponent({
   Consultas,
   Pacientes,
@@ -50,6 +52,10 @@ function AdminControlPanelComponent({
   turnoForm,
   fotosP,
   onSubmitTurno,
+  searchPaciente,
+  setSearchPaciente,
+  SearchOpen,
+  setSearchOpen,
 }) {
   let name = PacienteSelected?.Nombre.split(" ");
   if (name) {
@@ -58,29 +64,46 @@ function AdminControlPanelComponent({
     ][0].toUpperCase()}`;
   }
   return (
-    <div className="Main"    >
-      <Navbar />
+    <div className="Main">
+      <NavBarCP
+        search
+        set={setSearchPaciente}
+        searchPaciente={searchPaciente}
+        SearchOpen={SearchOpen}
+        setSearchOpen={setSearchOpen}
+      />
       <div className="twoSides">
         <div className="LeftSide">
-          <p className="ListaTitle" >Listado de Pacientes</p>
+          <p className="ListaTitle">Listado de Pacientes</p>
           <div className="PacientesLista">
-            <div className="botonContainer1" onClick={()=>setTramite(6)}>
+            <div className="botonContainer1" onClick={() => setTramite(6)}>
               <IoPersonAddOutline size={"25px"} color={"#15353B"} />
-              <p className="botonText1" >Agregar nuevo/a paciente</p>
+              <p className="botonText1">Agregar nuevo/a paciente</p>
             </div>
-
-            {Pacientes.map((e) => {
-              return (
-                <BotonComponent
-                  Titulo={e.Nombre}
-                  Paciente={e}
-                  submit={SelectPaciente}
-                />
-              );
-            })}
+            {!searchPaciente
+              ? Pacientes.map((e) => {
+                  return (
+                    <BotonComponent
+                      Titulo={e.Nombre}
+                      Paciente={e}
+                      submit={SelectPaciente}
+                    />
+                  );
+                })
+              : Pacientes.filter((f) =>
+                  f.Nombre.toUpperCase().includes(searchPaciente.toUpperCase())
+                ).map((e) => {
+                  return (
+                    <BotonComponent
+                      Titulo={e.Nombre}
+                      Paciente={e}
+                      submit={SelectPaciente}
+                    />
+                  );
+                })}
           </div>
         </div>
-          <div className="RightSide" >
+        <div className="RightSide">
           {!PacienteSelected ? (
             <p className="holaSabina">
               Hola Sabina, ¡bienvenida! Seleccioná un/a paciente para ver más
@@ -93,11 +116,11 @@ function AdminControlPanelComponent({
                   <div className="Pacientediv2">
                     <p className="CircleName">{name.substring(0, 2)}</p>
                   </div>
-                  <div className="Pacientediv3">
+                  <div className="Pacientediv3" > 
                     <h2 className="Paciente2">{PacienteSelected?.Nombre}</h2>
-                    <h4 className="Paciente3">
+                    <p className="Paciente3" onClick={()=>setTramite(7)}>
                       Ver información personal del paciente
-                    </h4>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -126,7 +149,7 @@ function AdminControlPanelComponent({
                     setTramite(2);
                   }}
                 />
-                <BotonTramiteComponent
+                {/* <BotonTramiteComponent
                   Titulo={"Agregar próximo turno"}
                   Icon={
                     <img
@@ -137,7 +160,7 @@ function AdminControlPanelComponent({
                   submit={() => {
                     setTramite(3);
                   }}
-                />
+                /> */}
                 <BotonTramiteComponent
                   Titulo={"Fotografías"}
                   Icon={
@@ -168,7 +191,7 @@ function AdminControlPanelComponent({
             <AdminClinicalHistoryComponent
               PacienteSelected={PacienteSelected}
               Consultas={Consultas}
-              setTramite={setTramite}
+         
             />
           ) : Tramite == 2 ? (
             <AddConsultaComponent
@@ -183,7 +206,7 @@ function AdminControlPanelComponent({
             />
           ) : Tramite == 3 ? (
             <AddTurnoComponent
-            setOpenT={setOpenT}
+              setOpenT={setOpenT}
               openT={openT}
               messageMT={messageMT}
               onSubmitTurno={onSubmitTurno}
@@ -194,33 +217,29 @@ function AdminControlPanelComponent({
               Tramite={setTramite}
               Turnos={Turnos}
             />
-          ) : 
-            Tramite == 4 ? (
-              <Fotos
-                fotosP={fotosP}
-                PacienteSelected={PacienteSelected}
+          ) : Tramite == 4 ? (
+            <Fotos
+              fotosP={fotosP}
+              PacienteSelected={PacienteSelected}
+              setTramite={setTramite}
+            />
+          ) : Tramite == 6 ? (
+              <AddPacienteComponent
+                PacienteForm={PacienteForm}
+                onSubmitPaciente={onSubmitPaciente}
+                setPacienteForm={setPacienteForm}
+                messageMP={messageMP}
                 setTramite={setTramite}
+                openP={openP}
+                setOpenP={setOpenP}
               />
-           
-            
-          ) :
-          Tramite == 6 && (
-            <AddPacienteComponent
-            PacienteForm={PacienteForm}
-            onSubmitPaciente={onSubmitPaciente}
-            setPacienteForm={setPacienteForm}
-            messageMP={messageMP}
-            setTramite={setTramite}
-            openP={openP}
-            setOpenP={setOpenP}
-          />
-          )
+            ): Tramite==7&&(
+              <DetallePacienteComponent PacienteSelected={PacienteSelected} setTramite={setTramite}/>
+            )
+          }
 
-        }
-      
-    
-          <img className="fector2" style={{zIndex:0}} src={Desk2} /></div> 
-    
+          <img className="fector2" style={{ zIndex: 0 }} src={Desk2} />
+        </div>
       </div>
     </div>
   );
