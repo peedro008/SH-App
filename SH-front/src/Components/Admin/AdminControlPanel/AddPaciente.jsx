@@ -21,7 +21,7 @@ function AddPacienteComponent({PacienteForm,
           </div>
           <div className="Pacientediv3">
             <p className="Paciente2">{PacienteForm.Nombre&&PacienteForm.Apellido?PacienteForm.Nombre + " " +PacienteForm.Apellido: "Nombre y Apellido"}</p>
-            <p className="Paciente3">Nuevo/a paciente</p>
+            <p className="Paciente3" >Nuevo/a paciente</p>
           </div>
         </div>
       </div>

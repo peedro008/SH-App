@@ -74,7 +74,7 @@
   align-items: center;
   padding-left: 15px;
   padding-right: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   z-index:100
 }
 .botonContainer1:hover {
@@ -123,7 +123,8 @@
   justify-content: space-between;
   margin: 0 auto;
 
-  padding: 1vw;
+  padding-block: 3vw;
+  padding-left: 2vw;
 }
 
 .Pacientediv2 {
@@ -136,10 +137,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
+  margin-inline: 20px;
 }
 .Pacientediv3 {
-  min-width:300px;
+  min-width:8vw;
 
 }
 .Paciente2 {
@@ -157,7 +158,7 @@
   font-style: normal;
   font-weight: 300;
   font-size: 1vw;
-
+  cursor: pointer;
   /* or 100% */
 
   color: #3e9aab;
@@ -177,8 +178,62 @@
 }
 .tramiteBotonContainer {
   max-width: 30vw;
-  padding-left: 2vw;
+  margin-left: 3.2vw;
 }
+
+/*NAVBAR-----------------------------*/
+.CPNcontainer{
+min-width: 100vw;
+max-width: 100vw;
+min-height: 13.96vh;
+max-height: 13.96vh;
+background-color: #7AAFB9;
+border-radius: 0px 0px 20px 20px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+
+}
+
+.CPNlogo{
+  background-color: white;
+  max-width: 4vw;
+  max-height: 4vw;
+  z-index: 9;
+  border-radius: 50%;
+  margin-right: 2.7vw;
+}
+
+.CPNLupa{
+  cursor: pointer;
+  height: 2.7vw;
+width: 2.7vw;
+
+
+}
+.CPNburg{
+  cursor: pointer;
+  width: 2.7vw;
+  height: 2.7vw;
+}
+.CPNiconCont{
+  margin-left: 2.7vw;
+  width:7.11vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.CPNsearchInput{
+  border-radius: 8px;
+  max-width: 200px!important;
+  border-width:0px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.062);
+  padding-inline: 8px ;
+  margin-left: 30px;
+}
+
+
 
 /*Clinical History---------------------*/
 .CliniCard {
@@ -363,6 +418,7 @@ abbr {
   font-weight: bold;
   font-size: 0.8em;
   color: #7b7b7b;
+  
 }
 .react-calendar__month-view__weekdays__weekday {
   text-transform: capitalize;
@@ -396,12 +452,12 @@ abbr {
   line-height: 26px;
   letter-spacing: 0em;
   border-radius: 50%;
-  width: 6.72vh!important;
-  height: 6.72vh!important;
-  min-width: 6.72vh!important;
-  min-height: 6.72vh!important;
-  max-width: 6.72vh!important;
-  max-height: 6.72vh!important;
+  width: 6.22vh!important;
+  height: 6.22vh!important;
+  min-width: 6.22vh!important;
+  min-height: 6.22vh!important;
+  max-width: 6.22vh!important;
+  max-height: 6.22vh!important;
 }
 .react-calendar__decade-view__years__year {
   background: white;
@@ -455,9 +511,30 @@ abbr {
 .react-calendar__navigation__arrow {
   display: none;
 }
+.react-calendar__month-view__days{
+  
+  justify-content: space-between;
 
+}
 .react-calendar__year-view__months__month {
   font-size: 12px;
+  padding-inline: 5px ;
+}
+
+
+.react-calendar__year-view__months__month{
+max-height: 15px;
+border-radius: 0;
+}
+
+.react-calendar__year-view__months__month{
+  max-height: 15px;
+  border-radius: 8px;
+  }
+
+.react-calendar__year-view__months{
+
+ justify-content: space-between;
 }
 .react-calendar__year-view__months__month {
   max-width: 80px;
@@ -511,9 +588,10 @@ width: 100%;
 }
 .AddForm{
   max-width:25vw;
-  max-height:60vh;
+  max-height:50vh;
+  z-index: 100;
   width:30vw;
-  height:60vh;
+  height:50vh;
   background-color: rgba(199, 240, 247, 0.29);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
 border-radius: 32.3922px;
@@ -632,6 +710,21 @@ height: 50px;
   max-width: 80vw;
   z-index: 50;
 
+}
+.FullScreenClose{
+  background-color: #7aafb9;
+  position:absolute;
+  top:5%;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 /*----------- MODAL ----------------*/
 
@@ -757,5 +850,43 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 
+
+}
+
+
+
+
+
+/*DetallePaciente---------------*/
+.DetallePaciente{
+  background: rgba(199, 240, 247, 0.29);
+  margin-left: 3vw;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+border-radius: 32.3922px;
+max-width:23vw;
+max-height:58vh;
+width:30vw;
+height:60vh;
+justify-content: space-evenly;
+display: flex;
+flex-direction: column ;
+align-items: flex-start;
+}
+.DetalleTitle{
+  font-family: 'Nunito';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+text-align: left;
+color: #252828;
+
+}
+.DetalleValor{
+  font-family: 'Nunito';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+text-align: left;
+color: #252828;
 
 }

@@ -31,9 +31,10 @@ function AdminControlPanel() {
 
     const [openP, setOpenP] = useState(false);
     const [messageMP, setMessageMP] = useState("")
-   
-  
-  
+    const [searchPaciente, setSearchPaciente] = useState("")
+    const [SearchOpen, setSearchOpen] = useState(false)
+    
+    
   
   //useEffect
   useEffect(() => {
@@ -280,6 +281,10 @@ Turnos={Turnos}
 onSubmitPaciente={onSubmitPaciente}
 PacienteForm={PacienteForm}
 setPacienteForm={setPacienteForm}
+searchPaciente={searchPaciente}
+setSearchPaciente={setSearchPaciente}
+SearchOpen={SearchOpen}
+setSearchOpen={setSearchOpen}
     />
   );
 }

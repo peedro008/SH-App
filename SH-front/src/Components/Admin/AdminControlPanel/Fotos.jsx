@@ -31,7 +31,7 @@ function Fotos({ PacienteSelected, setTramite, fotosP }) {
           </div>
           <div className="Pacientediv3">
             <p className="Paciente2">{PacienteSelected?.Nombre}</p>
-            <p className="Paciente3">Ver información personal del paciente</p>
+            <p className="Paciente3" onClick={()=>setTramite(7)}>Ver información personal del paciente</p>
           </div>
         </div>
       </div>
@@ -84,8 +84,8 @@ function Fotos({ PacienteSelected, setTramite, fotosP }) {
       {FS&&
        <div className="modalCont1">
           <img className="FullScreenImg" src={IS} />
-          <div style={{backgroundColor:"#7aafb9",position:"absolute", top:"5%", right:"5%", width:"25px", height:"25px", display:"flex", alignItems:"center", borderRadius:"50%", cursor:"pointer"}}>
-          <p style={{ fontSize:"25px", color:"white"}} onClick={()=>{SetIS(""); SetFS(false)}}>x</p></div>
+          <div className="FullScreenClose">
+          <p style={{marginBottom:"3px", fontSize:"25px", color:"white"}} onClick={()=>{SetIS(""); SetFS(false)}}>x</p></div>
        </div>}
     </div>
   );
