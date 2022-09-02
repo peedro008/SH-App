@@ -1,3 +1,7 @@
+.containerComp {
+  height: 83vh;
+}
+
 .containerHeader {
   display: flex;
   flex-direction: column;
@@ -12,7 +16,7 @@
 .mainCompPaciente {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 45% 45% 10%;
+  grid-template-rows: 44% 44% 10%;
   z-index: 999;
   margin: 0 auto;
   height: 55vh;
@@ -49,4 +53,29 @@
   margin-left: 10%;
   margin-top: 1vh;
   background-color: transparent !important;
+}
+
+.containerGenerate {
+  display: flex;
+  width: 50vw;
+  justify-content: right;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  bottom: 3.5vh;
+  border-radius: 2rem;
+  left: 8vw;
+}
+
+.btnGenerate {
+  display: flex;
+  font-size: 3vw;
+  height: 10vw;
+  width: 100%;
+  color: white;
+  background-color: #c0a4c8;
+  border: none;
+  align-items: center;
+  border-radius: 2rem;
+  padding-left: 4vw;
 }

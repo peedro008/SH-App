@@ -4,7 +4,7 @@ import "./AdminControlPanelMobile.css";
 import { IoPersonOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
-function AdminControlPanelMobileComponent({ Pacientes, PacienteId }) {
+function AdminControlPanelMobileComponent({ Pacientes }) {
   const navigate = useNavigate();
 
   return (

@@ -40,7 +40,7 @@ function DashboardComponent() {
           text="Fotografias"
         />
         <Boton
-          nav="/before-and-after"
+          nav="/comparation"
           icon={
             <img
               src={AntDesp}

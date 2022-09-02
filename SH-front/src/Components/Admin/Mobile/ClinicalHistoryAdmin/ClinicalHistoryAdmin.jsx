@@ -20,7 +20,7 @@ const ClinicalHistoryAdmin = ({ userName }) => {
   return (
     <div>
       <Navbar />
-      <div className="containerHeader">
+      <div className="containerHeaderCHA">
         <h2>{location.state[1]}</h2>
         <h4>Historia clínica</h4>
       </div>

@@ -6,6 +6,7 @@ function ClinicalHistory() {
   const PacienteId = useSelector((state) => state.userSession).pacienteId;
   const userName = useSelector((state) => state.userSession).userName;
   const [consultas, setConsultas] = useState([]);
+  const [noInfo, setNoInfo] = useState("");
 
   useEffect(() => {
     fetch(
@@ -13,11 +14,20 @@ function ClinicalHistory() {
     )
       .then((response) => response.json())
       .then((data) => {
-        setConsultas(data);
+        if (!data.mensaje) setConsultas(data);
+        else {
+          setNoInfo(data);
+        }
       });
   }, [PacienteId]);
-
-  return <ClinicalHistoryComponent userName={userName} consultas={consultas} />;
+  console.log(consultas);
+  return (
+    <ClinicalHistoryComponent
+      userName={userName}
+      consultas={consultas}
+      noInfo={noInfo}
+    />
+  );
 }
 
 export default ClinicalHistory;

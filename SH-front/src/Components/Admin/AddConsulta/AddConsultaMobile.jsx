@@ -1,11 +1,12 @@
-import React from "react";
-import ButtonBack from "../../Paciente/Elementos/ButtonBack";
+import React, { useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
 import BotonMas from "./../AdminControlPanel/BotonMas.svg";
 import "./AddConsultaMobile.css";
 import Navbar from "../../Paciente/Elementos/Navbar";
 import ButtonAdd from "../Elementos/ButtonAdd";
 import ButtonBackAdmin from "../Elementos/ButtonBackAdmin";
+import { useState } from "react";
 
 function AddConsultaComponentMobile({
   form,
@@ -17,6 +18,13 @@ function AddConsultaComponentMobile({
   Paciente,
 }) {
   const navigate = useNavigate();
+
+  const [addOn, setAddOn] = useState(true);
+
+  useEffect(() => {
+    if (form.Detalle && form.Indicacion) setAddOn(false);
+  }, [form]);
+
   return (
     <>
       <Navbar />
@@ -95,7 +103,7 @@ function AddConsultaComponentMobile({
         </div>
 
         <ButtonBackAdmin Paciente={Paciente} />
-        <ButtonAdd onSubmitConsulta={onSubmitConsulta} />
+        <ButtonAdd onSubmitConsulta={onSubmitConsulta} addOn={addOn} />
       </div>
     </>
   );

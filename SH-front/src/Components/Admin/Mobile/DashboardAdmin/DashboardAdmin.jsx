@@ -8,12 +8,12 @@ import calen from "../../../../assets/calen.svg";
 import Edit from "../../../../assets/Edit.svg";
 import Cam from "../../../../assets/Cam.svg";
 // import Vector7 from "../../../assets/Vector7.svg";
-
+import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
 import Navbar from "../../../Paciente/Elementos/Navbar";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
+function DashboardAdminComponent({}) {
   const location = useLocation();
   const { Nombre, Consulta } = location.state[0];
   const [fotos4, setFotos4] = useState([]);
@@ -71,7 +71,7 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
   let name = Nombre.split(" ");
   name = `${name[0][0].toUpperCase()}${name[name.length - 1][0].toUpperCase()}`;
   //
-  return !Tramite ? (
+  return (
     <>
       <Navbar />
       <div className="containerPatient">
@@ -128,20 +128,6 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
           <div
             className="botonTramiteCont"
             onClick={() =>
-              navigate("/addturno", { state: [location.state[0]] })
-            }
-          >
-            <img
-              src={calen}
-              style={{ width: "5vw", height: "5vh" }}
-              alt="imagen"
-            />
-            <p className="botonTramiteText">Agregar tratamiento</p>
-          </div>
-
-          <div
-            className="botonTramiteCont"
-            onClick={() =>
               navigate("/fotos", {
                 state: [fotosArray4, Nombre, location.state[0]],
               })
@@ -158,8 +144,8 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
           <div
             className="botonTramiteCont"
             onClick={() =>
-              navigate("/BeforeAndAfterAdmin", {
-                state: [fotosArray9, location.state[0]],
+              navigate("/compareAdmin", {
+                state: [location.state[0], fotosArray9],
               })
             }
           >
@@ -172,21 +158,8 @@ function DashboardAdminComponent({ Tramite, PacienteSelected, setTramite }) {
           </div>
         </div>
       </div>
+      <ButtonBack />
     </>
-  ) : (
-    <div className="RightMain">
-      <div className="PacienteHeader">
-        <div className="Pacientediv1">
-          <div className="Pacientediv2">
-            <p className="CircleName">{name.substring(0, 2)}</p>
-          </div>
-          <div className="Pacientediv3">
-            <h2 className="Paciente2">{PacienteSelected?.Nombre}</h2>
-            <h4 className="Paciente3">Ver información personal del paciente</h4>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
 

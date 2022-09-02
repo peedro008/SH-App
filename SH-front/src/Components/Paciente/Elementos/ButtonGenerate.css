@@ -11,7 +11,8 @@
 }
 
 .botonGenerate:disabled {
-  background-color: #c0a4c83b;
+  background-color: #c7c7c7;
+  color: rgb(128, 128, 128);
 }
 
 .botonGenerate {

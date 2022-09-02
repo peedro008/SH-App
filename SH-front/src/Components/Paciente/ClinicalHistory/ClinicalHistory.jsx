@@ -12,13 +12,14 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 
-const ClinicalHistoryComponent = ({ consultas, userName }) => {
+const ClinicalHistoryComponent = ({ consultas, userName, noInfo }) => {
   return (
     <div>
       <Navbar />
-      <div className="containerHeader">
+      <div className="containerHeaderCHA">
         <h2>{userName}</h2>
         <h4>Historia clínica</h4>
+        <h3>{noInfo.mensaje}</h3>
       </div>
       <div className="containerSwiper">
         <Swiper

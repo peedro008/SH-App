@@ -4,9 +4,23 @@ import LogoLogin from "../../../assets/LogoLogin.svg";
 import { HiMenu } from "react-icons/hi";
 import { userSession } from "../../../Redux/actions";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const logOut = () => {
+    navigate("/");
+    dispatch(
+      userSession({
+        userRole: null,
+        userId: null,
+        userName: null,
+        pacienteId: null,
+      })
+    );
+  };
 
   return (
     <div className="box">
@@ -14,15 +28,16 @@ const Navbar = () => {
         size={"7vh"}
         color="white"
         className="hamburgerBtn"
-        onClick={() =>
-          dispatch(
-            userSession({
-              userRole: null,
-              userId: null,
-              userName: null,
-              pacienteId: null,
-            })
-          )
+        onClick={
+          () => logOut()
+          // dispatch(
+          //   userSession({
+          //     userRole: null,
+          //     userId: null,
+          //     userName: null,
+          //     pacienteId: null,
+          //   })
+          // )
         }
       />
 

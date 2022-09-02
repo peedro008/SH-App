@@ -10,7 +10,7 @@ const Tratamiento = ({ tratamientos }) => {
   return (
     <div>
       <Navbar />
-      <div className="containerHeader">
+      <div className="containerHeaderCHA">
         <h2>Tratamientos en SH</h2>
         <h4>¿Qué estás buscando?</h4>
       </div>
@@ -24,7 +24,9 @@ const Tratamiento = ({ tratamientos }) => {
                   : "containerTratOff"
               }
             >
-              <h4 style={{ fontWeight: "bold" }}>{e.Categoria}</h4>
+              <h4 className="botonTextMob" style={{ fontWeight: "bold" }}>
+                {e.Titulo}
+              </h4>
               <button
                 className={dataShow === e.Descripcion ? "off" : "on"}
                 onClick={() => {

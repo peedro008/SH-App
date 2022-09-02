@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import selected from "../../../../assets/selected.svg";
 import Navbar from "../../../Paciente/Elementos/Navbar";
 import "./BeforeAndAfterAdmin.css";
@@ -15,16 +14,31 @@ import { Pagination } from "swiper";
 import ButtonGenerateAdmin from "../../Elementos/ButtonGenerateAdmin";
 import ButtonBackAdmin from "../../Elementos/ButtonBackAdmin";
 
-const BeforeAndAfterAdmin = ({ fotosP }) => {
+const BeforeAndAfterAdmin = ({
+  fotosP,
+  setFormBAF,
+  formBAF,
+  onSubmitBAF,
+  PacienteSelected,
+}) => {
   const [selected1, setSelected1] = useState(null);
   const [selected2, setSelected2] = useState(null);
   const [claseSelected, setClaseSelected] = useState(false);
 
   const location = useLocation();
+  console.log(PacienteSelected);
 
   useEffect(() => {
     if (selected1 !== null && selected2 !== null) {
       setClaseSelected(true);
+
+      setFormBAF({
+        ...formBAF,
+        FotoAntes: selected1.URL,
+        FechaAntes: selected1.createdAt.substring(0, 10),
+        FotoDespues: selected2.URL,
+        FechaDespues: selected2.createdAt.substring(0, 10),
+      });
     } else {
       setClaseSelected(false);
     }
@@ -46,7 +60,7 @@ const BeforeAndAfterAdmin = ({ fotosP }) => {
           modules={[Pagination]}
           className="swiper"
         >
-          {location.state[0]?.map((e, index) => {
+          {fotosP.map((e, index) => {
             return (
               <SwiperSlide className="swiperSlide" key={index}>
                 <div className="main">
@@ -96,11 +110,11 @@ const BeforeAndAfterAdmin = ({ fotosP }) => {
 
       <ButtonGenerateAdmin
         clase={claseSelected}
-        selected1={selected1}
-        selected2={selected2}
-        Paciente={location.state[1]}
+        PacienteSelected={PacienteSelected}
+        onSubmitBAF={onSubmitBAF}
+        // Paciente={location.state[1]}
       />
-      <ButtonBackAdmin Paciente={location.state[1]} />
+      <ButtonBackAdmin Paciente={location.state[0]} />
     </div>
   );
 };

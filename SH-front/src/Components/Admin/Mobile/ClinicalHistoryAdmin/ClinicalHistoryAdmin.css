@@ -14,3 +14,13 @@
   width: 100vw;
   height: 60vh;
 }
+
+.containerHeaderCHA {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 12vh;
+  width: 80vw;
+}

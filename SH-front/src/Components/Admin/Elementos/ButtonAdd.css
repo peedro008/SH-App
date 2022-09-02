@@ -23,3 +23,8 @@
   border-radius: 2rem;
   padding-left: 4vw;
 }
+
+.botonAdd:disabled {
+  background-color: #c7c7c7b2;
+  color: rgb(128, 128, 128);
+}

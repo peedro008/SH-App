@@ -22,7 +22,7 @@ const PhotographicTracking = ({ userName, fotosP }) => {
     <div>
       <Navbar />
       <div className="containerPhoto">
-        <div className="containerHeader">
+        <div className="containerHeaderCHA">
           <h2>{userName}</h2>
           <h4>Seguimiento fotográfico</h4>
         </div>

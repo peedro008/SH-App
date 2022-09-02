@@ -1,13 +1,11 @@
 import React from "react";
-import ButtonBack from "../Elementos/ButtonBack";
+import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
+import { useLocation } from "react-router-dom";
+import share from "../../../../assets/share.svg";
+import download from "../../../../assets/download.svg";
+import Navbar from "../../../Paciente/Elementos/Navbar";
 
-import share from "../../../assets/share.svg";
-import download from "../../../assets/download.svg";
-import Navbar from "../Elementos/Navbar";
-
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import "./Comparation.css";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,20 +14,21 @@ import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
-import ButtonGenerate from "../Elementos/ButtonGenerate";
+import ButtonBackAdmin from "../../Elementos/ButtonBackAdmin";
 
-const Comparation = ({ PhotoForm, noInfo }) => {
-  const userName = useSelector((state) => state.userSession).userName;
+const ComparationAdminComponent = ({ PhotoForm, PacienteSelected }) => {
+  const location = useLocation();
   const navigate = useNavigate();
-  console.log(PhotoForm);
+  const data = location.state[0];
+  console.log(location.state[1]);
   return (
-    <div className="containerComp">
+    <div>
       <Navbar />
-      <div className="containerHeaderCHA">
-        <h2>{userName}</h2>
+      <div className="containerHeader">
+        <h2>{PacienteSelected?.Nombre}</h2>
         <h4>Antes y después</h4>
-        <p>{noInfo.mensaje}</p>
       </div>
+
       <div className="containerSwiper">
         <Swiper
           pagination={{
@@ -38,7 +37,7 @@ const Comparation = ({ PhotoForm, noInfo }) => {
           modules={[Pagination]}
           className="swiper"
         >
-          {PhotoForm?.map((e) => {
+          {data?.AntesDespues.map((e) => {
             return (
               <SwiperSlide className="swiperSlide" key={e.id}>
                 <div className="mainCompPaciente">
@@ -102,11 +101,16 @@ const Comparation = ({ PhotoForm, noInfo }) => {
           })}
         </Swiper>
       </div>
-      <ButtonBack />
+
+      <ButtonBackAdmin Paciente={location.state[0]} />
       <div className="containerGenerate">
         <button
           className="btnGenerate"
-          onClick={() => navigate("/before-and-after")}
+          onClick={() =>
+            navigate("/before-and-after-admin", {
+              state: [data, location.state[1]],
+            })
+          }
         >
           <h3>Generar</h3>
         </button>
@@ -115,4 +119,4 @@ const Comparation = ({ PhotoForm, noInfo }) => {
   );
 };
 
-export default Comparation;
+export default ComparationAdminComponent;

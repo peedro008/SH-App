@@ -20,10 +20,13 @@ import ClinicalHistoryAdmin from "../Components/Admin/Mobile/ClinicalHistoryAdmi
 import Fotos from "../Components/Admin/Mobile/Fotos/Fotos";
 import DashboardAdminComponent from "../Components/Admin/Mobile/DashboardAdmin/DashboardAdmin";
 import BeforeAndAfterAdmin from "../Components/Admin/Mobile/BeforeAndAfterAdmin/BeforeAndAfterAdmin";
-import ComparationAdmin from "../Components/Admin/Mobile/BeforeAndAfterAdmin/ComparationAdmin";
+
 import InfoPaciente from "../Components/Admin/Mobile/InfoPaciente/InfoPaciente";
 import AddTurnoMobile from "../Components/Admin/AddTurno/AddTurnoMobile";
 import AddTurno from "../Controllers/Admin/AddTurno";
+import ComparationController from "../Controllers/Paciente/ComparationController";
+import AddComparation from "../Controllers/Admin/AddComparation";
+import ComparationAdminComponent from "../Components/Admin/Mobile/ComparationAdmin/ComparationAdmin";
 
 export const PacienteRouter = () => {
   return (
@@ -35,11 +38,11 @@ export const PacienteRouter = () => {
           path="/photographic-tracking"
           element={<PhotograpicTracking />}
         />
+        <Route path="/comparation" element={<ComparationController />} />
         <Route
           path="/before-and-after"
           element={<BeforeAndAfterController />}
         />
-        <Route path="/compare" element={<Comparation />} />
         <Route path="/tratamientos" element={<Tratamiento />} />
         <Route path="/cupon" element={<Cupones />} />
         <Route path="/addCupon" element={<AddCupon />} />
@@ -83,8 +86,10 @@ export const AdminRouter = () => {
           element={<ClinicalHistoryAdmin />}
         />
         <Route path="/fotos" element={<Fotos />} />
-        <Route path="/compareAdmin" element={<ComparationAdmin />} />
-        <Route path="/beforeAndAfterAdmin" element={<BeforeAndAfterAdmin />} />
+
+        <Route path="/compareAdmin" element={<ComparationAdminComponent />} />
+
+        <Route path="/before-and-after-admin" element={<AddComparation />} />
         <Route path="/infoPaciente" element={<InfoPaciente />} />
         <Route path="/addCupon" element={<AddCupon />} />
         <Route path="/addConsulta" element={<AddConsulta />} />

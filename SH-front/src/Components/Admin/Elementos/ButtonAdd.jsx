@@ -1,10 +1,10 @@
 import React from "react";
 import "./ButtonAdd.css";
 
-const ButtonAdd = ({ onSubmitConsulta }) => {
+const ButtonAdd = ({ onSubmitConsulta, addOn }) => {
   return (
     <div className="containerAdd">
-      <button className="botonAdd" onClick={onSubmitConsulta}>
+      <button className="botonAdd" disabled={addOn} onClick={onSubmitConsulta}>
         <h3>Añadir</h3>
       </button>
     </div>

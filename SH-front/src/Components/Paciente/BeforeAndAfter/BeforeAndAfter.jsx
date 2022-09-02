@@ -13,14 +13,22 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import ButtonGenerate from "../Elementos/ButtonGenerate";
 
-const BeforeAndAfter = ({ fotosP }) => {
+const BeforeAndAfter = ({ fotosP, onSubmitBAF, setFormBAF, formBAF }) => {
   const [selected1, setSelected1] = useState(null);
   const [selected2, setSelected2] = useState(null);
   const [claseSelected, setClaseSelected] = useState(false);
-
+  console.log(fotosP);
   useEffect(() => {
     if (selected1 !== null && selected2 !== null) {
       setClaseSelected(true);
+
+      setFormBAF({
+        ...formBAF,
+        FotoAntes: selected1.URL,
+        FechaAntes: selected1.createdAt.substring(0, 10),
+        FotoDespues: selected2.URL,
+        FechaDespues: selected2.createdAt.substring(0, 10),
+      });
     } else {
       setClaseSelected(false);
     }
@@ -30,7 +38,7 @@ const BeforeAndAfter = ({ fotosP }) => {
   return (
     <div>
       <Navbar />
-      <div className="containerHeader">
+      <div className="containerHeaderCHA">
         <h2>Generar antes y después</h2>
         <h4>Seleccionar dos fotografías</h4>
       </div>
@@ -90,11 +98,7 @@ const BeforeAndAfter = ({ fotosP }) => {
         </Swiper>
       </div>
 
-      <ButtonGenerate
-        clase={claseSelected}
-        selected1={selected1}
-        selected2={selected2}
-      />
+      <ButtonGenerate onSubmitBAF={onSubmitBAF} clase={claseSelected} />
       <ButtonBack />
     </div>
   );

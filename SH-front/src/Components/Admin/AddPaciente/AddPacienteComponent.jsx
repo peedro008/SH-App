@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 
 import ButtonBack from "../../Paciente/Elementos/ButtonBack";
 import Navbar from "../../Paciente/Elementos/Navbar";
 import "./AddPacienteComponent.css";
 
 const AddPacienteComponent = ({ setFormP, formP, onSubmit }) => {
+  const [btnOn, setBtnOn] = useState(true);
+
+  useEffect(() => {
+    if (formP.Nombre && formP.DNI && formP.Email) setBtnOn(false);
+  }, [formP]);
+
   return (
     <>
       <Navbar />
@@ -103,10 +110,19 @@ const AddPacienteComponent = ({ setFormP, formP, onSubmit }) => {
           </div>
         </div>
         <div className="addPaciente">
-          <button className="addPacienteBtn" onClick={onSubmit}>
+          <button
+            className="addPacienteBtn"
+            disabled={btnOn}
+            onClick={onSubmit}
+          >
             <h3>Añadir Paciente</h3>
           </button>
         </div>
+        {/* <div className="containerGenerateOn">
+          <button disabled={true} className="botonGenerate">
+            <h3 className="back">Generar</h3>
+          </button>
+        </div> */}
         <ButtonBack />
       </div>
     </>

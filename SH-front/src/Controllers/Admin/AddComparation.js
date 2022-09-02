@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import BeforeAndAfter from "../../Components/Paciente/BeforeAndAfter/BeforeAndAfter";
+import { useLocation } from "react-router-dom";
+import BeforeAndAfterAdmin from "../../Components/Admin/Mobile/BeforeAndAfterAdmin/BeforeAndAfterAdmin";
+import ComparationAdminComponent from "../../Components/Admin/Mobile/ComparationAdmin/ComparationAdmin";
 
-function BeforeAndAfterController() {
-  const PacienteId = useSelector((state) => state.userSession).pacienteId;
-
+const AddComparation = () => {
+  const [PhotoForm, setPhotoForm] = useState([]);
+  const [PacienteSelected, setPacienteSelected] = useState(null);
+  const [formBAF, setFormBAF] = useState({});
   const [fotos, setFotos] = useState([]);
   const [fotosP, setFotosP] = useState([]);
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState("");
-  const [formBAF, setFormBAF] = useState({ PacienteId });
+
+  const location = useLocation();
+  const PacienteId = location.state[0]?.id;
+
+  let pE = location.state[0];
 
   useEffect(() => {
-    let temp = [];
-    for (let i = 0; i < fotos.length; i + 9) {
-      temp.push(fotos.splice(i, i + 9));
-    }
-    setFotosP(temp);
-  }, [fotos]);
+    setPacienteSelected(pE);
+    setFotosP(location.state[1]);
+    setFormBAF({ ...formBAF, PacienteId: PacienteId });
+  }, [pE]);
 
   const onSubmitBAF = () => {
     fetch(
@@ -49,23 +53,16 @@ function BeforeAndAfterController() {
       });
   };
 
-  useEffect(() => {
-    fetch(
-      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetFotosPaciente?PacienteId=${PacienteId}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setFotos(data);
-      });
-  }, [PacienteId]);
-
+  console.log(fotosP);
   return (
-    <BeforeAndAfter
+    <BeforeAndAfterAdmin
       fotosP={fotosP}
+      PacienteSelected={PacienteSelected}
       onSubmitBAF={onSubmitBAF}
       setFormBAF={setFormBAF}
       formBAF={formBAF}
     />
   );
-}
-export default BeforeAndAfterController;
+};
+
+export default AddComparation;

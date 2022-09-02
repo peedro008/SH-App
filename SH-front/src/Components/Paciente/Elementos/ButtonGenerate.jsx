@@ -1,12 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+
 import "./ButtonGenerate.css";
 
-const ButtonGenerate = ({clase, selected1, selected2}) => {
-  const navigate = useNavigate();
+const ButtonGenerate = ({ clase, onSubmitBAF }) => {
   return (
     <div className="containerGenerateOn">
-      <button disabled={clase ? false : true} className="botonGenerate" onClick={() => navigate("/compare", {state: [selected1, selected2]})}>
+      <button
+        disabled={clase ? false : true}
+        className="botonGenerate"
+        onClick={onSubmitBAF}
+      >
         <h3 className="back">Generar</h3>
       </button>
     </div>
