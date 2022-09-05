@@ -10,6 +10,9 @@ import { TbDiscount2 } from "react-icons/tb";
 
 // import Vector7 from "../../../assets/Vector7.svg";
 import { useSelector } from "react-redux";
+import NavBarCP from "../../Admin/AdminControlPanel/NavBarCP";
+import { useState } from "react";
+import NavBarPaciente from "../Elementos/NavBarPaciente";
 
 function DashboardComponent() {
   const userName = useSelector((state) => state.userSession)?.userName;
@@ -19,7 +22,8 @@ function DashboardComponent() {
 
   return (
     <div className="containerBody">
-      <Navbar />
+      <NavBarPaciente />
+
       <div className="div1">
         <div className="div2">
           <h1>{name}</h1>
@@ -61,11 +65,11 @@ function DashboardComponent() {
           }
           text="Tratamientos en SH"
         />
-        <Boton
+        {/* <Boton
           nav="/cupon"
           icon={<TbDiscount2 size="24px" color="#15353B" />}
           text="Descuentos"
-        />
+        /> */}
       </div>
     </div>
   );

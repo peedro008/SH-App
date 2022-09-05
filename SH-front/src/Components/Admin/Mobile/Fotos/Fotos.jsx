@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
-import Navbar from "../../../Paciente/Elementos/Navbar";
-
 import btnQuit from "../../../../assets/btnQuit.svg";
 import "./Fotos.css";
 import { useLocation } from "react-router-dom";
@@ -15,6 +12,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { useState } from "react";
 import ButtonBackAdmin from "../../Elementos/ButtonBackAdmin";
+import NavBarAdmin from "../../Elementos/NavBarAdmin";
 
 const Fotos = () => {
   const [photoViz, setPhotoViz] = useState(null);
@@ -27,8 +25,8 @@ const Fotos = () => {
   const location = useLocation();
 
   return (
-    <div>
-      <Navbar />
+    <div className="mainContainerFotos">
+      <NavBarAdmin />
       <div className="containerPhoto">
         <div className="containerHeader">
           <h2>{location.state[1]}</h2>

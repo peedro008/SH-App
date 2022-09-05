@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
+import NavBarPaciente from "../Elementos/NavBarPaciente";
 
 const PhotographicTracking = ({ userName, fotosP }) => {
   const [photoViz, setPhotoViz] = useState(null);
@@ -20,7 +21,7 @@ const PhotographicTracking = ({ userName, fotosP }) => {
   }, [photoViz]);
   return (
     <div>
-      <Navbar />
+      <NavBarPaciente />
       <div className="containerPhoto">
         <div className="containerHeaderCHA">
           <h2>{userName}</h2>

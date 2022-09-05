@@ -25,25 +25,22 @@ const LoginComponent = ({ dni, setDni, onSubmit, isError }) => {
 
   return (
     <div className="container">
-      <img
-        src={PopUpDNI}
-        alt="popUp"
-        className={isError === false ? "offPop" : "onPop"}
-      />
+      <img src={PopUpDNI} alt="popUp" className={error} />
       <div className="loader"></div>
       <div className="grow"></div>
       <img src={LogoStartNew} className="logo2" alt="logo"></img>
-      <div className="whi">
+      <div className="containerLogin">
         <div className="ContainerDiv2">
-          <div className="ContainerDiv">
-            {/* <img src={Vector1} alt="vector" className="Vector1" /> */}
+          <div className="ContainerDivLogin">
             <img src={LogoLogin} alt="vector" className="LogoLogin" />
-            {/* <img src={Vector2} alt="vector" className="Vector2" /> */}
-            <p className="Bienvenide">BIENVENIDA/O</p>
-            <p className="Bienvenide">D.N.I</p>
+
+            <p className="BienvenideLogin">BIENVENIDA/O</p>
+            <p className="BienvenideLogin2" style={{ fontSize: "25px" }}>
+              Ingrese su DNI
+            </p>
             <input
               value={dni}
-              className={isError === false ? "Input" : "InputOff"}
+              className={errorInput}
               onChange={(e) => {
                 setDni(e.target.value);
               }}

@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
-
-import { useNavigate } from "react-router-dom";
 import BotonMas from "./../AdminControlPanel/BotonMas.svg";
 import "./AddConsultaMobile.css";
-import Navbar from "../../Paciente/Elementos/Navbar";
 import ButtonAdd from "../Elementos/ButtonAdd";
 import ButtonBackAdmin from "../Elementos/ButtonBackAdmin";
 import { useState } from "react";
+import NavBarAdmin from "../Elementos/NavBarAdmin";
 
 function AddConsultaComponentMobile({
   form,
@@ -17,8 +15,6 @@ function AddConsultaComponentMobile({
   imagen,
   Paciente,
 }) {
-  const navigate = useNavigate();
-
   const [addOn, setAddOn] = useState(true);
 
   useEffect(() => {
@@ -27,7 +23,7 @@ function AddConsultaComponentMobile({
 
   return (
     <>
-      <Navbar />
+      <NavBarAdmin />
       <div className="containerAddConsultaMob">
         <div className="containerHeaderAddCons">
           <h2>{Paciente.Nombre}</h2>

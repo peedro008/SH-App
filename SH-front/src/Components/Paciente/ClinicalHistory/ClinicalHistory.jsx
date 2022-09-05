@@ -11,11 +11,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
+import NavBarPaciente from "../Elementos/NavBarPaciente";
 
 const ClinicalHistoryComponent = ({ consultas, userName, noInfo }) => {
   return (
     <div>
-      <Navbar />
+      <NavBarPaciente />
       <div className="containerHeaderCHA">
         <h2>{userName}</h2>
         <h4>Historia clínica</h4>

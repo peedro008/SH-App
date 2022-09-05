@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 import ButtonBack from "../../Paciente/Elementos/ButtonBack";
 import Navbar from "../../Paciente/Elementos/Navbar";
+import NavBarAdmin from "../Elementos/NavBarAdmin";
 import "./AddPacienteComponent.css";
 
 const AddPacienteComponent = ({ setFormP, formP, onSubmit }) => {
@@ -14,7 +15,7 @@ const AddPacienteComponent = ({ setFormP, formP, onSubmit }) => {
 
   return (
     <>
-      <Navbar />
+      <NavBarAdmin />
       <div className="containerAddPacienteMob">
         <div className="div1" style={{ marginBottom: "5vh" }}>
           <div className="divAddP">

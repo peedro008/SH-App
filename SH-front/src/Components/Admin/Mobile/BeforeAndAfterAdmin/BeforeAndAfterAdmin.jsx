@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import ButtonGenerateAdmin from "../../Elementos/ButtonGenerateAdmin";
 import ButtonBackAdmin from "../../Elementos/ButtonBackAdmin";
+import NavBarAdmin from "../../Elementos/NavBarAdmin";
 
 const BeforeAndAfterAdmin = ({
   fotosP,
@@ -47,7 +48,7 @@ const BeforeAndAfterAdmin = ({
 
   return (
     <div>
-      <Navbar />
+      <NavBarAdmin />
       <div className="containerHeader">
         <h2>Generar antes y después</h2>
         <h4>Seleccionar dos fotografías</h4>

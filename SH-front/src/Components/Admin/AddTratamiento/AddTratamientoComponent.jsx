@@ -1,36 +1,18 @@
-import React from "react";
-import Navbar from "../../Paciente/Elementos/Navbar";
+import React, { useEffect, useState } from "react";
 import ButtonAdd from "../Elementos/ButtonAdd";
 import "./AddTratamientoComponent.css";
 import ButtonBack from "../../Paciente/Elementos/ButtonBack";
+import NavBarAdmin from "../Elementos/NavBarAdmin";
 
 const AddTratamientoComponent = ({ formT, setFormT, onSubmitTrat }) => {
+  const [addOn, setAddOn] = useState(true);
+
+  useEffect(() => {
+    if (formT.Categoria && formT.Titulo && formT.Descripcion) setAddOn(false);
+  }, [formT]);
   return (
-    //   <div
-    //   style={{
-    //     width: "100vw",
-    //     height: "100vh",
-    //     display: "flex",
-    //     flexDirection: "column",
-    //   }}
-    // >
-    //    <p>Tipo de Tratamiento</p>
-    //    <select onChange={(e) => setFormT({...formT, Categoria:e.target.value})} defaultValue=''>
-    //           <option value=''>- - -</option>
-    //           <option value='Tratamientos faciales'>Tratamientos faciales</option>
-    //           <option value='Tratamientos capilares'>Tratamientos capilares</option>
-    //           <option value='Tratamientos corporales'>Tratamientos corporales</option>
-
-    //     </select>
-
-    //   <p>Nombre del Tratamiento</p>
-    //   <input type={"text"} onChange={(e)=>setFormT({...formT, Titulo:e.target.value})}/>
-    //   <p>Descripción</p>
-    //   <input type={"text"} onChange={(e)=>setFormT({...formT, Descripcion:e.target.value})}/>
-    //   <button onClick={onSubmit}>Subir Tratamiento</button>
-    // </div>
     <>
-      <Navbar />
+      <NavBarAdmin />
       <div className="containerAddConsultaMob">
         <div className="containerHeaderAddCons">
           <h4>Nuevo Tratamiento</h4>
@@ -80,7 +62,7 @@ const AddTratamientoComponent = ({ formT, setFormT, onSubmitTrat }) => {
         </div>
 
         <ButtonBack />
-        <ButtonAdd onSubmitConsulta={onSubmitTrat} />
+        <ButtonAdd onSubmitConsulta={onSubmitTrat} addOn={addOn} />
       </div>
     </>
   );

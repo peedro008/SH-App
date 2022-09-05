@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 import ButtonGenerate from "../Elementos/ButtonGenerate";
+import NavBarPaciente from "../Elementos/NavBarPaciente";
 
 const BeforeAndAfter = ({ fotosP, onSubmitBAF, setFormBAF, formBAF }) => {
   const [selected1, setSelected1] = useState(null);
@@ -37,7 +38,7 @@ const BeforeAndAfter = ({ fotosP, onSubmitBAF, setFormBAF, formBAF }) => {
 
   return (
     <div>
-      <Navbar />
+      <NavBarPaciente />
       <div className="containerHeaderCHA">
         <h2>Generar antes y después</h2>
         <h4>Seleccionar dos fotografías</h4>

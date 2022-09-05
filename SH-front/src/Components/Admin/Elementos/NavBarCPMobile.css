@@ -1,0 +1,164 @@
+.SearchContainer {
+  min-width: 90vw;
+  align-self: center;
+  max-width: 88vw;
+  z-index: 100;
+  height: 13vh;
+  min-height: 12vh;
+  background-color: #7aafb9;
+  display: grid;
+  grid-template-columns: 2% 2% 40% 20%;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 0px 0px 20px 20px;
+  box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.25);
+}
+
+.logoLogin {
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.5%;
+  right: 3%;
+
+  max-width: 10vh;
+  min-width: 8vh;
+}
+
+.logoLoginHamb {
+  background-color: rgba(255, 255, 255, 0.63);
+  border-radius: 50%;
+  position: absolute;
+  top: 5%;
+
+  justify-self: center;
+  max-width: 10vh;
+}
+
+.LogoLupa {
+  cursor: pointer;
+  max-width: 4vh;
+  min-width: 2vh;
+}
+.LogoHambOff {
+  cursor: pointer;
+  max-width: 6vh;
+  min-width: 4vh;
+}
+.btnQuit {
+  max-width: 3vh;
+  position: absolute;
+  right: 10%;
+  top: 5%;
+}
+
+.titleHamb {
+  color: white;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+}
+.CPNiconCont {
+  margin-left: 2.7vw;
+  width: 7.11vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.SearchInput {
+  border-radius: 8px;
+  height: 4vh;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  border-width: 0px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.062);
+  padding-inline: 8px;
+}
+
+.containerHambStart {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 10% 30%;
+  padding-top: 18vh;
+  left: -100vw;
+  top: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 82vh;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.801);
+}
+
+.containerHambOff {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 10% 30%;
+  padding-top: 18vh;
+  left: -100vw;
+  top: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 80vh;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.801);
+  animation: out 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes out {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100vw;
+  }
+}
+
+.containerHambOn {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 10% 30%;
+  padding-top: 18vh;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 82vh;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.801);
+  animation: in 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes in {
+  0% {
+    left: -100vw;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.botonContainerLogOut {
+  height: 5vh;
+  max-width: 75%;
+  width: 60%;
+  cursor: pointer;
+
+  border-radius: 75px;
+  display: flex;
+  position: absolute;
+  bottom: 5%;
+
+  justify-self: center;
+  background-color: #c9c9c9;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 5px;
+  margin-bottom: 30px;
+  z-index: 100;
+}

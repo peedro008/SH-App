@@ -1,46 +1,14 @@
 .ContainerDiv {
-  max-height: 100vh;
-  max-width: 100vw;
-  min-width: 100vw;
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  display: flex;
-  position: relative;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 20% 20% 15% 18% 5%;
+  justify-content: center;
   align-items: center;
-}
-.Vector3 {
-  position: absolute;
-  width: 100vw;
-  left: 0;
-  top: 4%;
-}
-.Vector6 {
-  position: absolute;
-  width: 100%;
-  left: 30%;
-}
-.Vector4 {
-  position: absolute;
-  width: 100vw;
-  left: 0;
-  bottom: 1%;
-}
-.Vector5 {
-  position: absolute;
-  width: 100vw;
-  left: 0;
-  bottom: 0;
-}
-.LogoRedo {
-  height: auto;
-  width: 20.5vw;
-  align-self: center;
-  margin-top: 22%;
-  z-index: 1;
-  opacity: 0.99;
+  background: url(../../../assets/Fondo_user2.svg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .Bienvenide {
   font-family: "Nunito";
@@ -48,63 +16,146 @@
   font-weight: 700;
   font-size: 30px;
   line-height: 41px;
-  margin-bottom: 15%;
-
+  justify-self: center;
+  align-self: center;
   color: #15353b;
 }
+
+.textBienvenide {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoLoginBienvenide {
+  margin-top: 5vh;
+  height: 10vh;
+  min-height: 80px;
+  align-self: center;
+  justify-self: center;
+  background-color: #cecece83;
+  border-radius: 100%;
+}
+
 .text {
   font-family: "Work Sans";
   font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 24px;
   text-align: center;
   padding-left: 8%;
   padding-right: 8%;
   margin-top: 5px;
   /* letra secundaria */
-
   color: #15353b;
 }
-.Comenzar{
-    display:"flex";
-    justify-content: center;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width:200px;
-    height: 48px;
-    color: #FFFFFF;
-    border-width: 0;
-    background: rgba(176, 141, 186, 0.8);
-    border-radius: 50px;
-    margin-top:20px ;
+.Comenzar {
+  display: "flex";
+  justify-content: center;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  height: 48px;
+  color: #ffffff;
+  border-width: 0;
+  background: rgba(176, 141, 186, 0.8);
+  border-radius: 50px;
+  margin-top: 20px;
 }
-.ProximoTurno{
-    display:"flex";
-    justify-content: center;
-    margin-top:16px ;
-    position: relative;
-    width:200px;
-    height: 48px;
-border: 2px solid #B08DBA;
-border-radius: 50px;
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 300;
-font-size: 22px;
-line-height: 30px;
-display: flex;
-align-items: center;
-text-align: center;
+.ProximoTurno {
+  display: "flex";
+  justify-content: center;
+  margin-top: 16px;
+  position: relative;
+  width: 200px;
+  height: 48px;
+  border: 2px solid #b08dba;
+  border-radius: 50px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
 
-/* Letra general */
+  /* Letra general */
 
-color: #252828;
+  color: #252828;
+}
 
+.turnoStart {
+  position: absolute;
+  background-color: #25282833;
+  top: -100vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.turnoOff {
+  position: absolute;
+  background-color: #25282833;
+  top: -100vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: out 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes out {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -100vh;
+  }
+}
+
+.turnoOn {
+  position: absolute;
+  background-color: #25282833;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: in 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes in {
+  0% {
+    top: -100vh;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.agendaTurno {
+  width: 60vw;
+  height: 60vh;
+  border: 2px solid #b08dba;
+  border-radius: 10%;
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 30% 20% 20%;
+  text-align: center;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
 }

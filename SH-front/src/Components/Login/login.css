@@ -1,4 +1,4 @@
-.ContainerDiv {
+.ContainerDivLogin {
   min-height: 100vh;
   max-height: 100vh;
   max-width: 100vw;
@@ -10,26 +10,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url(../../assets/Fondo_admin1.svg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   background-color: white;
 }
-.Vector2 {
-  position: absolute;
-  top: 7%;
+
+.ContainerDivPassword {
+  min-height: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(../../assets/Fondo_admin2.svg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: white;
 }
-.Vector1 {
-  position: absolute;
-  width: 98vw;
-  left: 0;
-}
-.Vector6 {
-  top: 5;
-  position: absolute;
-  width: 100vw;
-}
+
 .LogoLogin {
   margin-top: 5vh;
-
   min-width: 20vh !important;
   max-width: 25vh;
   min-height: 20vh !important;
@@ -90,7 +96,6 @@
   font-style: normal;
   font-weight: 700;
   font-size: 4vmax;
-
   color: #15353b;
 }
 .DNI {
@@ -115,15 +120,36 @@
   position: absolute;
   padding-left: 10%;
   padding-right: 10%;
-  top: 90vh;
-
+  top: 85vh;
   font-family: "Work Sans";
   font-style: normal;
   font-weight: 500;
   font-size: 2.5vmax;
-  line-height: 19px;
+  line-height: 30px;
   text-align: center;
   /* letra secundaria */
+  color: #15353b;
+}
+
+.BienvenideLogin {
+  height: 5vh;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 10px;
+  margin-top: 5vh;
+  color: #15353b;
+}
+
+.BienvenideLogin2 {
+  height: 5vh;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 10px;
+  margin-top: 2vh;
   color: #15353b;
 }
 
@@ -239,7 +265,7 @@
   }
 }
 
-.whi {
+.containerLogin {
   position: absolute;
   top: -100vh;
   animation: down 1s ease-in-out 2.8s;

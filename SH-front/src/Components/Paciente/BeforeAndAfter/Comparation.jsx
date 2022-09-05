@@ -16,7 +16,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
-import ButtonGenerate from "../Elementos/ButtonGenerate";
+import NavBarPaciente from "../Elementos/NavBarPaciente";
 
 const Comparation = ({ PhotoForm, noInfo }) => {
   const userName = useSelector((state) => state.userSession).userName;
@@ -24,7 +24,7 @@ const Comparation = ({ PhotoForm, noInfo }) => {
   console.log(PhotoForm);
   return (
     <div className="containerComp">
-      <Navbar />
+      <NavBarPaciente />
       <div className="containerHeaderCHA">
         <h2>{userName}</h2>
         <h4>Antes y después</h4>

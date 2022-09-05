@@ -13,26 +13,23 @@ import BeforeAndAfterController from "../Controllers/Paciente/BeforeAndAfter";
 import AdminControlPanel from "../Controllers/Admin/AdminControlPanel";
 import AddCupon from "../Controllers/Admin/AddCupon";
 import Cupones from "../Controllers/Paciente/Cupones";
-import Comparation from "../Components/Paciente/BeforeAndAfter/Comparation";
 import AdminControlPanelMobile from "../Controllers/Admin/AdminControlPanelMobile";
-
 import ClinicalHistoryAdmin from "../Components/Admin/Mobile/ClinicalHistoryAdmin/ClinicalHistoryAdmin";
 import Fotos from "../Components/Admin/Mobile/Fotos/Fotos";
 import DashboardAdminComponent from "../Components/Admin/Mobile/DashboardAdmin/DashboardAdmin";
-import BeforeAndAfterAdmin from "../Components/Admin/Mobile/BeforeAndAfterAdmin/BeforeAndAfterAdmin";
-
 import InfoPaciente from "../Components/Admin/Mobile/InfoPaciente/InfoPaciente";
-import AddTurnoMobile from "../Components/Admin/AddTurno/AddTurnoMobile";
 import AddTurno from "../Controllers/Admin/AddTurno";
 import ComparationController from "../Controllers/Paciente/ComparationController";
 import AddComparation from "../Controllers/Admin/AddComparation";
 import ComparationAdminComponent from "../Components/Admin/Mobile/ComparationAdmin/ComparationAdmin";
+import BienvenideComponent from "../Components/Paciente/Bienvenide/Bienvenide";
 
 export const PacienteRouter = () => {
   return (
     <div className="containerRoutes">
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<BienvenideComponent />} />
+        <Route path="/main" element={<Dashboard />} />
         <Route path="/clinical-history" element={<ClinicalHistory />} />
         <Route
           path="/photographic-tracking"

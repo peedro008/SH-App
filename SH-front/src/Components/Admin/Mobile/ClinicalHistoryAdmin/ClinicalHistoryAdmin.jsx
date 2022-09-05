@@ -1,7 +1,6 @@
 import React from "react";
 import ButtonBackAdmin from "../../Elementos/ButtonBackAdmin";
 
-import Navbar from "../../../Paciente/Elementos/Navbar";
 import "./ClinicalHistoryAdmin.css";
 
 // Import Swiper React components
@@ -13,13 +12,14 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { useLocation } from "react-router-dom";
 import ButtonShareDown from "../../Elementos/ButtonShareDownAdmin";
+import NavBarAdmin from "../../Elementos/NavBarAdmin";
 
 const ClinicalHistoryAdmin = ({ userName }) => {
   const location = useLocation();
   console.log(location);
   return (
     <div>
-      <Navbar />
+      <NavBarAdmin />
       <div className="containerHeaderCHA">
         <h2>{location.state[1]}</h2>
         <h4>Historia clínica</h4>

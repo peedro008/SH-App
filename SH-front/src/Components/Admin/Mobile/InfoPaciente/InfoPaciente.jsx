@@ -1,10 +1,10 @@
 import React from "react";
 import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
 
-import Navbar from "../../../Paciente/Elementos/Navbar";
 import "./InfoPaciente.css";
 import { useLocation } from "react-router-dom";
-import ButtonShareDown from "../../Elementos/ButtonShareDownAdmin";
+
+import NavBarAdmin from "../../Elementos/NavBarAdmin";
 
 const InfoPaciente = () => {
   const location = useLocation();
@@ -27,13 +27,13 @@ const InfoPaciente = () => {
 
   return (
     <div>
-      <Navbar />
+      <NavBarAdmin />
 
       <div className="containerHeaderInfo">
         <div className="circleName">
-          <h2 style={{ fontSize: "5vh" }}>{name}</h2>
+          <h2 style={{ fontSize: "20px" }}>{name}</h2>
         </div>
-        <h3 style={{ fontSize: "30px" }}>{Nombre}</h3>
+        <h3 style={{ fontSize: "20px" }}>{Nombre}</h3>
       </div>
       <div>
         <div className="containerInfo">

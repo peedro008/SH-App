@@ -28,17 +28,7 @@ const Navbar = () => {
         size={"7vh"}
         color="white"
         className="hamburgerBtn"
-        onClick={
-          () => logOut()
-          // dispatch(
-          //   userSession({
-          //     userRole: null,
-          //     userId: null,
-          //     userName: null,
-          //     pacienteId: null,
-          //   })
-          // )
-        }
+        onClick={() => logOut()}
       />
 
       <img src={LogoLogin} alt="logo" className="logo" />

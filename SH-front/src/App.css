@@ -1,0 +1,92 @@
+.ContainerDiv {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 20% 20% 15% 18% 5%;
+  justify-content: center;
+  align-items: center;
+  background: url(../../../assets/Fondo_user2.svg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.Bienvenide {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 41px;
+  justify-self: center;
+  align-self: center;
+  color: #15353b;
+}
+
+.textBienvenide {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoLoginBienvenide {
+  margin-top: 5vh;
+  height: 10vh;
+  min-height: 80px;
+  align-self: center;
+  justify-self: center;
+  background-color: #cecece83;
+  border-radius: 100%;
+}
+
+.text {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 24px;
+  text-align: center;
+  padding-left: 8%;
+  padding-right: 8%;
+  margin-top: 5px;
+  /* letra secundaria */
+  color: #15353b;
+}
+.Comenzar {
+  display: "flex";
+  justify-content: center;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  height: 48px;
+  color: #ffffff;
+  border-width: 0;
+  background: rgba(176, 141, 186, 0.8);
+  border-radius: 50px;
+  margin-top: 20px;
+}
+.ProximoTurno {
+  display: "flex";
+  justify-content: center;
+  margin-top: 16px;
+  position: relative;
+  width: 200px;
+  height: 48px;
+  border: 2px solid #b08dba;
+  border-radius: 50px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Letra general */
+
+  color: #252828;
+}

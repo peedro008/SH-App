@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ButtonBack from "../Elementos/ButtonBack";
 import Navbar from "../Elementos/Navbar";
+import NavBarPaciente from "../Elementos/NavBarPaciente";
 import "./Tratamientos.css";
 
 const Tratamiento = ({ tratamientos }) => {
@@ -9,7 +10,7 @@ const Tratamiento = ({ tratamientos }) => {
 
   return (
     <div>
-      <Navbar />
+      <NavBarPaciente />
       <div className="containerHeaderCHA">
         <h2>Tratamientos en SH</h2>
         <h4>¿Qué estás buscando?</h4>

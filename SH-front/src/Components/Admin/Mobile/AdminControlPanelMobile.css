@@ -71,3 +71,19 @@
   /* font-size: 3.5vmin; */
   font-size: 4vmin;
 }
+
+.botonAddPaciente {
+  height: 5vh;
+  max-width: 75%;
+  width: 85%;
+  cursor: pointer;
+  border: 2.5px solid #2b6c78;
+  border-radius: 75px;
+  display: flex;
+  background-color: #7aafb9;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 5px;
+  margin-bottom: 30px;
+}

@@ -1,14 +1,13 @@
 import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import "./ButtonBack.css";
 
-const ButtonBack = ({ admin }) => {
+const ButtonOut = () => {
   const navigate = useNavigate();
 
   return (
     <div className="containerBack">
-      <button className="botonBack" onClick={() => navigate("/main")}>
+      <button className="botonBack" onClick={() => navigate("/")}>
         <IoIosArrowBack size="4vw" />
         <h3>Volver</h3>
       </button>
@@ -16,4 +15,4 @@ const ButtonBack = ({ admin }) => {
   );
 };
 
-export default ButtonBack;
+export default ButtonOut;

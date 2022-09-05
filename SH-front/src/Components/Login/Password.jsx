@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./login.css";
-import Vector1 from "../../assets/Vector1.svg";
-import Vector2 from "../../assets/Vector2.svg";
 import PopUpContra from "../../assets/PopUpContra.svg";
 import LogoLogin from "../../assets/LogoLogin.svg";
 import Continuar from "../../assets/Continuar.svg";
 const PasswordComponent = ({ password, setPassword, onSubmit, isError }) => {
   return (
-    <div className="ContainerDiv">
+    <div className="ContainerDivPassword">
       <img
         src={PopUpContra}
         alt="popUp"
         className={isError === false ? "offPop" : "onPop"}
       />
-      <img src={Vector1} className="Vector1" alt="vector" />
+
       <img src={LogoLogin} className="LogoLogin" alt="vector" />
-      <img src={Vector2} className="Vector2" alt="vector" />
-      <p className="Bienvenide">BIENVENIDA SABINA</p>
+
+      <p className="Bienvenide" style={{ textAlign: "center" }}>
+        BIENVENIDA SABINA
+      </p>
       <p className="DNI">PASSWORD</p>
 
       <input

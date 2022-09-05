@@ -1,10 +1,9 @@
 import React from "react";
 import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
 import { useLocation } from "react-router-dom";
-import share from "../../../../assets/share.svg";
-import download from "../../../../assets/download.svg";
-import Navbar from "../../../Paciente/Elementos/Navbar";
-
+import shareAdmin from "../../../../assets/shareAdmin.svg";
+import downloadAdmin from "../../../../assets/downloadAdmin.svg";
+import "./ComparationAdmin.css";
 import { useNavigate } from "react-router-dom";
 
 // Import Swiper React components
@@ -15,17 +14,18 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 import ButtonBackAdmin from "../../Elementos/ButtonBackAdmin";
+import NavBarAdmin from "../../Elementos/NavBarAdmin";
 
-const ComparationAdminComponent = ({ PhotoForm, PacienteSelected }) => {
+const ComparationAdminComponent = ({ PhotoForm }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const data = location.state[0];
-  console.log(location.state[1]);
+
   return (
     <div>
-      <Navbar />
+      <NavBarAdmin />
       <div className="containerHeader">
-        <h2>{PacienteSelected?.Nombre}</h2>
+        <h2>{location.state[0].Nombre}</h2>
         <h4>Antes y después</h4>
       </div>
 
@@ -40,7 +40,7 @@ const ComparationAdminComponent = ({ PhotoForm, PacienteSelected }) => {
           {data?.AntesDespues.map((e) => {
             return (
               <SwiperSlide className="swiperSlide" key={e.id}>
-                <div className="mainCompPaciente">
+                <div className="mainCompAdmin">
                   <div className="cuboComp">
                     <p style={{ marginLeft: "10%", fontSize: "4vw" }}>
                       {e.FechaAntes}
@@ -64,7 +64,7 @@ const ComparationAdminComponent = ({ PhotoForm, PacienteSelected }) => {
                   </div>
                   <div className="containerButtons">
                     <img
-                      src={share}
+                      src={shareAdmin}
                       alt="share"
                       style={{
                         width: "5vh",
@@ -75,7 +75,7 @@ const ComparationAdminComponent = ({ PhotoForm, PacienteSelected }) => {
                       }}
                     />
                     <img
-                      src={download}
+                      src={downloadAdmin}
                       alt="download"
                       style={{
                         width: "5vh",
@@ -105,7 +105,7 @@ const ComparationAdminComponent = ({ PhotoForm, PacienteSelected }) => {
       <ButtonBackAdmin Paciente={location.state[0]} />
       <div className="containerGenerate">
         <button
-          className="btnGenerate"
+          className="btnGenerateAdmin"
           onClick={() =>
             navigate("/before-and-after-admin", {
               state: [data, location.state[1]],

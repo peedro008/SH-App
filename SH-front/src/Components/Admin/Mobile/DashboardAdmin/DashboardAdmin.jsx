@@ -3,17 +3,16 @@ import React, { useEffect, useState } from "react";
 import "./DashboardAdmin.css";
 import AntDesp from "../../../../assets/AntDesp.svg";
 import Notas from "../../../../assets/Notas.svg";
-
-import calen from "../../../../assets/calen.svg";
 import Edit from "../../../../assets/Edit.svg";
 import Cam from "../../../../assets/Cam.svg";
 // import Vector7 from "../../../assets/Vector7.svg";
-import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
-import Navbar from "../../../Paciente/Elementos/Navbar";
+
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import NavBarAdmin from "../../Elementos/NavBarAdmin";
+import ButtonOut from "../../Elementos/ButtonOut";
 
-function DashboardAdminComponent({}) {
+function DashboardAdminComponent() {
   const location = useLocation();
   const { Nombre, Consulta } = location.state[0];
   const [fotos4, setFotos4] = useState([]);
@@ -73,7 +72,8 @@ function DashboardAdminComponent({}) {
   //
   return (
     <>
-      <Navbar />
+      <NavBarAdmin />
+
       <div className="containerPatient">
         <div className="div1" style={{ marginBottom: "5vh" }}>
           <div className="div2">
@@ -158,7 +158,7 @@ function DashboardAdminComponent({}) {
           </div>
         </div>
       </div>
-      <ButtonBack />
+      <ButtonOut />
     </>
   );
 }
