@@ -43,9 +43,9 @@
   align-self: center;
 }
 .Input {
-  height: 8vh;
+  height: 49px;
   border-width: 0;
-  width: 60vw;
+  width: 264px;
   left: 63px;
   background-color: rgba(196, 196, 196, 0.35);
   border-radius: 75px;
@@ -192,6 +192,17 @@
   z-index: 998;
 }
 
+.containerGrow {
+  position: absolute;
+  display: flex;
+  width: auto;
+  background-color: #2b6c78;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+}
+
 .logo2 {
   position: absolute;
   background-color: #2b6c78;
@@ -200,6 +211,13 @@
   border-radius: 100%;
 
   z-index: 998;
+}
+.logo2D {
+  background-color: #2b6c78;
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  z-index: 999;
 }
 
 @keyframes loading {
@@ -268,11 +286,11 @@
 .containerLogin {
   position: absolute;
   top: -100vh;
+  height: 100vh;
+  width: 100vw;
   animation: down 1s ease-in-out 2.8s;
   animation-fill-mode: forwards;
   z-index: 999;
-  height: 100vh;
-  width: 100vw;
   background-color: rgb(188, 188, 188);
 }
 
@@ -323,7 +341,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url(../../assets/Desk_fondo1.svg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: white;
 }
+
 .VectorD1 {
   width: 12%;
   position: absolute;
@@ -457,4 +480,15 @@
 .Dlogo {
   position: absolute;
   z-index: 998;
+}
+
+.Dwhi {
+  position: absolute;
+  top: -100vh;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+  animation: down 1s ease-in-out 2.8s;
+  animation-fill-mode: forwards;
+  background-color: white;
 }
