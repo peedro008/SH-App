@@ -20,7 +20,7 @@ function AddConsultaComponent({ PacienteSelected, Consultas, setTramite ,imagen,
           </div>
           <div className="Pacientediv3">
             <p className="Paciente2">{PacienteSelected?.Nombre}</p>
-            <p className="Paciente3" onClick={()=>setTramite(7)}>Ver información personal del paciente</p>
+            <p className="Paciente3">Nueva consulta</p>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@ function AddConsultaComponent({ PacienteSelected, Consultas, setTramite ,imagen,
               onChange={ImageHandleChange}
              
             />  <div style={{flexDirection:"row"}}>
-        </div><label for="archivo"><img style={{cursor:"pointer"}}  src={BotonMas}/></label></div>
+        </div><label for="archivo"><img style={{cursor:"pointer", width:"1.7vw"}}  src={BotonMas}/></label></div>
            
           </div> 
         

@@ -27,7 +27,7 @@ function AdminControlPanel() {
 
   const [openC, setOpenC] = useState(false);
   const [messageMC, setMessageMC] = useState("");
-
+  const [onBurger, setOnBurger]=useState(false)
   const [openP, setOpenP] = useState(false);
   const [messageMP, setMessageMP] = useState("");
   const [searchPaciente, setSearchPaciente] = useState("");
@@ -301,6 +301,8 @@ function AdminControlPanel() {
       SearchOpen={SearchOpen}
       setSearchOpen={setSearchOpen}
       fotosP9={fotosP9}
+onBurger={onBurger}
+      setOnBurger={setOnBurger}
     />
   );
 }

@@ -25,7 +25,7 @@ function BeforeAndAfterCarComponent({ PacienteSelected, setTramite }) {
           <div className="Pacientediv3">
             <p className="Paciente2">{PacienteSelected?.Nombre}</p>
             <p className="Paciente3" onClick={() => setTramite(7)}>
-              Ver información personal del paciente
+              Antes y después
             </p>
           </div>
         </div>

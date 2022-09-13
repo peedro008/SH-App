@@ -3,13 +3,15 @@ import "./AdminControlPanel";
 import LogoLogin from "../../../assets/LogoLogin.svg";
 import Lupa from "../../../assets/Lupa.svg";
 import { HiMenu } from "react-icons/hi";
-function NavBarCP({ search, set, searchPaciente, SearchOpen, setSearchOpen }) {
+function NavBarCP({ search, set, searchPaciente, SearchOpen, setSearchOpen, onBurger,
+  setOnBurger }) {
+    
   return (
     <div className="CPNcontainer">
      
       <div style={{ flexDirection: "row", display: "flex" }}>
         <div className="CPNiconCont">
-          <HiMenu className="CPNburg" color="#15353B" />
+          <HiMenu className="CPNburg" color="#15353B" onClick={()=>setOnBurger(!onBurger)} />
           {search ? (
             <img
               src={Lupa}

@@ -1,6 +1,7 @@
 import React from "react";
 import { TbDiscount2 } from "react-icons/tb";
 import { IoPersonAddOutline } from "react-icons/io5";
+import { IoIosLogOut } from "react-icons/io";
 
 import "./AdminControlPanel.css";
 import BotonComponent from "../Elementos/Boton";
@@ -22,6 +23,8 @@ import NavBarCP from "./NavBarCP";
 import DetallePacienteComponent from "./DetallePaciente";
 import BeforeAndAfterCarComponent from "./BeforeAndAfterCar";
 import BeforeAndAfterGenComponent from "./BeforAndAfterGen";
+import { useDispatch } from "react-redux";
+import { userSession } from "../../../Redux/actions";
 function AdminControlPanelComponent({
   Consultas,
   Pacientes,
@@ -41,7 +44,8 @@ function AdminControlPanelComponent({
   openP,
   setOpenP,
   messageMC,
-
+  onBurger,
+  setOnBurger,
   messageMP,
   onSubmitPaciente,
   PacienteForm,
@@ -60,6 +64,7 @@ function AdminControlPanelComponent({
   fotosP9,
   setSearchOpen,
 }) {
+  const dispatch = useDispatch();
   let name = PacienteSelected?.Nombre.split(" ");
   if (name) {
     name = `${name[0][0].toUpperCase()}${name[
@@ -74,6 +79,8 @@ function AdminControlPanelComponent({
         searchPaciente={searchPaciente}
         SearchOpen={SearchOpen}
         setSearchOpen={setSearchOpen}
+        onBurger={onBurger}
+        setOnBurger={setOnBurger}
       />
       <div className="twoSides">
         <div className="LeftSide">
@@ -89,6 +96,7 @@ function AdminControlPanelComponent({
                     <BotonComponent
                       Titulo={e.Nombre}
                       Paciente={e}
+                      PacienteSelected={PacienteSelected}
                       submit={SelectPaciente}
                     />
                   );
@@ -259,6 +267,41 @@ function AdminControlPanelComponent({
           <img className="fector2" style={{ zIndex: 0 }} src={Desk2} />
         </div>
       </div>
+      {onBurger && (
+        <div className="BurgerMenuContainer">
+          <div className="botonBurger" style={{marginTop:"4vh"}}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                paddingLeft: "2vh",
+              
+              }}
+            >
+              <img src={Edit} style={{ width: "2.5vw", height: "2.5vh" ,   marginRight:"0.5vw"}} />
+              <p className="botonBurgerText">Agregar Tratamiento</p>{" "}
+            </div>
+          </div>
+          <div className="botonBurger">
+            <div
+            onClick={()=>
+              dispatch(
+                userSession({})
+            )}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                paddingLeft: "3vh",
+              }}
+            >
+              <IoIosLogOut size={"1.5vw"} style={{marginRight:"2vh"}} />
+              <p className="botonBurgerText">Cerrar sesión</p>{" "}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
