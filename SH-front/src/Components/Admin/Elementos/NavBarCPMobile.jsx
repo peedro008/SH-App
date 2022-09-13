@@ -83,7 +83,7 @@ function NavBarCP({
           className="botonContainerLogOut"
           onClick={() => logOut()}
         >
-          <p className="botonTextAdd">Log Out</p>
+          <p className="botonTextAdd">Cerrar Sesión</p>
         </div>
       </div>
     </div>

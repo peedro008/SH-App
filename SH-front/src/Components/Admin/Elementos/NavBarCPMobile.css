@@ -143,7 +143,7 @@
 }
 
 .botonContainerLogOut {
-  height: 5vh;
+  height: 8vh;
   max-width: 75%;
   width: 60%;
   cursor: pointer;
@@ -151,7 +151,7 @@
   border-radius: 75px;
   display: flex;
   position: absolute;
-  bottom: 5%;
+  bottom: 15%;
 
   justify-self: center;
   background-color: #c9c9c9;

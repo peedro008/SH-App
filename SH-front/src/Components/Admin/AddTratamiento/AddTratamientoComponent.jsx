@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ButtonAdd from "../Elementos/ButtonAdd";
 import "./AddTratamientoComponent.css";
-import ButtonBack from "../../Paciente/Elementos/ButtonBack";
+import ButtonBackStart from "../Elementos/ButtonBackStart";
 import NavBarAdmin from "../Elementos/NavBarAdmin";
 
 const AddTratamientoComponent = ({ formT, setFormT, onSubmitTrat }) => {
@@ -61,7 +61,7 @@ const AddTratamientoComponent = ({ formT, setFormT, onSubmitTrat }) => {
           </div>
         </div>
 
-        <ButtonBack />
+        <ButtonBackStart />
         <ButtonAdd onSubmitConsulta={onSubmitTrat} addOn={addOn} />
       </div>
     </>
