@@ -20,6 +20,8 @@ import AddPacienteComponent from "./AddPaciente";
 import Desk2 from "./Desk2.svg";
 import NavBarCP from "./NavBarCP";
 import DetallePacienteComponent from "./DetallePaciente";
+import BeforeAndAfterCarComponent from "./BeforeAndAfterCar";
+import BeforeAndAfterGenComponent from "./BeforAndAfterGen";
 function AdminControlPanelComponent({
   Consultas,
   Pacientes,
@@ -55,6 +57,7 @@ function AdminControlPanelComponent({
   searchPaciente,
   setSearchPaciente,
   SearchOpen,
+  fotosP9,
   setSearchOpen,
 }) {
   let name = PacienteSelected?.Nombre.split(" ");
@@ -116,9 +119,9 @@ function AdminControlPanelComponent({
                   <div className="Pacientediv2">
                     <p className="CircleName">{name.substring(0, 2)}</p>
                   </div>
-                  <div className="Pacientediv3" > 
+                  <div className="Pacientediv3">
                     <h2 className="Paciente2">{PacienteSelected?.Nombre}</h2>
-                    <p className="Paciente3" onClick={()=>setTramite(7)}>
+                    <p className="Paciente3" onClick={() => setTramite(7)}>
                       Ver información personal del paciente
                     </p>
                   </div>
@@ -191,7 +194,7 @@ function AdminControlPanelComponent({
             <AdminClinicalHistoryComponent
               PacienteSelected={PacienteSelected}
               Consultas={Consultas}
-         
+              setTramite={setTramite}
             />
           ) : Tramite == 2 ? (
             <AddConsultaComponent
@@ -224,19 +227,34 @@ function AdminControlPanelComponent({
               setTramite={setTramite}
             />
           ) : Tramite == 6 ? (
-              <AddPacienteComponent
-                PacienteForm={PacienteForm}
-                onSubmitPaciente={onSubmitPaciente}
-                setPacienteForm={setPacienteForm}
-                messageMP={messageMP}
+            <AddPacienteComponent
+              PacienteForm={PacienteForm}
+              onSubmitPaciente={onSubmitPaciente}
+              setPacienteForm={setPacienteForm}
+              messageMP={messageMP}
+              setTramite={setTramite}
+              openP={openP}
+              setOpenP={setOpenP}
+            />
+          ) : Tramite == 7 ? (
+            <DetallePacienteComponent
+              PacienteSelected={PacienteSelected}
+              setTramite={setTramite}
+            />
+          ) : Tramite == 5 ? (
+            <BeforeAndAfterCarComponent
+              PacienteSelected={PacienteSelected}
+              setTramite={setTramite}
+            />
+          ) : (
+            Tramite == 8 && (
+              <BeforeAndAfterGenComponent
+                PacienteSelected={PacienteSelected}
                 setTramite={setTramite}
-                openP={openP}
-                setOpenP={setOpenP}
+                fotosP={fotosP9}
               />
-            ): Tramite==7&&(
-              <DetallePacienteComponent PacienteSelected={PacienteSelected} setTramite={setTramite}/>
             )
-          }
+          )}
 
           <img className="fector2" style={{ zIndex: 0 }} src={Desk2} />
         </div>

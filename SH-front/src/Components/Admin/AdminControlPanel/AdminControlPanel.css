@@ -1,3 +1,23 @@
+.bback{
+
+    position: absolute;
+    width: 104px;
+    height: 37px;
+    bottom: 3%;
+    right: 5%;
+    z-index: 5;
+    cursor: pointer;
+  }
+  .bgenerar{
+    position: absolute;
+    width: 134px;
+    height: 37px;
+    bottom: 3%;
+    right: 15%;
+    z-index: 5;
+    cursor: pointer;
+  }
+
 /*CONTROL PANEL--------------------*/
 .fector1 {
   position: absolute;
@@ -66,10 +86,11 @@
   max-width: 75%;
   width: 85%;
   cursor: pointer;
-  border: 2.5px solid #2b6c78;
-  border-radius: 75px;
+ 
+
   display: flex;
-  background-color: #7aafb9;
+  background: #7AAFB9;
+  border-radius: 75px;
   flex-direction: row;
   align-items: center;
   padding-left: 15px;
@@ -123,8 +144,8 @@
   justify-content: space-between;
   margin: 0 auto;
 
-  padding-block: 3vw;
-  padding-left: 2vw;
+  padding-block: 2vw;
+  padding-left: 1.5vw;
 }
 
 .Pacientediv2 {
@@ -160,7 +181,7 @@
   font-size: 1vw;
   cursor: pointer;
   /* or 100% */
-
+  line-height: 15px;
   color: #3e9aab;
 }
 .CircleName {
@@ -185,8 +206,8 @@
 .CPNcontainer{
 min-width: 100vw;
 max-width: 100vw;
-min-height: 13.96vh;
-max-height: 13.96vh;
+min-height: 13.06vh;
+max-height: 13.06vh;
 background-color: #7AAFB9;
 border-radius: 0px 0px 20px 20px;
 display: flex;
@@ -231,6 +252,7 @@ width: 2.7vw;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.062);
   padding-inline: 8px ;
   margin-left: 30px;
+  background: rgba(196, 196, 196, 0.35);
 }
 
 
@@ -247,7 +269,8 @@ width: 2.7vw;
 
   max-width: 28%;
   height: 52vh !important;
-  width: 29%;
+  width: 26%!important;
+  max-width: 26%!important;
 
   border-radius: 32.392215728759766px;
   overflow-y: scroll;
@@ -278,13 +301,33 @@ width: 2.7vw;
   font-size: large;
 }
 .swiperD {
-  width: 100%;
+  width: 80vw!important;
   height: 63vh;
+}
+.swiperD2 {
+  width: 50vw!important;
+  height: 70vh!important;
+}
+.swiperD2 > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom:  10%!important;
+  left: 40% !important;
+}
+.swiperD1 {
+  width: 50vw!important;
+  height: 70vh!important;
+}
+.swiperD1 > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom:  10%!important;
+  left: 40% !important;
 }
 .swiperD > .swiper-pagination-bullets,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-  bottom: 0px !important;
+  bottom: 15px !important;
   left: 25% !important;
 }
 .FotoCard {
@@ -300,9 +343,9 @@ width: 2.7vw;
   align-items: center;
   justify-content: center;
   z-index: 50;
-  width: 33%;
-  min-width: 33%;
-  max-width: 33%;
+  width: 26%;
+  min-width: 26%;
+  max-width: 26%;
 
   border-radius: 32.392215728759766px;
 }
@@ -328,7 +371,17 @@ width: 2.7vw;
   display: none;
 }
 
+.FotoDate{
+  text-align: center;
+  margin-top: 105%;
+  font-family: Nunito;
 
+font-weight: 600;
+line-height: 30px;
+letter-spacing: 0em;
+
+
+}
 /* AddConsulta-------------------------*/
 
 .react-calendar {
@@ -666,31 +719,34 @@ height: 50px;
   /* sombra */
   margin-left: 8%;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-  height: 52vh !important;
-  min-height: 52vh !important;
-  max-height: 52vh !important;
+  height: 55vh !important;
+  min-height: 55vh !important;
+  max-height: 55vh !important;
   grid-row: 2;
   flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center ;
   z-index: 50;
-  width: 33%;
-  min-width: 33%;
-  max-width: 33%;
+  width: 23vw!important;
+  min-width: 23vw!important;
+  max-width: 23vw!important;
+ 
   overflow: hidden;
   border-radius: 32.392215728759766px;
+  padding-bottom: 10px;
+  
 }
 .FotoCard1::-webkit-scrollbar {
   display: none;
 }
 .DdivFoto1 {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-  width: 8vw;
-  height: 8vw;
+  width: 8.5vw;
+  height: 8.5vw;
   border-radius: 50%;
   cursor:pointer;
-  margin: 15px;
+  margin: 20px;
  
 
 }
@@ -700,6 +756,68 @@ height: 50px;
   grid-template-columns: 50% 50%;
   grid-template-rows:  50% 50%;
 }
+
+
+
+
+
+
+.FotoCard2 {
+  background: #dae9ec;
+  /* sombra */
+  margin-left: 8%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  height: 55vh !important;
+  min-height: 55vh !important;
+  max-height: 55vh !important;
+  grid-row: 3;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  z-index: 50;
+  width: 23vw!important;
+  min-width: 23vw!important;
+  max-width: 23vw!important;
+ 
+  overflow: hidden;
+  border-radius: 32.392215728759766px;
+  padding-bottom: 10px;
+  
+}
+.FotoCard2::-webkit-scrollbar {
+  display: none;
+}
+.DdivFoto2 {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  width: 5.5vw;
+  height: 5.5vw;
+  border-radius: 50%;
+  cursor:pointer;
+  margin: 14px;
+ 
+
+}
+.fotosGridDiv2{
+  display: grid;
+
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows:  33% 33% 33%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .FullScreenImg{
@@ -889,4 +1007,93 @@ font-size: 18px;
 text-align: left;
 color: #252828;
 
+}
+
+
+/*ANTES DES¨PUES*/
+.ADCard {
+  background: rgba(199, 240, 247, 0.29);
+  /* sombra */
+  margin-left: 0%;
+
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 32.3922px;
+  min-height: 57vh !important;
+  max-height: 57vh !important;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 40%!important;
+  height: 57vh !important;
+  width: 30%!important;
+  max-width: 30%!important;
+
+  border-radius: 32.392215728759766px;
+  overflow-y: scroll;
+}
+.ADCard::-webkit-scrollbar {
+  display: none;
+}
+.ADImage{
+  width: 85%;
+  height: 35%;
+  align-self:center !important;
+  background-size: cover;
+  border-radius: 26px;
+}
+.ADdate{
+  font-family: Nunito;
+font-size: 1vw;
+font-weight: 600;
+line-height: 25px;
+letter-spacing: 0em;
+text-align: left;
+color:#252828;
+}
+.ADsh{
+  font-family: Nunito;
+font-size: 14px;
+font-weight: 300;
+line-height: 19px;
+
+text-align: right;
+
+}
+
+.ADcontainerButtons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2%;
+  width: 80%;
+  align-items: center;
+
+}
+
+.ADCard1 {
+  background: rgba(199, 240, 247, 0.29);
+  /* sombra */
+  margin-left: 0%;
+
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 32.3922px;
+  min-height: 57vh !important;
+  max-height: 57vh !important;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
+  min-width: 30%!important;
+  height: 57vh !important;
+  width: 30%!important;
+  max-width: 30%!important;
+
+  border-radius: 32.392215728759766px;
+  overflow-y: scroll;
+}
+.ADCard1::-webkit-scrollbar {
+  display: none;
 }

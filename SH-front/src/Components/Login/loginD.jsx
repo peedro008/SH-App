@@ -32,12 +32,11 @@ const LoginDComponent = ({ dni, setDni, onSubmit, isError }) => {
         <img src={LogoStartNew} className="logo2D" alt="logo"></img>
       </div>
       <div className="Dwhi">
-        <div className="DContainerDiv">
-          <img src={LogoLogin} alt="vector" className="DLogoLogin" />
-
+        <form onSubmit={onSubmit} className="DContainerDiv">
+          <img  src={LogoLogin} alt="vector" className="DLogoLogin" />
           <p className="DBienvenide">BIENVENIDA/O</p>
           <p className="DDNI">D.N.I</p>
-
+      
           <input
             value={dni}
             className={errorInput}
@@ -45,17 +44,19 @@ const LoginDComponent = ({ dni, setDni, onSubmit, isError }) => {
               setDni(e.target.value);
             }}
           ></input>
+           
           <img
             src={Continuar}
             alt="vector"
             className="Dbotonn"
             onClick={onSubmit}
-          />
-
+          /> 
+          <button type="submit" style={{display:"none"}}/>
+   
           <p className="Dfooter">
             Sabina Hairabedian Consultorios Bv. San Juan 670 - Piso 6{" "}
           </p>
-        </div>
+        </form>
       </div>
     </div>
   );

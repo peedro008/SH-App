@@ -16,7 +16,7 @@ function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite 
       name.length - 1
     ][0].toUpperCase()}`;
   }
-  let consultas = [1, 2, 3, 4];
+
   return (
     <div className="RightMain" style={{ height:"100vh"}}>
       <div className="PacienteHeader">
@@ -39,12 +39,14 @@ function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite 
         className="swiperD"
         style={{ backgroundColor: "transparent"}}
       >
-        {Consultas?.map((e,i) => {
+        {Consultas.length?
+        Consultas?.map((e,i) => {
        
           return (
             <SwiperSlide className="DswiperSlide"  key={e.id}>
-              <div  style={{display:"flex", flexDirection:"row",  paddingTop:"20px", backgroundColor: "transparent"}}>
-                <div className="CliniCard"><div className="W370razor"style={ {maxHeight:"95%",maxWidth:"95%", backgroundColor:"transparent", overflowY:"scroll"} }>
+              <div  style={{display:"flex", flexDirection:"row",  paddingTop:"10px", backgroundColor: "transparent"}}>
+                <div className="CliniCard" >
+                  <div className="W370razor"style={ {maxHeight:"95%",maxWidth:"95%", backgroundColor:"transparent", overflowY:"scroll"} }>
                   <p className="DCHTitle">Consulta: {e.updatedAt.substring(0,10)}</p>
                   <p className="DCHText">
                   {e.Detalle}
@@ -67,7 +69,8 @@ function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite 
               </div>
             </SwiperSlide>
           );
-        })}
+        })
+      : <></>}
       </Swiper>
       <img style={{position:"absolute", width:"115px", height:"48px", bottom:"5%", right:"5%", zIndex:5, cursor: "pointer"}}src={volver} onClick={()=>setTramite(null)}/>
       {FS&&

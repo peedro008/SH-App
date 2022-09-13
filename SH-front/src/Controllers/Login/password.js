@@ -51,6 +51,46 @@ function Password() {
       });
   };
 
+  const onSubmitD = (e) => {
+    e.preventDefault();
+    fetch(
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/loginPassword`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ Password: password }),
+      }
+    )
+      .then(async (res) => {
+        try {
+          const jsonRes = await res.json();
+          if (res.status === 404) {
+            setIsError(true);
+            console.log(isError);
+            setMessage(jsonRes.message);
+          } else {
+            setIsError(false);
+            setMessage(jsonRes.message);
+            console.log(jsonRes, "aaaaaaaaaaaaaaaaa");
+
+            dispatch(
+              userSession({
+                userRole: jsonRes.UserRole,
+                userId: jsonRes.userId,
+                userName: "Sabina",
+              })
+            );
+            Navigate("/");
+          }
+        } catch (err) {}
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return window.innerWidth < 750 ? (
     <PasswordComponent
       password={password}
@@ -62,7 +102,7 @@ function Password() {
     <PasswordDComponent
       password={password}
       setPassword={setPassword}
-      onSubmit={onSubmit}
+      onSubmit={onSubmitD}
       isError={isError}
     />
   );

@@ -51,6 +51,47 @@ function Login() {
         console.log(err);
       });
   };
+  const onSubmitD = (e) => {
+    e.preventDefault();
+    fetch(
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/Login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ DNI: dni }),
+      }
+    )
+      .then(async (res) => {
+        const jsonRes = await res.json();
+        try {
+          if (res.status === 300) {
+            Navigate("/password");
+          } else if (res.status === 404) {
+            setIsError(true);
+            console.log(isError);
+            setMessage(jsonRes.message);
+          } else {
+            setIsError(false);
+            setMessage(jsonRes.message);
+            console.log(message);
+
+            dispatch(
+              userSession({
+                userRole: jsonRes.UserRole,
+                userId: jsonRes.userId,
+                userName: jsonRes.Nombre,
+                pacienteId: jsonRes.PacienteId,
+              })
+            );
+          }
+        } catch (err) {}
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return window.innerWidth < 750 ? (
     <LoginComponent
       dni={dni}
@@ -62,7 +103,7 @@ function Login() {
     <LoginDComponent
       dni={dni}
       setDni={setDni}
-      onSubmit={onSubmit}
+      onSubmit={onSubmitD}
       isError={isError}
     />
   );

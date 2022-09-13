@@ -6,7 +6,7 @@ import { HiMenu } from "react-icons/hi";
 function NavBarCP({ search, set, searchPaciente, SearchOpen, setSearchOpen }) {
   return (
     <div className="CPNcontainer">
-      <img src={LogoLogin} alt="logo" className="CPNlogo" />
+     
       <div style={{ flexDirection: "row", display: "flex" }}>
         <div className="CPNiconCont">
           <HiMenu className="CPNburg" color="#15353B" />
@@ -30,6 +30,7 @@ function NavBarCP({ search, set, searchPaciente, SearchOpen, setSearchOpen }) {
           />
         )}
       </div>
+      <img src={LogoLogin} alt="logo" className="CPNlogo" />
     </div>
   );
 }

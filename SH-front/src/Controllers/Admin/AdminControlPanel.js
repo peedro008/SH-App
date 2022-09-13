@@ -17,35 +17,43 @@ function AdminControlPanel() {
   const [form, setForm] = useState({
     Fecha: new Date().toISOString().split("T")[0],
   });
+
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState("");
   const [fotosP, setFotosP] = useState([]);
-    //modalEstados
-    const [openT, setOpenT] = useState(false);
-    const [messageMT, setMessageMT] = useState("")
-   
+  //modalEstados
+  const [openT, setOpenT] = useState(false);
+  const [messageMT, setMessageMT] = useState("");
 
-    const [openC, setOpenC] = useState(false);
-    const [messageMC, setMessageMC] = useState("")
-   
+  const [openC, setOpenC] = useState(false);
+  const [messageMC, setMessageMC] = useState("");
 
-    const [openP, setOpenP] = useState(false);
-    const [messageMP, setMessageMP] = useState("")
-    const [searchPaciente, setSearchPaciente] = useState("")
-    const [SearchOpen, setSearchOpen] = useState(false)
-    
-    
-  
+  const [openP, setOpenP] = useState(false);
+  const [messageMP, setMessageMP] = useState("");
+  const [searchPaciente, setSearchPaciente] = useState("");
+  const [SearchOpen, setSearchOpen] = useState(false);
+  const [fotos, setFotos] = useState([]);
+  const [fotosP9, setFotosP9] = useState([]);
   //useEffect
   useEffect(() => {
-    PacienteSelected && getConsulta(PacienteSelected?.id);getTurno(PacienteSelected?.id)
+    PacienteSelected && getConsulta(PacienteSelected?.id);
+    getTurno(PacienteSelected?.id);
     setTramite(null);
   }, [PacienteSelected]);
   useEffect(() => {
     setForm({ ...form, PacienteId: PacienteSelected?.id });
     setTurnoForm({ ...turnoForm, PacienteID: PacienteSelected?.id });
   }, [PacienteSelected]);
-  
+ useEffect(() => {
+  if (PacienteSelected) {
+    fetch(
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetFotosPaciente?PacienteId=${PacienteSelected?.id}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setFotos(data);
+      });}
+  }, [PacienteSelected]);
   useEffect(() => {
     imagen.map((e) => {
       const imagenRef = ref(storage, `images/${333 * Math.random() + e.name}`);
@@ -61,16 +69,40 @@ function AdminControlPanel() {
         });
     });
   }, [imagen]);
-
+  useEffect(() => {
+    if (PacienteSelected) {
+      if(fotos.length<=9){
+        setFotosP9([fotos])
+      }
+      else{
+      let temp = [];
+   
+  
+    
+    for (let i = 0; i < fotos; i + 9) {
+      temp.push(fotos.splice(i, i + 9));
+    }
+    setFotosP9(temp);}}
+  }, [fotos, PacienteSelected]);
   useEffect(() => {
     if (PacienteSelected) {
       let temp = [];
-      for (let i = 0; i < PacienteSelected.Fotos.length; i + 4) {
-        temp.push(PacienteSelected.Fotos.splice(i, i + 4));
+      let temp1 = [];
+      let fotos = PacienteSelected.Fotos
+      let fotos1 = PacienteSelected.Fotos
+      for (let i = 0; i < fotos.length; i + 4) {
+        temp.push(fotos.splice(i, i + 4));
+        console.log(temp)
       }
       setFotosP(temp);
+   
+    for (let i = 0; i < fotos1; i + 9) {
+      temp1.push(fotos1.splice(i, i + 9));
+      console.log(temp1)
     }
+    setFotosP9(temp1) }
   }, [PacienteSelected]);
+
   useEffect(() => {
     fetch(
       `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetPacientes`
@@ -79,7 +111,7 @@ function AdminControlPanel() {
       .then((data) => {
         setPacientes(data);
       });
-  }, []);  
+  }, []);
   useEffect(() => {
     setForm({ ...form, Fotos: url });
   }, [url]);
@@ -122,8 +154,6 @@ function AdminControlPanel() {
     });
   };
 
-
-
   //onSubmit
 
   const onSubmitConsulta = () => {
@@ -156,83 +186,33 @@ function AdminControlPanel() {
       });
   };
   const onSubmitTurno = () => {
-    if(!turnoForm.Fecha||!turnoForm.Observacion||!turnoForm.Hora){
-      setMessageMT("Debes completar todos los campos")
-      setOpenT(true)
-    }
-   else{
-    fetch(
-      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddTurno`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        
-        },
-        body: JSON.stringify(turnoForm),
-      }
-    )
-      .then(async (res) => {
-      
-        try {
-          const jsonRes = await res.json();
-          
-          if (res.status === 404) {
-            setIsError(true);
-            setMessage(jsonRes.mensaje);
-            
-            console.log(`Hubo un error? ${isError}. Mensaje: ${message}`);
-          } else {
-            
-            
-          
-            setMessage(jsonRes.mensaje);
-            setMessageMT(jsonRes.mensaje)
-            setOpenT(true)
-            setIsError(false);
-          }
-        } catch (err) {}
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    }
-  };
-
-  const onSubmitPaciente = () => {
-    if(!PacienteForm.DNI||!PacienteForm.Email||!PacienteForm.Nombre){
-      setMessageMP("Debes completar todos los campos requeridos")
-      setOpenP(true)
-    }
-    else{
+    if (!turnoForm.Fecha || !turnoForm.Observacion || !turnoForm.Hora) {
+      setMessageMT("Debes completar todos los campos");
+      setOpenT(true);
+    } else {
       fetch(
-        `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddPaciente`,
+        `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddTurno`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-          
           },
-          body: JSON.stringify(PacienteForm),
+          body: JSON.stringify(turnoForm),
         }
       )
         .then(async (res) => {
-        
           try {
             const jsonRes = await res.json();
-            
+
             if (res.status === 404) {
               setIsError(true);
               setMessage(jsonRes.mensaje);
-              
+
               console.log(`Hubo un error? ${isError}. Mensaje: ${message}`);
             } else {
-              
-              
-            
               setMessage(jsonRes.mensaje);
-              setMessageMP(jsonRes.mensaje)
-              setOpenP(true)
+              setMessageMT(jsonRes.mensaje);
+              setOpenT(true);
               setIsError(false);
             }
           } catch (err) {}
@@ -240,11 +220,46 @@ function AdminControlPanel() {
         .catch((err) => {
           console.log(err);
         });
-      }
+    }
+  };
 
+  const onSubmitPaciente = () => {
+    if (!PacienteForm.DNI || !PacienteForm.Email || !PacienteForm.Nombre) {
+      setMessageMP("Debes completar todos los campos requeridos");
+      setOpenP(true);
+    } else {
+      fetch(
+        `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddPaciente`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(PacienteForm),
+        }
+      )
+        .then(async (res) => {
+          try {
+            const jsonRes = await res.json();
 
+            if (res.status === 404) {
+              setIsError(true);
+              setMessage(jsonRes.mensaje);
 
-  }
+              console.log(`Hubo un error? ${isError}. Mensaje: ${message}`);
+            } else {
+              setMessage(jsonRes.mensaje);
+              setMessageMP(jsonRes.mensaje);
+              setOpenP(true);
+              setIsError(false);
+            }
+          } catch (err) {}
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
 
   return (
     <AdminControlPanelComponent
@@ -272,19 +287,20 @@ function AdminControlPanel() {
       fotosP={fotosP}
       onSubmitTurno={onSubmitTurno}
       messageMT={messageMT}
-setMessageMT={setMessageMT}
-messageMC={messageMC}
-setMessageMC={setMessageMC}
-messageMP={messageMP}
-setMessageMP={setMessageMP}
-Turnos={Turnos}
-onSubmitPaciente={onSubmitPaciente}
-PacienteForm={PacienteForm}
-setPacienteForm={setPacienteForm}
-searchPaciente={searchPaciente}
-setSearchPaciente={setSearchPaciente}
-SearchOpen={SearchOpen}
-setSearchOpen={setSearchOpen}
+      setMessageMT={setMessageMT}
+      messageMC={messageMC}
+      setMessageMC={setMessageMC}
+      messageMP={messageMP}
+      setMessageMP={setMessageMP}
+      Turnos={Turnos}
+      onSubmitPaciente={onSubmitPaciente}
+      PacienteForm={PacienteForm}
+      setPacienteForm={setPacienteForm}
+      searchPaciente={searchPaciente}
+      setSearchPaciente={setSearchPaciente}
+      SearchOpen={SearchOpen}
+      setSearchOpen={setSearchOpen}
+      fotosP9={fotosP9}
     />
   );
 }
