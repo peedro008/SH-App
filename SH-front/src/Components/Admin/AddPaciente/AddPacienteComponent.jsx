@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 
-import ButtonBack from "../../Paciente/Elementos/ButtonBack";
-import Navbar from "../../Paciente/Elementos/Navbar";
+import ButtonBackStart from "../Elementos/ButtonBackStart";
 import NavBarAdmin from "../Elementos/NavBarAdmin";
 import "./AddPacienteComponent.css";
 
@@ -31,6 +30,7 @@ const AddPacienteComponent = ({ setFormP, formP, onSubmit }) => {
             />
           </div>
         </div>
+       
         <div className="contAddFormPaciente">
           <div className="AddFormMobP">
             <div className="containerAddPacienteInput">
@@ -124,7 +124,7 @@ const AddPacienteComponent = ({ setFormP, formP, onSubmit }) => {
             <h3 className="back">Generar</h3>
           </button>
         </div> */}
-        <ButtonBack />
+        <ButtonBackStart />
       </div>
     </>
   );

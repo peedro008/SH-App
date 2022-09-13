@@ -89,7 +89,7 @@ function AddConsultaComponentMobile({
                 <label htmlFor="archivo">
                   <img
                     alt="Hola"
-                    style={{ cursor: "pointer", marginLeft: "50%" }}
+                    style={{ cursor: "pointer", marginLeft: "50%", height: '10vh', maxHeight:'25px', marginTop:'10px' }}
                     src={BotonMas}
                   />
                 </label>
