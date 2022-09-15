@@ -78,6 +78,30 @@ function Fotos({ PacienteSelected, setTramite, fotosP }) {
                     })}
                   </div>
                 </div>
+              
+                <div className="FotoCard1">
+                  <div className="fotosGridDiv">
+                    {fotosP[i+1]&&
+                    fotosP[i+1].map((f, i) => {
+                      return (
+                      
+                        <div
+                          onClick={() => {
+                            SetIS(f.URL);
+                            SetFS(true);
+                          }}
+                          style={{
+                            backgroundImage: `url(${f.URL}`,
+                            backgroundSize: "cover",
+                          }}
+                          className="DdivFoto1"
+                        >
+                       <p className="FotoDate">{f.createdAt.substring(0,10)}</p>
+                        </div> 
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </SwiperSlide>
           );

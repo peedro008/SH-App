@@ -33,6 +33,7 @@ function AdminControlPanelComponent({
   setPacienteSelected,
   SelectPaciente,
   Tramite,
+  setImagen,
   Turnos,
   setTramite,
   ImageHandleChange,
@@ -209,6 +210,11 @@ function AdminControlPanelComponent({
               imagen={imagen}
               onSubmitConsulta={onSubmitConsulta}
               setForm={setForm}
+
+              openC={openC}
+              setOpenC={setOpenC}
+              setImagen={setImagen}
+              messageMC={messageMC}
               form={form}
               PacienteSelected={PacienteSelected}
               Consultas={Consultas}

@@ -103,12 +103,13 @@
   height: 5vh;
   min-height: 5vh;
   width: 90%;
-  background: #ffffff;
+  background: #FFF;
   border: 2.5px solid #2b6c78;
   border-radius: 75px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-align: left;
   padding-left: 15px;
   padding-right: 1vh;
   margin-bottom: 4vh;
@@ -116,4 +117,10 @@
 
 .botonTramiteText {
   font-size: 5vw;
+  text-align: left;
+}
+.cCc{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

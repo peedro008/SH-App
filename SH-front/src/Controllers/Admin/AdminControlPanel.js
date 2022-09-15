@@ -79,11 +79,13 @@ function AdminControlPanel() {
    
   
     
-    for (let i = 0; i < fotos; i + 9) {
+    for (let i = 0; i < fotos.length; i + 9) {
       temp.push(fotos.splice(i, i + 9));
+      console.log(i)
     }
-    setFotosP9(temp);}}
-  }, [fotos, PacienteSelected]);
+    setFotosP9(temp);
+  }}
+  }, [ PacienteSelected]);
   useEffect(() => {
     if (PacienteSelected) {
       let temp = [];
@@ -95,12 +97,7 @@ function AdminControlPanel() {
         console.log(temp)
       }
       setFotosP(temp);
-   
-    for (let i = 0; i < fotos1; i + 9) {
-      temp1.push(fotos1.splice(i, i + 9));
-      console.log(temp1)
-    }
-    setFotosP9(temp1) }
+  }
   }, [PacienteSelected]);
 
   useEffect(() => {
@@ -172,12 +169,15 @@ function AdminControlPanel() {
           const jsonRes = await res.json();
           if (res.status === 404) {
             setIsError(true);
-            setMessage(jsonRes.message);
-            console.log(`Hubo un error? ${isError}. Mensaje: ${message}`);
+            setMessageMC(jsonRes.mensaje);
+            setOpenC(true)
+
           } else {
+            console.log("AAAAAAAAAAAA")
+            setMessage(jsonRes.mensaje);
+            setMessageMC(jsonRes.mensaje);
+            setOpenC(true);
             setIsError(false);
-            window.location.reload();
-            setMessage(jsonRes.message);
           }
         } catch (err) {}
       })
@@ -303,6 +303,7 @@ function AdminControlPanel() {
       fotosP9={fotosP9}
 onBurger={onBurger}
       setOnBurger={setOnBurger}
+      setImagen={setImagen}
     />
   );
 }

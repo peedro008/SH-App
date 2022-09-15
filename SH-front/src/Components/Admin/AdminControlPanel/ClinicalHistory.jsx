@@ -77,7 +77,7 @@ function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite 
        <div className="modalCont1">
           <img className="FullScreenImg" src={IS} />
           <div className="FullScreenClose">
-          <p style={{ fontSize:"25px", color:"white"}} onClick={()=>{SetIS(""); SetFS(false)}}>x</p></div>
+          <p style={{ fontSize:"25px", color:"white", marginBottom:"2px"}} onClick={()=>{SetIS(""); SetFS(false)}}>x</p></div>
        </div>}
    </div>
   );
