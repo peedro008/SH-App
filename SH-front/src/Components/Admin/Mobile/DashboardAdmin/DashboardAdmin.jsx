@@ -102,13 +102,13 @@ function DashboardAdminComponent() {
                 state: [Consulta, Nombre, location.state[0]],
               })
             }
-          >
+          ><div className="cCc">
             <img
               src={Notas}
-              style={{ width: "5vw", height: "5vh" }}
+              style={{ width: "5vw", height: "5vh", marginRight:"10px" }}
               alt="imagen"
             />
-            <p className="botonTramiteText">Historia Clinica Completa</p>
+            <p className="botonTramiteText">Historia Clinica Completa</p></div>
           </div>
 
           <div
@@ -116,13 +116,13 @@ function DashboardAdminComponent() {
             onClick={() =>
               navigate("/addconsulta", { state: [location.state[0]] })
             }
-          >
+          ><div className="cCc">
             <img
               src={Edit}
-              style={{ width: "5vw", height: "5vh" }}
+              style={{ width: "5vw", height: "5vh", marginRight:"10px" }}
               alt="imagen"
             />
-            <p className="botonTramiteText">Agregar última consulta</p>
+            <p className="botonTramiteText">Agregar última consulta</p></div>
           </div>
 
           <div
@@ -132,13 +132,13 @@ function DashboardAdminComponent() {
                 state: [fotosArray4, Nombre, location.state[0]],
               })
             }
-          >
+          ><div className="cCc">
             <img
               src={Cam}
-              style={{ width: "5vw", height: "5vh" }}
+              style={{ width: "5vw", height: "5vh", marginRight:"10px" }}
               alt="imagen"
             />
-            <p className="botonTramiteText">Fotografías</p>
+            <p className="botonTramiteText">Fotografías</p></div>
           </div>
 
           <div
@@ -148,13 +148,13 @@ function DashboardAdminComponent() {
                 state: [location.state[0], fotosArray9],
               })
             }
-          >
+          ><div className="cCc">
             <img
               src={AntDesp}
-              style={{ width: "5vw", height: "5vh" }}
+              style={{ width: "5vw", height: "5vh", marginRight:"10px" }}
               alt="imagen"
             />
-            <p className="botonTramiteText">Antes y después en fotos</p>
+            <p className="botonTramiteText">Antes y después en fotos</p></div>
           </div>
         </div>
       </div>

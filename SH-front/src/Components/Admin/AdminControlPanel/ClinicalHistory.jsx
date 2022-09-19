@@ -26,7 +26,7 @@ function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite 
           </div>
           <div className="Pacientediv3">
             <p className="Paciente2">{PacienteSelected?.Nombre}</p>
-            <p className="Paciente3" onClick={()=>setTramite(7)}>Ver información personal del paciente</p>
+            <p className="Paciente3">Historia clínica</p>
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@ function AdminClinicalHistoryComponent({ PacienteSelected,Consultas, setTramite 
        <div className="modalCont1">
           <img className="FullScreenImg" src={IS} />
           <div className="FullScreenClose">
-          <p style={{ fontSize:"25px", color:"white"}} onClick={()=>{SetIS(""); SetFS(false)}}>x</p></div>
+          <p style={{ fontSize:"25px", color:"white", marginBottom:"2px"}} onClick={()=>{SetIS(""); SetFS(false)}}>x</p></div>
        </div>}
    </div>
   );

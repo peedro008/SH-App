@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -14,13 +14,33 @@ import { useState } from "react";
 function Fotos({ PacienteSelected, setTramite, fotosP }) {
   const [FS, SetFS] = useState(false);
   const [IS, SetIS] = useState("");
+  const [BBB, SetBBB] = useState([]);
   let name = PacienteSelected?.Nombre.split(" ");
+  useEffect(() => {
+
+    if (PacienteSelected&&PacienteSelected.Fotos?.length) {
+      let temp = [];
+   
+      let data1 = PacienteSelected.Fotos
+  
+  
+  
+      for (let i = 0; i < data1.length; i + 4) {
+        temp.push(data1.splice(i, i + 4));
+      }
+  
+  
+  
+      SetBBB(temp);
+    }
+  }, [])
+  
   if (name) {
     name = `${name[0][0].toUpperCase()}${name[
       name.length - 1
     ][0].toUpperCase()}`;
   }
-  let consultas = [1, 2, 3, 4];
+
   console.log(fotosP);
   return (
     <div className="RightMain" style={{ height: "100vh" }}>
@@ -32,7 +52,7 @@ function Fotos({ PacienteSelected, setTramite, fotosP }) {
           <div className="Pacientediv3">
             <p className="Paciente2">{PacienteSelected?.Nombre}</p>
             <p className="Paciente3" onClick={() => setTramite(7)}>
-              Ver información personal del paciente
+              Seguimiento fotográfico
             </p>
           </div>
         </div>
@@ -45,7 +65,7 @@ function Fotos({ PacienteSelected, setTramite, fotosP }) {
         className="swiperD"
         style={{ backgroundColor: "transparent" }}
       >
-        {fotosP?.map((e, i) => {
+        {BBB?.map((e, i) => {
           return (
             <SwiperSlide className="DswiperSlide" key={i}>
               <div
@@ -59,6 +79,30 @@ function Fotos({ PacienteSelected, setTramite, fotosP }) {
                 <div className="FotoCard1">
                   <div className="fotosGridDiv">
                     {e.map((f, i) => {
+                      return (
+                      
+                        <div
+                          onClick={() => {
+                            SetIS(f.URL);
+                            SetFS(true);
+                          }}
+                          style={{
+                            backgroundImage: `url(${f.URL}`,
+                            backgroundSize: "cover",
+                          }}
+                          className="DdivFoto1"
+                        >
+                       <p className="FotoDate">{f.createdAt.substring(0,10)}</p>
+                        </div> 
+                      );
+                    })}
+                  </div>
+                </div>
+              
+                <div className="FotoCard1">
+                  <div className="fotosGridDiv">
+                    {BBB[i+1]&&
+                    BBB[i+1].map((f, i) => {
                       return (
                       
                         <div

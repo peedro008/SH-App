@@ -1,7 +1,7 @@
 .containerAdd {
   display: flex;
   width: 25vw;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
   position: fixed;
   z-index: 998;
@@ -16,12 +16,14 @@
   font-size: 3vw;
   color: white;
   height: 10vw;
+  text-align: center;
+  display :flex;
   width: 100%;
   background-color: transparent;
   align-items: center;
   border: 0.15rem solid transparent;
   border-radius: 2rem;
-  padding-left: 4vw;
+  justify-content: center;
 }
 
 .botonAdd:disabled {

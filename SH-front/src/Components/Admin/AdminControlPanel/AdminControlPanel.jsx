@@ -1,6 +1,7 @@
 import React from "react";
 import { TbDiscount2 } from "react-icons/tb";
 import { IoPersonAddOutline } from "react-icons/io5";
+import { IoIosLogOut } from "react-icons/io";
 
 import "./AdminControlPanel.css";
 import BotonComponent from "../Elementos/Boton";
@@ -22,7 +23,17 @@ import NavBarCP from "./NavBarCP";
 import DetallePacienteComponent from "./DetallePaciente";
 import BeforeAndAfterCarComponent from "./BeforeAndAfterCar";
 import BeforeAndAfterGenComponent from "./BeforAndAfterGen";
+import { useDispatch } from "react-redux";
+import { userSession } from "../../../Redux/actions";
+import AddTratamientoComponent from "./addTratamiento";
 function AdminControlPanelComponent({
+
+messageMTR,
+  trataForm,
+setTrataForm,
+openTR,
+setOpenTR,
+onSubmitTrat,
   Consultas,
   Pacientes,
   getConsulta,
@@ -30,6 +41,7 @@ function AdminControlPanelComponent({
   setPacienteSelected,
   SelectPaciente,
   Tramite,
+  setImagen,
   Turnos,
   setTramite,
   ImageHandleChange,
@@ -41,7 +53,8 @@ function AdminControlPanelComponent({
   openP,
   setOpenP,
   messageMC,
-
+  onBurger,
+  setOnBurger,
   messageMP,
   onSubmitPaciente,
   PacienteForm,
@@ -57,9 +70,14 @@ function AdminControlPanelComponent({
   searchPaciente,
   setSearchPaciente,
   SearchOpen,
+  addTrat,
+setAddTrat,
+addPaci,
+setAddPaci,
   fotosP9,
   setSearchOpen,
 }) {
+  const dispatch = useDispatch();
   let name = PacienteSelected?.Nombre.split(" ");
   if (name) {
     name = `${name[0][0].toUpperCase()}${name[
@@ -74,12 +92,14 @@ function AdminControlPanelComponent({
         searchPaciente={searchPaciente}
         SearchOpen={SearchOpen}
         setSearchOpen={setSearchOpen}
+        onBurger={onBurger}
+        setOnBurger={setOnBurger}
       />
       <div className="twoSides">
         <div className="LeftSide">
           <p className="ListaTitle">Listado de Pacientes</p>
           <div className="PacientesLista">
-            <div className="botonContainer1" onClick={() => setTramite(6)}>
+            <div className="botonContainer1" onClick={() => {setAddPaci(true);setAddTrat(false)}}>
               <IoPersonAddOutline size={"25px"} color={"#15353B"} />
               <p className="botonText1">Agregar nuevo/a paciente</p>
             </div>
@@ -89,6 +109,7 @@ function AdminControlPanelComponent({
                     <BotonComponent
                       Titulo={e.Nombre}
                       Paciente={e}
+                      PacienteSelected={PacienteSelected}
                       submit={SelectPaciente}
                     />
                   );
@@ -107,12 +128,37 @@ function AdminControlPanelComponent({
           </div>
         </div>
         <div className="RightSide">
-          {!PacienteSelected ? (
+          {!PacienteSelected && !addTrat && !addPaci ? (
             <p className="holaSabina">
               Hola Sabina, ¡bienvenida! Seleccioná un/a paciente para ver más
               información.
-            </p>
-          ) : !Tramite ? (
+            </p> 
+          ): !PacienteSelected && addTrat  && !addPaci ?(
+            <AddTratamientoComponent
+          
+            messageMTR={messageMTR}
+            setTramite={setTramite}
+            trataForm={trataForm}
+            setTrataForm={setTrataForm}
+            openTR={openTR}
+            setOpenTR={setOpenTR}
+            onSubmitTrat={onSubmitTrat}
+            setAddTrat={setAddTrat}/>
+          ):!PacienteSelected && !addTrat  && addPaci ?
+          
+           
+          <AddPacienteComponent
+          PacienteForm={PacienteForm}
+          onSubmitPaciente={onSubmitPaciente}
+          setPacienteForm={setPacienteForm}
+          messageMP={messageMP}
+          setAddPaci={setAddPaci}
+          openP={openP}
+          setOpenP={setOpenP}
+        />
+          
+          
+          : !Tramite ? (
             <div className="RightMain">
               <div className="PacienteHeader">
                 <div className="Pacientediv1">
@@ -201,6 +247,11 @@ function AdminControlPanelComponent({
               imagen={imagen}
               onSubmitConsulta={onSubmitConsulta}
               setForm={setForm}
+
+              openC={openC}
+              setOpenC={setOpenC}
+              setImagen={setImagen}
+              messageMC={messageMC}
               form={form}
               PacienteSelected={PacienteSelected}
               Consultas={Consultas}
@@ -226,16 +277,6 @@ function AdminControlPanelComponent({
               PacienteSelected={PacienteSelected}
               setTramite={setTramite}
             />
-          ) : Tramite == 6 ? (
-            <AddPacienteComponent
-              PacienteForm={PacienteForm}
-              onSubmitPaciente={onSubmitPaciente}
-              setPacienteForm={setPacienteForm}
-              messageMP={messageMP}
-              setTramite={setTramite}
-              openP={openP}
-              setOpenP={setOpenP}
-            />
           ) : Tramite == 7 ? (
             <DetallePacienteComponent
               PacienteSelected={PacienteSelected}
@@ -247,18 +288,65 @@ function AdminControlPanelComponent({
               setTramite={setTramite}
             />
           ) : (
-            Tramite == 8 && (
+            Tramite == 8 ? (
               <BeforeAndAfterGenComponent
                 PacienteSelected={PacienteSelected}
                 setTramite={setTramite}
                 fotosP={fotosP9}
               />
+            ): (
+              Tramite == 9 && (
+                <AddTratamientoComponent
+                PacienteSelected={PacienteSelected}
+                setTramite={setTramite}
+                trataForm={trataForm}
+                setTrataForm={setTrataForm}
+                openTR={openTR}
+                setOpenTR={setOpenTR}
+                onSubmitTrat={onSubmitTrat}/>
+              )
             )
           )}
 
           <img className="fector2" style={{ zIndex: 0 }} src={Desk2} />
         </div>
       </div>
+      {onBurger && (
+        <div className="BurgerMenuContainer">
+          <div className="botonBurger"  onClick={()=>{setAddPaci(false);
+             setAddTrat(true)}} style={{marginTop:"4vh"}}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                paddingLeft: "2vh",
+              
+              }}
+            >
+              <img src={Edit} style={{ width: "2.5vw", height: "2.5vh" ,   marginRight:"0.5vw"}} />
+              <p className="botonBurgerText">Agregar Tratamiento</p>{" "}
+            </div>
+          </div>
+          <div className="botonBurger">
+            <div
+            onClick={()=>
+              dispatch(
+                userSession({})
+            )}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                paddingLeft: "3vh",
+              }}
+            >
+              <IoIosLogOut size={"1.5vw"} style={{marginRight:"2vh"}} />
+              <p className="botonBurgerText">Cerrar sesión</p>{" "}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
