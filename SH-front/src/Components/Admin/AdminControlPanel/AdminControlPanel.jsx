@@ -25,7 +25,15 @@ import BeforeAndAfterCarComponent from "./BeforeAndAfterCar";
 import BeforeAndAfterGenComponent from "./BeforAndAfterGen";
 import { useDispatch } from "react-redux";
 import { userSession } from "../../../Redux/actions";
+import AddTratamientoComponent from "./addTratamiento";
 function AdminControlPanelComponent({
+
+messageMTR,
+  trataForm,
+setTrataForm,
+openTR,
+setOpenTR,
+onSubmitTrat,
   Consultas,
   Pacientes,
   getConsulta,
@@ -62,6 +70,10 @@ function AdminControlPanelComponent({
   searchPaciente,
   setSearchPaciente,
   SearchOpen,
+  addTrat,
+setAddTrat,
+addPaci,
+setAddPaci,
   fotosP9,
   setSearchOpen,
 }) {
@@ -87,7 +99,7 @@ function AdminControlPanelComponent({
         <div className="LeftSide">
           <p className="ListaTitle">Listado de Pacientes</p>
           <div className="PacientesLista">
-            <div className="botonContainer1" onClick={() => setTramite(6)}>
+            <div className="botonContainer1" onClick={() => {setAddPaci(true);setAddTrat(false)}}>
               <IoPersonAddOutline size={"25px"} color={"#15353B"} />
               <p className="botonText1">Agregar nuevo/a paciente</p>
             </div>
@@ -116,12 +128,37 @@ function AdminControlPanelComponent({
           </div>
         </div>
         <div className="RightSide">
-          {!PacienteSelected ? (
+          {!PacienteSelected && !addTrat && !addPaci ? (
             <p className="holaSabina">
               Hola Sabina, ¡bienvenida! Seleccioná un/a paciente para ver más
               información.
-            </p>
-          ) : !Tramite ? (
+            </p> 
+          ): !PacienteSelected && addTrat  && !addPaci ?(
+            <AddTratamientoComponent
+          
+            messageMTR={messageMTR}
+            setTramite={setTramite}
+            trataForm={trataForm}
+            setTrataForm={setTrataForm}
+            openTR={openTR}
+            setOpenTR={setOpenTR}
+            onSubmitTrat={onSubmitTrat}
+            setAddTrat={setAddTrat}/>
+          ):!PacienteSelected && !addTrat  && addPaci ?
+          
+           
+          <AddPacienteComponent
+          PacienteForm={PacienteForm}
+          onSubmitPaciente={onSubmitPaciente}
+          setPacienteForm={setPacienteForm}
+          messageMP={messageMP}
+          setAddPaci={setAddPaci}
+          openP={openP}
+          setOpenP={setOpenP}
+        />
+          
+          
+          : !Tramite ? (
             <div className="RightMain">
               <div className="PacienteHeader">
                 <div className="Pacientediv1">
@@ -240,16 +277,6 @@ function AdminControlPanelComponent({
               PacienteSelected={PacienteSelected}
               setTramite={setTramite}
             />
-          ) : Tramite == 6 ? (
-            <AddPacienteComponent
-              PacienteForm={PacienteForm}
-              onSubmitPaciente={onSubmitPaciente}
-              setPacienteForm={setPacienteForm}
-              messageMP={messageMP}
-              setTramite={setTramite}
-              openP={openP}
-              setOpenP={setOpenP}
-            />
           ) : Tramite == 7 ? (
             <DetallePacienteComponent
               PacienteSelected={PacienteSelected}
@@ -261,12 +288,23 @@ function AdminControlPanelComponent({
               setTramite={setTramite}
             />
           ) : (
-            Tramite == 8 && (
+            Tramite == 8 ? (
               <BeforeAndAfterGenComponent
                 PacienteSelected={PacienteSelected}
                 setTramite={setTramite}
                 fotosP={fotosP9}
               />
+            ): (
+              Tramite == 9 && (
+                <AddTratamientoComponent
+                PacienteSelected={PacienteSelected}
+                setTramite={setTramite}
+                trataForm={trataForm}
+                setTrataForm={setTrataForm}
+                openTR={openTR}
+                setOpenTR={setOpenTR}
+                onSubmitTrat={onSubmitTrat}/>
+              )
             )
           )}
 
@@ -275,7 +313,8 @@ function AdminControlPanelComponent({
       </div>
       {onBurger && (
         <div className="BurgerMenuContainer">
-          <div className="botonBurger" style={{marginTop:"4vh"}}>
+          <div className="botonBurger"  onClick={()=>{setAddPaci(false);
+             setAddTrat(true)}} style={{marginTop:"4vh"}}>
             <div
               style={{
                 display: "flex",

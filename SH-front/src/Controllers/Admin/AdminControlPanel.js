@@ -17,17 +17,20 @@ function AdminControlPanel() {
   const [form, setForm] = useState({
     Fecha: new Date().toISOString().split("T")[0],
   });
-
+  const [trataForm, setTrataForm] = useState({});
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState("");
   const [fotosP, setFotosP] = useState([]);
   //modalEstados
   const [openT, setOpenT] = useState(false);
   const [messageMT, setMessageMT] = useState("");
-
+  const [addTrat, setAddTrat] = useState(false);
+  const [addPaci, setAddPaci] = useState(false);
+  const [openTR, setOpenTR] = useState(false);
+  const [messageMTR, setMessageMTR] = useState("");
   const [openC, setOpenC] = useState(false);
   const [messageMC, setMessageMC] = useState("");
-  const [onBurger, setOnBurger]=useState(false)
+  const [onBurger, setOnBurger] = useState(false);
   const [openP, setOpenP] = useState(false);
   const [messageMP, setMessageMP] = useState("");
   const [searchPaciente, setSearchPaciente] = useState("");
@@ -39,20 +42,39 @@ function AdminControlPanel() {
     PacienteSelected && getConsulta(PacienteSelected?.id);
     getTurno(PacienteSelected?.id);
     setTramite(null);
-  }, [PacienteSelected]);
-  useEffect(() => {
     setForm({ ...form, PacienteId: PacienteSelected?.id });
     setTurnoForm({ ...turnoForm, PacienteID: PacienteSelected?.id });
+
   }, [PacienteSelected]);
- useEffect(() => {
-  if (PacienteSelected) {
-    fetch(
-      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetFotosPaciente?PacienteId=${PacienteSelected?.id}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setFotos(data);
-      });}
+  useEffect(() => {
+    if (fotos&&fotos?.length) {
+      
+      let temp1 = [];
+      let data1 = fotos
+    
+
+      for (let i = 0; i < data1.length; i + 9) {
+        temp1.push(data1.splice(i, i + 9));
+      }
+
+    
+
+      setFotosP9(temp1);
+
+    }
+
+  }, [fotos])
+  
+  useEffect(() => {
+    if (PacienteSelected) {
+      fetch(
+        `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/GetFotosPaciente?PacienteId=${PacienteSelected?.id}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setFotos(data);
+        });
+    }
   }, [PacienteSelected]);
   useEffect(() => {
     imagen.map((e) => {
@@ -69,36 +91,8 @@ function AdminControlPanel() {
         });
     });
   }, [imagen]);
-  useEffect(() => {
-    if (PacienteSelected) {
-      if(fotos.length<=9){
-        setFotosP9([fotos])
-      }
-      else{
-      let temp = [];
-   
-  
-    
-    for (let i = 0; i < fotos.length; i + 9) {
-      temp.push(fotos.splice(i, i + 9));
-      console.log(i)
-    }
-    setFotosP9(temp);
-  }}
-  }, [ PacienteSelected]);
-  useEffect(() => {
-    if (PacienteSelected) {
-      let temp = [];
-      let temp1 = [];
-      let fotos = PacienteSelected.Fotos
-      let fotos1 = PacienteSelected.Fotos
-      for (let i = 0; i < fotos.length; i + 4) {
-        temp.push(fotos.splice(i, i + 4));
-        console.log(temp)
-      }
-      setFotosP(temp);
-  }
-  }, [PacienteSelected]);
+
+
 
   useEffect(() => {
     fetch(
@@ -170,10 +164,9 @@ function AdminControlPanel() {
           if (res.status === 404) {
             setIsError(true);
             setMessageMC(jsonRes.mensaje);
-            setOpenC(true)
-
+            setOpenC(true);
           } else {
-            console.log("AAAAAAAAAAAA")
+            console.log("AAAAAAAAAAAA");
             setMessage(jsonRes.mensaje);
             setMessageMC(jsonRes.mensaje);
             setOpenC(true);
@@ -260,9 +253,46 @@ function AdminControlPanel() {
         });
     }
   };
-
+  const onSubmitTrat = () => {
+    fetch(
+      `http://shapi-env.eba-c37uz2s3.us-east-1.elasticbeanstalk.com/AddTratamientos`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(trataForm),
+      }
+    )
+      .then(async (res) => {
+        console.log("1111111111111");
+        try {
+          const jsonRes = await res.json();
+          if (res.status === 404) {
+            setIsError(true);
+            setMessage(jsonRes.message);
+            console.log(`Hubo un error? ${isError}. Mensaje: ${message}`);
+          } else {
+            console.log(jsonRes);
+            setMessage(jsonRes.mensaje);
+            setMessageMTR(jsonRes.mensaje);
+            setOpenTR(true);
+            setIsError(false);
+          }
+        } catch (err) {}
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <AdminControlPanelComponent
+      messageMTR={messageMTR}
+      trataForm={trataForm}
+      setTrataForm={setTrataForm}
+      openTR={openTR}
+      setOpenTR={setOpenTR}
+      onSubmitTrat={onSubmitTrat}
       Consultas={Consultas}
       Pacientes={Pacientes}
       getConsulta={getConsulta}
@@ -301,9 +331,13 @@ function AdminControlPanel() {
       SearchOpen={SearchOpen}
       setSearchOpen={setSearchOpen}
       fotosP9={fotosP9}
-onBurger={onBurger}
+      onBurger={onBurger}
       setOnBurger={setOnBurger}
       setImagen={setImagen}
+      addTrat={addTrat}
+      setAddTrat={setAddTrat}
+      addPaci={addPaci}
+      setAddPaci={setAddPaci}
     />
   );
 }

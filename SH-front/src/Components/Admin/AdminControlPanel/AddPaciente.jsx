@@ -6,6 +6,7 @@ import Añadir from "./Añadir.svg"
 import volver from "./volver.svg"
 function AddPacienteComponent({PacienteForm,
     setTramite,
+    setAddPaci,
     onSubmitPaciente,
     setPacienteForm,
     openP,
@@ -88,7 +89,7 @@ function AddPacienteComponent({PacienteForm,
        
         </div>
   
-      <img style={{position:"absolute", width:"95px", height:"48px", bottom:"1%", right:"5%", zIndex:5, cursor: "pointer"}}src={volver} onClick={()=>setTramite(null)}/>
+      <img style={{position:"absolute", width:"95px", height:"48px", bottom:"1%", right:"5%", zIndex:5, cursor: "pointer"}}src={volver} onClick={()=>setAddPaci(false)}/>
       {openP && (
         <div className="modalCont" >
           <div className="modal" style={{width:"max-content", paddingInline:"20px"}}>
@@ -99,8 +100,7 @@ function AddPacienteComponent({PacienteForm,
               onClick={() => {
                 messageMP.substring(0, 3) == "Deb"
                   ? setOpenP(false)
-                  : setOpenP(false);
-                setTramite(null);
+                  : window.location.reload()
               }}
             >
               {" "}
