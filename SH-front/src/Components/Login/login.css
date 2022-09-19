@@ -112,7 +112,7 @@
 .botonn {
   margin-top: 5vh;
   z-index: 1000;
-  min-width: 5vh;
+  min-width: 50px;
   width: 8vh;
   max-width: 10vh;
 }
