@@ -21,7 +21,7 @@ import NavBarPaciente from "../Elementos/NavBarPaciente";
 const Comparation = ({ PhotoForm, noInfo }) => {
   const userName = useSelector((state) => state.userSession).userName;
   const navigate = useNavigate();
-  console.log(PhotoForm);
+
   return (
     <div className="containerComp">
       <NavBarPaciente />

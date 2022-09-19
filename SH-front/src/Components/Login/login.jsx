@@ -7,7 +7,7 @@ import Continuar from "../../assets/Continuar.svg";
 import LogoStartNew from "../../assets/LogoStartNew.svg";
 
 const LoginComponent = ({ dni, setDni, onSubmit, isError }) => {
-  console.log(isError);
+
   const [error, setError] = useState("offPop");
   const [errorInput, setErrorInput] = useState("Input");
 

@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonBack from "../../../Paciente/Elementos/ButtonBack";
+import ButtonBackStart from "../../Elementos/ButtonBackStart";
 
 import "./InfoPaciente.css";
 import { useLocation } from "react-router-dom";
@@ -23,7 +23,7 @@ const InfoPaciente = () => {
 
   // Nombre
   let name = Nombre.split(" ");
-  name = `${name[0][0].toUpperCase()}${name[name.length - 1][0].toUpperCase()}`;
+  if (name[name.length - 1] ? name = `${name[0][0].toUpperCase()}${name[name.length - 1][0]?.toUpperCase()}` :  name = `${name[0][0].toUpperCase()}`)
 
   return (
     <div>
@@ -79,7 +79,7 @@ const InfoPaciente = () => {
         </div>
       </div>
       <div>
-        <ButtonBack admin="/" />
+        <ButtonBackStart />
       </div>
     </div>
   );

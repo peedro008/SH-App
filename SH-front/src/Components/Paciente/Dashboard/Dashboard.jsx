@@ -18,7 +18,7 @@ function DashboardComponent() {
   const userName = useSelector((state) => state.userSession)?.userName;
 
   let name = userName?.split(" ");
-  name = `${name[0][0].toUpperCase()}${name[name.length - 1][0].toUpperCase()}`;
+  if (name[name.length - 1] ? name = `${name[0][0].toUpperCase()}${name[name.length - 1][0]?.toUpperCase()}` :  name = `${name[0][0].toUpperCase()}`)
 
   return (
     <div className="containerBody">
